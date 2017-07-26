@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="js/jquery.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Lancelot|Marcellus+SC|Open+Sans+Condensed:300|Poiret+One" rel="stylesheet">
   <script src="js/main.js" charset="utf-8"></script>
@@ -12,20 +14,27 @@
 </head>
 <body>
 
-  <div id='header'><p id='title'>James Theo</p></div>
+  <div id='header'><p id='title'>James Theo</p>
+  </div>
 
   <div class="flexbox-container">
   	<div id="column-1">
-      <div class="nav-container"><p>About</p></div>
-      <div class="nav-container"><p>Github</p></div>
-      <div class="nav-container"><p>Resume</p></div>
-      <div class="nav-container"><p>omg</p></div>
+      <div class="nav-container"><p id="nav-fun">Fun</p></div>
+      <div class="nav-container"><p id="nav-about">About</p></div>
+      <div class="nav-container"><p id="nav-projects">Projects</p></div>
+      <div class="nav-container"><p id="nav-contact">Contact</p></div>
     </div>
-    <div class="column-2" id="about"><p>About</p></div>
-    <div class="column-2" id="github"><p>Github</p></div>
-    <div class="column-2" id="resume"><p>Resume</p></div>
+
+    <div id="column-2">
+      <div class="content" id="about"><p>About</p></div>
+      <div class="content" id="projects"><p>Projects</p></div>
+      <div class="content" id="contact"><p>Contact</p></div>
+      <div class="content" id="fun"><p>Fun!</p></div>
+
+    </div>
 
   </div>
+
 
 </body>
 </html>

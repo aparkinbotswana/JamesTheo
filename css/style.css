@@ -20,10 +20,12 @@ body {
   border-right: 1px solid black;
   font-family: 'Poiret One', cursive;
   font-weight: bold;
+  color: #410B13;
+  font-size: 20px;
 
 }
 
-.column-2 {
+#column-2 {
   width: 80vw;
   height: auto;
   padding-left: 10px;
@@ -48,6 +50,21 @@ body {
   transform: translateY(-50%);
 }
 
-.nav-container {
+#about {
+  /*display: none;*/
+
+}
+
+#projects {
+  /*display: none;*/
+
+}
+
+#contact {
+  /*display: none;*/
+
+}
+
+#fun {
 
 }
