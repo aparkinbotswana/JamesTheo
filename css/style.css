@@ -1,0 +1,53 @@
+/*font-family: 'Poiret One', cursive;
+font-family: 'Lancelot', cursive;
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Marcellus SC', serif;
+font-family: 'Alegreya SC', serif;*/
+body {
+  background: #E8F1F2
+}
+
+.flexbox-container {
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+}
+
+#column-1 {
+  width: 20vw;
+  height: auto;
+  padding-left: 25px;
+  border-right: 1px solid black;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+
+}
+
+.column-2 {
+  width: 80vw;
+  height: auto;
+  padding-left: 10px;
+}
+
+.flexbox-container > div:first-child {
+	margin-right: 20px;
+}
+
+#header {
+  font-weight: bold;
+  color: #2F394D;
+  height: 10vw;
+  font-family: 'Poiret One', cursive;
+  font-size: 36px;
+  text-align: center;
+}
+
+#title {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-container {
+
+}
