@@ -1,32 +1,23 @@
 $( document ).ready(function() {
 
-  var divEmpty = function () {
-    $("content").hide('slow')
-  }
+  $( "#nav-fun" ).click(function() {
+    $('.content').fadeOut(2000);
+    $('#fun').delay(2000).fadeIn(2000);
+  });
 
   $( "#nav-about" ).click(function() {
-     divEmpty()
-     $('#about').animate({height: "toggle"})
+    $('.content').fadeOut(2000);
+    $('#about').delay(2000).fadeIn(2000);
   });
 
   $( "#nav-projects" ).click(function() {
-    divEmpty()
-    $('#projects').animate({height: "toggle"})
-
-
+    $('.content').fadeOut(2000);
+    $('#projects').delay(2000).fadeIn(2000);
   });
 
   $( "#nav-contact" ).click(function() {
-    divEmpty()
-    $('#contact').animate({height: "toggle"})
-
-  });
-
-  $( "#nav-fun" ).click(function() {
-    // divEmpty()
-    $('#fun').animate({height: "toggle"})
-
-
+    $('.content').fadeOut(2000);
+    $('#contact').delay(2000).fadeIn(2000);
   });
 
 });
