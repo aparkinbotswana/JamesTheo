@@ -18,9 +18,9 @@ body {
 }
 
 #column-1 {
-  width: 20vw;
+  width: 15vw;
   height: auto;
-  padding-left: 25px;
+  padding-left: 35px;
   border-right: 1px solid black;
   font-family: 'Poiret One', cursive;
   /*font-weight: bold;*/
@@ -32,12 +32,16 @@ body {
 #column-2 {
   width: 80vw;
   height: auto;
-  padding-left: 10px;
+  padding-left: 35px;
 }
 
-.flexbox-container > div:first-child {
-	margin-right: 20px;
+#column-3 {
+  width: 30vw;
+  height: auto;
+  padding-right: 35px;
 }
+
+
 
 #header {
   font-weight: bold;
@@ -65,8 +69,11 @@ body {
 }
 
 #contact {
+  text-align: center;
   display: none;
-
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #fun {

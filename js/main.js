@@ -20,4 +20,7 @@ $( document ).ready(function() {
     $('#contact').delay(2000).fadeIn(2000);
   });
 
+
+  onclick = "window.open(this.href)" // click function that opens new tab and directs to correct website.
+
 });
