@@ -29,20 +29,20 @@ $( document ).ready(function() {
   particlesJS("particles-js", {
     "particles": {
       "number": {
-        "value": 380,
+        "value": 600,
         "density": {
           "enable": true,
           "value_area": 800
         }
       },
       "color": {
-        "value": "#ffffff"
+        "value": "#35CE8D"
       },
       "shape": {
         "type": "circle",
         "stroke": {
-          "width": 0,
-          "color": "#000000"
+          "width": 10,
+          "color": "#35CE8D"
         },
         "polygon": {
           "nb_sides": 5
@@ -74,9 +74,9 @@ $( document ).ready(function() {
         }
       },
       "line_linked": {
-        "enable": true,
+        "enable": false,
         "distance": 150,
-        "color": "#ffffff",
+        "color": "#35CE8D",
         "opacity": 0.4,
         "width": 1
       },
@@ -86,8 +86,8 @@ $( document ).ready(function() {
         "direction": "none",
         "random": false,
         "straight": false,
-        "out_mode": "out",
-        "bounce": false,
+        "out_mode": "bounce",
+        "bounce": true,
         "attract": {
           "enable": false,
           "rotateX": 600,

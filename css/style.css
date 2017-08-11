@@ -10,10 +10,9 @@ body {
   background: rgb(249, 249, 249)
 }
 
-#particles-js {
-  background: cornflowerblue;
-}
-
+/*canvas{
+  z-index: -100 !important;
+}*/
 /*.flexbox-container {
 	display: -ms-flex;
 	display: -webkit-flex;
@@ -70,6 +69,7 @@ body {
 .nav-container {
   cursor: pointer;
   cursor: hand;
+  /*z-index: 100 !important;*/
 }
 
 
