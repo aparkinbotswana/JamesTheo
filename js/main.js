@@ -74,11 +74,11 @@ $( document ).ready(function() {
         }
       },
       "line_linked": {
-        "enable": false,
-        "distance": 150,
+        "enable": true,
+        "distance": 35,
         "color": "#35CE8D",
-        "opacity": 0.4,
-        "width": 1
+        "opacity": 0.7,
+        "width": 7
       },
       "move": {
         "enable": true,
