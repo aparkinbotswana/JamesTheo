@@ -29,10 +29,10 @@ $( document ).ready(function() {
   particlesJS("particles-js", {
     "particles": {
       "number": {
-        "value": 600,
+        "value": 1000,
         "density": {
           "enable": true,
-          "value_area": 800
+          "value_area": 600
         }
       },
       "color": {
@@ -82,7 +82,7 @@ $( document ).ready(function() {
       },
       "move": {
         "enable": true,
-        "speed": 6,
+        "speed": 4,
         "direction": "none",
         "random": false,
         "straight": false,
@@ -100,10 +100,10 @@ $( document ).ready(function() {
       "events": {
         "onhover": {
           "enable": true,
-          "mode": "grab"
+          "mode": "repulse"
         },
         "onclick": {
-          "enable": true,
+          "enable": false,
           "mode": "push"
         },
         "resize": true
@@ -123,7 +123,7 @@ $( document ).ready(function() {
           "speed": 3
         },
         "repulse": {
-          "distance": 200,
+          "distance": 50,
           "duration": 0.4
         },
         "push": {
