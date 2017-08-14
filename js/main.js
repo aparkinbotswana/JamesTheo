@@ -1,9 +1,5 @@
 $( document ).ready(function() {
 
-  $( "#nav-fun" ).click(function() {
-    $('.content').fadeOut(2000);
-    $('#fun').delay(2000).fadeIn(2000);
-  });
 
   $( "#nav-about" ).click(function() {
     $('.content').fadeOut(2000);
@@ -20,11 +16,6 @@ $( document ).ready(function() {
     $('#contact').delay(2000).fadeIn(2000);
   });
 
-
-  // onclick = "window.open(this.href)" // click function that opens new tab and directs to correct website.
-
-  /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-  /* ---- particles.js config ---- */
 
   particlesJS("particles-js", {
     "particles": {
@@ -136,9 +127,6 @@ $( document ).ready(function() {
     },
     "retina_detect": true
   });
-
-
-  /* ---- stats.js config ---- */
 
   var count_particles, stats, update;
   stats = new Stats;
