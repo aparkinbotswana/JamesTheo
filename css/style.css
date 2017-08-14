@@ -29,10 +29,19 @@ body {
   color: #2F394D;
   height: 10vw;
   font-family: 'Poiret One', cursive;
-  font-size: 36px;
   text-align: center;
+  margin-bottom: 55px;
+}
+
+#title-name {
+  font-size: 50px;
+}
+
+#title-web {
+  font-size: 36px;
 
 }
+
 
 .nav-container {
   cursor: pointer;
@@ -42,10 +51,6 @@ body {
 
 .content {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   display: none;
-}
-
-.content-title{
-  font-size: 22px;
 }

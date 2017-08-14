@@ -4,16 +4,19 @@ $( document ).ready(function() {
   $( "#nav-about" ).click(function() {
     $('.content').slideUp(2000);
     $('#about').delay(2000).slideDown(2000);
+
   });
 
   $( "#nav-projects" ).click(function() {
     $('.content').slideUp(2000);
     $('#projects').delay(2000).slideDown(2000);
+
   });
 
   $( "#nav-contact" ).click(function() {
     $('.content').slideUp(2000);
     $('#contact').delay(2000).slideDown(2000);
+
   });
 
 
@@ -127,24 +130,4 @@ $( document ).ready(function() {
     },
     "retina_detect": true
   });
-
-  var count_particles, stats, update;
-  stats = new Stats;
-  stats.setMode(0);
-  stats.domElement.style.position = 'absolute';
-  stats.domElement.style.left = '0px';
-  stats.domElement.style.top = '0px';
-  document.body.appendChild(stats.domElement);
-  count_particles = document.querySelector('.js-count-particles');
-  update = function() {
-    stats.begin();
-    stats.end();
-    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-    }
-    requestAnimationFrame(update);
-  };
-  requestAnimationFrame(update);
-
-
 });
