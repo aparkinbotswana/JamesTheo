@@ -2,18 +2,18 @@ $( document ).ready(function() {
 
 
   $( "#nav-about" ).click(function() {
-    $('.content').fadeOut(2000);
-    $('#about').delay(2000).fadeIn(2000);
+    $('.content').slideUp(2000);
+    $('#about').delay(2000).slideDown(2000);
   });
 
   $( "#nav-projects" ).click(function() {
-    $('.content').fadeOut(2000);
-    $('#projects').delay(2000).fadeIn(2000);
+    $('.content').slideUp(2000);
+    $('#projects').delay(2000).slideDown(2000);
   });
 
   $( "#nav-contact" ).click(function() {
-    $('.content').fadeOut(2000);
-    $('#contact').delay(2000).fadeIn(2000);
+    $('.content').slideUp(2000);
+    $('#contact').delay(2000).slideDown(2000);
   });
 
 
@@ -27,13 +27,13 @@ $( document ).ready(function() {
         }
       },
       "color": {
-        "value": "#35CE8D"
+        "value": "#612940"
       },
       "shape": {
         "type": "circle",
         "stroke": {
           "width": 10,
-          "color": "#35CE8D"
+          "color": "#612940"
         },
         "polygon": {
           "nb_sides": 5
@@ -65,7 +65,7 @@ $( document ).ready(function() {
         }
       },
       "line_linked": {
-        "enable": true,
+        "enable": false,
         "distance": 35,
         "color": "#35CE8D",
         "opacity": 0.7,

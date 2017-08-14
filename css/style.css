@@ -10,24 +10,7 @@ body {
   background: rgb(249, 249, 249)
 }
 
-/*canvas{
-  z-index: -100 !important;
-}*/
-/*.flexbox-container {
-	display: -ms-flex;
-	display: -webkit-flex;
-	display: flex;
-}*/
-
-/*.text {
-  margin: 0;
-}*/
-
 #column-1 {
-  /*width: 30vw;
-  height: auto;
-  padding-left: 35px;
-  border-right: 1px solid black;*/
   font-family: 'Poiret One', cursive;
   font-weight: 550;
   color: #410B13;
@@ -35,19 +18,11 @@ body {
 
 }
 
-/*#column-2 {
-  width: 40vw;
-  height: auto;
-  padding-left: 35px;
+#column-2 {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+
 }
-
-#column-3 {
-  width: 30vw;
-  height: auto;
-  padding-right: 35px;
-}*/
-
-
 
 #header {
   font-weight: bold;
