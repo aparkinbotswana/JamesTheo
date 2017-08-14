@@ -34,31 +34,18 @@ body {
 
 }
 
-/*#title-name, #title-web {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: auto 0;
-}*/
 
 .nav-container {
   cursor: pointer;
   cursor: hand;
-  /*z-index: 100 !important;*/
 }
-
-
-/*#contact, #projects, #about {
-  text-align: center;
-  display: none;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}*/
 
 
 .content{
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
 }
 
-/*increase line spacing*/
+.content-title{
+  font-size: 22px;
+}
