@@ -24,13 +24,11 @@ body {
 
 }
 
-#header {
+#main-heading {
   font-weight: bold;
   color: #2F394D;
-  height: 10vw;
   font-family: 'Poiret One', cursive;
   text-align: center;
-  margin-bottom: 55px;
 }
 
 #title-name {
@@ -39,7 +37,18 @@ body {
 
 #title-web {
   font-size: 36px;
+}
 
+@media only screen and (max-width: 641px)  {
+  #main-heading {
+    margin-bottom: 25px;
+  }
+}
+
+@media only screen and (min-width: 642px)  {
+  #main-heading {
+    margin-bottom: 25px;
+  }
 }
 
 
