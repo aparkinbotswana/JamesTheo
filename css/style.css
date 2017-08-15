@@ -63,3 +63,7 @@ body {
 .project-img {
   border-radius: 5%;
 }
+
+canvas {
+  border-radius: 50%;
+}

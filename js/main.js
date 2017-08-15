@@ -2,14 +2,71 @@ var count = 0
 
 $( document ).ready(function() {
 
+  // function navFunc(id){
+  //   if (count === 0) {
+  //     $(id).slideDown(2000);
+  //     count = 1
+  //   } else {
+  //     // unbindNav();
+  //     navMove(id);
+  //     // reBindNav();
+  //   }
+  //
+  // };
+  //
+  // function unbindNav() {
+  //   $('#nav-about').off();
+  //   $('#nav-projects').off();
+  //   $('#nav-contact').off();
+  //   console.log('unbind');
+  // };
+  //
+  // function navMove(id){
+  //   $('.content').slideUp(2000);
+  //   $(id).delay(2000).slideDown(2000);
+  // };
+  //
+  // function reBindNav() {
+  //   $('#nav-about').on('click', navFunc());
+  //   $('#nav-projects').on('click', navFunc());
+  //   $('#nav-contact').on('click', navFunc());
+  //   console.log('bind');
+  // };
+  //
+  // $( "#nav-about" ).click(navFunc('#about'));
+  //
+  // $( "#nav-projects" ).click(navFunc('#projects'));
+  //
+  // $( "#nav-contact" ).click(navFunc('#contact'));
+
+
+  function unbindNav() {
+    $('#nav-about').off();
+    $('#nav-projects').off();
+    $('#nav-contact').off();
+    console.log('unbind');
+  }
+
+  function navMove(id){
+    $('.content').slideUp(2000);
+    $(id).delay(2000).slideDown(2000);
+  }
+
+  function reBindNav() {
+    $('#nav-about').on('click');
+    $('#nav-projects').on('click');
+    $('#nav-contact').on('click');
+    console.log('bind');
+  }
 
   $( "#nav-about" ).click(function() {
     if (count === 0) {
       $('#about').slideDown(2000);
       count = 1
     } else {
-      $('.content').slideUp(2000);
-      $('#about').delay(2000).slideDown(2000);
+      unbindNav();
+      navMove('#about')
+      reBindNav();
     }
   });
   $( "#nav-projects" ).click(function() {
@@ -17,8 +74,9 @@ $( document ).ready(function() {
       $('#projects').slideDown(2000);
       count = 1
     } else {
-      $('.content').slideUp(2000);
-      $('#projects').delay(2000).slideDown(2000);
+      unbindNav();
+      navMove('#projects')
+      reBindNav();
     }
   });
   $( "#nav-contact" ).click(function() {
@@ -26,8 +84,9 @@ $( document ).ready(function() {
       $('#contact').slideDown(2000);
       count = 1
     } else {
-      $('.content').slideUp(2000);
-      $('#contact').delay(2000).slideDown(2000);
+      unbindNav();
+      navMove('#contact')
+      reBindNav();
     }
   });
 
@@ -35,7 +94,7 @@ $( document ).ready(function() {
   particlesJS("particles-js", {
     "particles": {
       "number": {
-        "value": 1000,
+        "value": 1200,
         "density": {
           "enable": true,
           "value_area": 600
@@ -109,8 +168,8 @@ $( document ).ready(function() {
           "mode": "repulse"
         },
         "onclick": {
-          "enable": false,
-          "mode": "push"
+          "enable": true,
+          "mode": "bubble"
         },
         "resize": true
       },
@@ -124,7 +183,7 @@ $( document ).ready(function() {
         "bubble": {
           "distance": 400,
           "size": 40,
-          "duration": 2,
+          "duration": 3,
           "opacity": 8,
           "speed": 3
         },
