@@ -10,18 +10,17 @@ body {
   background: rgb(249, 249, 249)
 }
 
-#column-1 {
+#column-1, a {
   font-family: 'Poiret One', cursive;
   font-weight: 550;
   color: #410B13;
   font-size: 28px;
-
+  text-decoration: none;
 }
 
-#column-2 {
-  border-right: 1px solid black;
-  border-left: 1px solid black;
-
+a:hover {
+  color: #410B13;
+  text-decoration: none;
 }
 
 #main-heading {
@@ -70,5 +69,8 @@ body {
 
 .projects-description {
   font-weight: bold;
+}
 
+.project-img {
+  border-radius: 5%;
 }
