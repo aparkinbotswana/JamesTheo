@@ -2,93 +2,43 @@ var count = 0
 
 $( document ).ready(function() {
 
-  // function navFunc(id){
-  //   if (count === 0) {
-  //     $(id).slideDown(2000);
-  //     count = 1
-  //   } else {
-  //     // unbindNav();
-  //     navMove(id);
-  //     // reBindNav();
-  //   }
-  //
-  // };
-  //
-  // function unbindNav() {
-  //   $('#nav-about').off();
-  //   $('#nav-projects').off();
-  //   $('#nav-contact').off();
-  //   console.log('unbind');
-  // };
-  //
-  // function navMove(id){
-  //   $('.content').slideUp(2000);
-  //   $(id).delay(2000).slideDown(2000);
-  // };
-  //
-  // function reBindNav() {
-  //   $('#nav-about').on('click', navFunc());
-  //   $('#nav-projects').on('click', navFunc());
-  //   $('#nav-contact').on('click', navFunc());
-  //   console.log('bind');
-  // };
-  //
-  // $( "#nav-about" ).click(navFunc('#about'));
-  //
-  // $( "#nav-projects" ).click(navFunc('#projects'));
-  //
-  // $( "#nav-contact" ).click(navFunc('#contact'));
+  function navFunc(id){
+    var id = $(this).data('target');
+    if (count === 0) {
+      $(id).slideDown(2000);
+      count = 1
+    } else {
+      unbindNav();
+      navMove(id);
+      reBindNav();
+    }
 
+  };
 
   function unbindNav() {
     $('#nav-about').off();
     $('#nav-projects').off();
     $('#nav-contact').off();
     console.log('unbind');
-  }
+  };
 
   function navMove(id){
     $('.content').slideUp(2000);
     $(id).delay(2000).slideDown(2000);
-  }
+  };
 
   function reBindNav() {
-    $('#nav-about').on('click');
-    $('#nav-projects').on('click');
-    $('#nav-contact').on('click');
+    $('#nav-about').on('click', navFunc);
+    $('#nav-projects').on('click', navFunc);
+    $('#nav-contact').on('click', navFunc);
     console.log('bind');
-  }
+  };
 
-  $( "#nav-about" ).click(function() {
-    if (count === 0) {
-      $('#about').slideDown(2000);
-      count = 1
-    } else {
-      unbindNav();
-      navMove('#about')
-      reBindNav();
-    }
-  });
-  $( "#nav-projects" ).click(function() {
-    if (count === 0) {
-      $('#projects').slideDown(2000);
-      count = 1
-    } else {
-      unbindNav();
-      navMove('#projects')
-      reBindNav();
-    }
-  });
-  $( "#nav-contact" ).click(function() {
-    if (count === 0) {
-      $('#contact').slideDown(2000);
-      count = 1
-    } else {
-      unbindNav();
-      navMove('#contact')
-      reBindNav();
-    }
-  });
+  $( "#nav-about" ).click(navFunc);
+
+  $( "#nav-projects" ).click(navFunc);
+
+  $( "#nav-contact" ).click(navFunc);
 
 
   particlesJS("particles-js", {
