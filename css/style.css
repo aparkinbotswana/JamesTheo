@@ -51,6 +51,10 @@ body {
   }
 }
 
+.project-links {
+  cursor: pointer;
+  cursor: hand;
+}
 
 .nav-container {
   cursor: pointer;
@@ -62,4 +66,9 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   display: none;
+}
+
+.projects-description {
+  font-weight: bold;
+
 }

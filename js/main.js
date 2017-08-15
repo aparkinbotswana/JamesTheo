@@ -1,22 +1,34 @@
+var count = 0
+
 $( document ).ready(function() {
 
 
   $( "#nav-about" ).click(function() {
-    $('.content').slideUp(2000);
-    $('#about').delay(2000).slideDown(2000);
-
+    if (count === 0) {
+      $('#about').slideDown(2000);
+      count = 1
+    } else {
+      $('.content').slideUp(2000);
+      $('#about').delay(2000).slideDown(2000);
+    }
   });
-
   $( "#nav-projects" ).click(function() {
-    $('.content').slideUp(2000);
-    $('#projects').delay(2000).slideDown(2000);
-
+    if (count === 0) {
+      $('#projects').slideDown(2000);
+      count = 1
+    } else {
+      $('.content').slideUp(2000);
+      $('#projects').delay(2000).slideDown(2000);
+    }
   });
-
   $( "#nav-contact" ).click(function() {
-    $('.content').slideUp(2000);
-    $('#contact').delay(2000).slideDown(2000);
-
+    if (count === 0) {
+      $('#contact').slideDown(2000);
+      count = 1
+    } else {
+      $('.content').slideUp(2000);
+      $('#contact').delay(2000).slideDown(2000);
+    }
   });
 
 
