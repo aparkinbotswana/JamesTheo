@@ -10,16 +10,11 @@ body {
   background: rgb(249, 249, 249)
 }
 
-#column-1, a {
+#column-1, a, a:hover, a:focus {
   font-family: 'Poiret One', cursive;
   font-weight: 550;
   color: #410B13;
   font-size: 28px;
-  text-decoration: none;
-}
-
-a:hover, a:focus {
-  color: #410B13;
   text-decoration: none;
 }
 
@@ -50,16 +45,10 @@ a:hover, a:focus {
   }
 }
 
-.project-links {
+.project-links, .nav-container {
   cursor: pointer;
   cursor: hand;
 }
-
-.nav-container {
-  cursor: pointer;
-  cursor: hand;
-}
-
 
 .content {
   font-family: 'Open Sans', sans-serif;
