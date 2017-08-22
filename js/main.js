@@ -2,45 +2,38 @@ var count = 0
 
 $( document ).ready(function() {
 
+  var initiated = false;
+  var running = false;
+  var previousId = null;
 
-  function unbindNav() {
-    $('#nav-about').off();
-    $('#nav-projects').off();
-    $('#nav-contact').off();
-    // $('#nav-freelance').off();
-    console.log('unbind');
+  function navMove (id) {
+    if (running) return;
+
+    running = true;
+    $(previousId).slideUp(2000, function () {
+      $(id).slideDown(2000, function () {
+        running = false;
+        previousId = id;
+      });
+    });
   };
 
-  function navMove(id){
-    $('.content').slideUp(2000);
-    $(id).delay(2000).slideDown(2000);
-  };
-
-  function reBindNav() {
-    $('#nav-about').on('click', navFunc);
-    $('#nav-projects').on('click', navFunc);
-    $('#nav-contact').on('click', navFunc);
-    // $('#nav-freelance').on('click', navFunc);
-    console.log('bind');
-  };
-
-  function navFunc(id){
+  function navFunc() {
     var id = $(this).data('target');
-    if (count === 0) {
-      $(id).slideDown(2000);
-      count = 1
-    } else {
-      unbindNav();
-      navMove(id);
-      reBindNav();
-    }
-  };
+
+    if (initiated) return navMove(id);
+
+    initiated = true;
+    running = true;
+    $(id).slideDown(2000, function () {
+      running = false;
+      previousId = id;
+    })
+  }
 
 
   $( "#nav-about" ).click(navFunc);
-
   $( "#nav-projects" ).click(navFunc);
-
   $( "#nav-contact" ).click(navFunc);
 
   // $( "#nav-freelance" ).click(navFunc);
