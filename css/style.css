@@ -39,7 +39,7 @@ p {
   margin: 0 auto;
 }
 
-@media only screen and (max-height: 700px)  {
+@media only screen and (max-height: 750px)  {
   #main-heading {
     margin-bottom: 10px;
   }
@@ -50,7 +50,7 @@ p {
   }
 }
 
-@media only screen and (min-height: 701px)  {
+@media only screen and (min-height: 751px)  {
   #main-heading {
     margin-bottom: 25px;
   }
