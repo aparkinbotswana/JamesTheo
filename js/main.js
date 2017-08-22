@@ -2,23 +2,12 @@ var count = 0
 
 $( document ).ready(function() {
 
-  function navFunc(id){
-    var id = $(this).data('target');
-    if (count === 0) {
-      $(id).slideDown(2000);
-      count = 1
-    } else {
-      unbindNav();
-      navMove(id);
-      reBindNav();
-    }
-
-  };
 
   function unbindNav() {
     $('#nav-about').off();
     $('#nav-projects').off();
     $('#nav-contact').off();
+    // $('#nav-freelance').off();
     console.log('unbind');
   };
 
@@ -31,14 +20,30 @@ $( document ).ready(function() {
     $('#nav-about').on('click', navFunc);
     $('#nav-projects').on('click', navFunc);
     $('#nav-contact').on('click', navFunc);
+    // $('#nav-freelance').on('click', navFunc);
     console.log('bind');
   };
+
+  function navFunc(id){
+    var id = $(this).data('target');
+    if (count === 0) {
+      $(id).slideDown(2000);
+      count = 1
+    } else {
+      unbindNav();
+      navMove(id);
+      reBindNav();
+    }
+  };
+
 
   $( "#nav-about" ).click(navFunc);
 
   $( "#nav-projects" ).click(navFunc);
 
   $( "#nav-contact" ).click(navFunc);
+
+  // $( "#nav-freelance" ).click(navFunc);
 
 
   particlesJS("particles-js", {
@@ -131,7 +136,7 @@ $( document ).ready(function() {
           }
         },
         "bubble": {
-          "distance": 400,
+          "distance": 1000,
           "size": 40,
           "duration": 3,
           "opacity": 8,

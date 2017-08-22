@@ -348,8 +348,8 @@ img {
   border-radius: 50%;
 }
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   border: 0;
   border-top: 1px solid #eee;
 }
@@ -490,9 +490,9 @@ h6,
 .h6 {
   font-size: 12px;
 }
-p {
+/*p {
   margin: 0 0 10px;
-}
+}*/
 .lead {
   margin-bottom: 20px;
   font-size: 16px;

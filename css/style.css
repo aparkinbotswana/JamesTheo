@@ -10,6 +10,11 @@ body {
   background: rgb(249, 249, 249)
 }
 
+p {
+  margin: 0 0 10px;
+}
+
+
 #column-1, a, a:hover, a:focus {
   font-family: 'Poiret One', cursive;
   font-weight: 550;
@@ -31,15 +36,21 @@ body {
 
 #title-web {
   font-size: 36px;
+  margin: 0 auto;
 }
 
-@media only screen and (max-width: 641px)  {
+@media only screen and (max-height: 700px)  {
   #main-heading {
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 4px;
+
   }
 }
 
-@media only screen and (min-width: 642px)  {
+@media only screen and (min-height: 701px)  {
   #main-heading {
     margin-bottom: 25px;
   }
