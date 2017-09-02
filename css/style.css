@@ -1,11 +1,3 @@
-/*font-family: 'Poiret One', cursive;
-font-family: 'Lancelot', cursive;
-font-family: 'Open Sans Condensed', sans-serif;
-font-family: 'Marcellus SC', serif;
-font-family: 'Alegreya SC', serif;
-
-font-family: 'Cinzel', serif;*/
-
 body {
   background: rgb(249, 249, 249)
 }
@@ -13,7 +5,6 @@ body {
 p {
   margin: 0 0 10px;
 }
-
 
 #column-1, a, a:hover, a:focus {
   font-family: 'Poiret One', cursive;
@@ -54,6 +45,12 @@ p {
   #main-heading {
     margin-bottom: 25px;
   }
+}
+
+.project-links {
+  font-weight: bold;
+  text-decoration: underline;
+
 }
 
 .project-links, .nav-container {
