@@ -42,7 +42,7 @@ p {
   font-size: 28px;
   text-decoration: none;
   text-align: center;
-  margin: auto;
+  margin: auto 0;
 }
 .project-links {
   font-weight: bold;
@@ -57,6 +57,7 @@ p {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   display: none;
+  text-align: center;
 }
 .projects-description {
   font-weight: bold;
@@ -66,4 +67,7 @@ p {
 }
 canvas {
   border-radius: 50%;
+}
+#nav-resume{
+
 }
