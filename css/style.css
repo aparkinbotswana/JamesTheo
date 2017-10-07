@@ -1,77 +1,73 @@
-body {
-  background: rgb(249, 249, 249)
-}
+@media only screen and (min-width: 900px)  {
+  .columnParent{
+    display: flex;
+    justify-content: space-between;
+  }
+  .secondaryColumn{
+    box-sizing: border-box;
+    flex-basis: 20%;
 
+  }
+  .mainColumn{
+    box-sizing: border-box;
+    flex-basis: 50%;
+
+  }
+}
+body {
+  background: rgb(249, 249, 249);
+  padding: 10px 120px 0 120px;
+}
 p {
   margin: 0 0 10px;
 }
-
+#main-heading {
+  font-weight: bold;
+  color: #2F394D;
+  font-family: 'Poiret One', cursive;
+  text-align: center;
+  margin-bottom: 25px;
+}
+#title-name {
+  font-size: 50px;
+}
+#title-web {
+  font-size: 36px;
+  margin: 0 auto;
+}
 #column-1, a, a:hover, a:focus {
   font-family: 'Poiret One', cursive;
   font-weight: 550;
   color: #410B13;
   font-size: 28px;
   text-decoration: none;
-}
-
-#main-heading {
-  font-weight: bold;
-  color: #2F394D;
-  font-family: 'Poiret One', cursive;
   text-align: center;
+  margin: auto 0;
 }
-
-#title-name {
-  font-size: 50px;
-}
-
-#title-web {
-  font-size: 36px;
-  margin: 0 auto;
-}
-
-@media only screen and (max-height: 750px)  {
-  #main-heading {
-    margin-bottom: 10px;
-  }
-
-  p {
-    margin-bottom: 4px;
-
-  }
-}
-
-@media only screen and (min-height: 751px)  {
-  #main-heading {
-    margin-bottom: 25px;
-  }
-}
-
 .project-links {
   font-weight: bold;
   text-decoration: underline;
 
 }
-
 .project-links, .nav-container, .contact-details {
   cursor: pointer;
   cursor: hand;
 }
-
 .content {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   display: none;
+  text-align: center;
 }
-
 .projects-description {
   font-weight: bold;
 }
-
 .project-img {
   border-radius: 5%;
 }
-
 canvas {
   border-radius: 50%;
+}
+#nav-resume{
+
 }
