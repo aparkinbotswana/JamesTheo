@@ -6,12 +6,11 @@
   .secondaryColumn{
     box-sizing: border-box;
     flex-basis: 20%;
-
+    margin-top: 60px;
   }
   .mainColumn{
     box-sizing: border-box;
     flex-basis: 50%;
-
   }
 }
 
@@ -26,6 +25,9 @@ img{
 @media only screen and (max-width: 640px)  {
   body{
     padding: 10px 30px 0;
+  }
+  #column-1{
+    margin: 0 auto;
   }
 }
 p {
@@ -52,7 +54,6 @@ p {
   font-size: 28px;
   text-decoration: none;
   text-align: center;
-  margin: auto 0;
 }
 .project-links {
   font-weight: bold;
@@ -77,7 +78,4 @@ p {
 }
 canvas {
   border-radius: 50%;
-}
-#nav-resume{
-
 }
