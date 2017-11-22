@@ -1,5 +1,3 @@
-var count = 0
-
 $( document ).ready(function() {
 
   var initiated = false;
