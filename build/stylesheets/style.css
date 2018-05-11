@@ -1,3 +1,6 @@
+.container {
+  display: flex; }
+
 /* @media only screen and (min-width: 900px)  {
   .columnParent{
     display: flex;
@@ -79,3 +82,5 @@ p {
 canvas {
   border-radius: 50%;
 } */
+
+/*# sourceMappingURL=style.css.map */
