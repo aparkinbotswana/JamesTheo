@@ -1390,7 +1390,6 @@
 },{}],2:[function(require,module,exports){
 // const HexaFlip = require('hexaflip')
 const OriDomi = require('oridomi')
-console.log('log');
 
 document.addEventListener('DOMContentLoaded', function(){
 
@@ -1401,7 +1400,10 @@ document.addEventListener('DOMContentLoaded', function(){
   //     curtis: ['Curtis', 'Roots', 'Super Fly', 'Back to the World', 'Got to Find a Way', 'Sweet Exorcist']
   //   }
   // );
-  var folded = new OriDomi(document.getElementsByClassName('paper')[0], {
+  const paper = document.getElementsByClassName('paper')[0]
+  const navBar = document.getElementById('nav-column')
+
+  var folded = new OriDomi(paper, {
     vPanels:         5,     // number of panels when folding left or right (vertically oriented)
     hPanels:         3,     // number of panels when folding top or bottom
     speed:           1000,  // folding duration in ms
@@ -1409,8 +1411,26 @@ document.addEventListener('DOMContentLoaded', function(){
     shadingIntensity: 0.4,    // lessen the shading effect
     perspective:     800,   // smaller values exaggerate 3D distortion
     maxAngle:        100,    // keep the user's folds within a range of -40 to 40 degrees
-    shading:         'soft' // change the shading type
+    shading:         false // change the shading type
   });
+
+  // const navFolded = new OriDomi(navBar, {
+  //   vPanels:         [25, 25, 25, 25],     // number of panels when folding left or right (vertically oriented)
+  //   hPanels:         1,     // number of panels when folding top or bottom
+  //   speed:           1000,  // folding duration in ms
+  //   ripple:          2,     // backwards ripple effect when animating
+  //   shadingIntensity: 0.4,    // lessen the shading effect
+  //   perspective:     800,   // smaller values exaggerate 3D distortion
+  //   maxAngle:        100,    // keep the user's folds within a range of -40 to 40 degrees
+  //   shading:         false // change the shading type
+  // });
+
+
+  // if (/*CONDITION THAT CHECKS THE SIZE OF SCREEN SO IT KNOWS WHICH ANIMATION TO USE*/) {
+    
+  // } else {
+
+  // }
  }, false);
 
 },{"oridomi":1}]},{},[2]);
