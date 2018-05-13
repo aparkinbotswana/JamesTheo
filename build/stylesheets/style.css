@@ -4,6 +4,9 @@ body {
 .center {
   text-align: center; }
 
+.nav-container {
+  background-color: #00381A; }
+
 .borderblack {
   border: 2px solid black; }
 
@@ -13,7 +16,7 @@ body {
 
   .nav-container {
     flex: 1; } }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .parent-column {
     display: flex; }
 
