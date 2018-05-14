@@ -1,32 +1,25 @@
-.hexaflip-cube {
-  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  text-rendering: optimizeLegibility;
-  font-smoothing: antialiased;
-  cursor: move;
-  cursor: grab;
-  display: inline-block;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.4s; }
-
 body {
-  background-color: #f9f9f9; }
+  background-color: #222222; }
 
 .center {
   text-align: center; }
 
-.nav-container {
+.nav-buttons {
   background-color: #00381A; }
 
-.borderblack {
-  border: 2px solid black; }
+.container {
+  display: flex; }
+
+.flex-1 {
+  flex: 1; }
 
 @media (max-width: 768px) {
   #nav-column-mobile {
     display: flex; }
 
   .nav-container {
-    flex: 1; }
+    flex: 1;
+    display: none; }
 
   #nav-column {
     display: none; } }
