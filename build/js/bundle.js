@@ -1388,7 +1388,7 @@
 
 
 },{}],2:[function(require,module,exports){
-// const HexaFlip = require('hexaflip')
+// const HexaFlip = require('./hexaflip.min.js')
 const OriDomi = require('oridomi')
 const makisu = require('./makisu.min.js')
 
@@ -1404,7 +1404,44 @@ document.addEventListener('DOMContentLoaded', function(){
   // );
   const list = document.getElementsByClassName('list')[0]
   const navBar = document.getElementById('nav-column')
+  const navBarMobile = document.getElementById('nav-column-mobile')
 
+  // var cubeSet = new HexaFlip(document.getElementById('cube'),
+  //   {
+  //       prince: ['For You', 'Prince', 'Dirty Mind', 'Controversy', '1999', 'Around the World in a Day'],
+  //       curtis: ['Curtis', 'Roots', 'Super Fly', 'Back to the World', 'Got to Find a Way', 'Sweet Exorcist']
+  //   }
+  // );
+
+//   var colorCube = new HexaFlip(document.getElementById('cube'),
+//     {
+//         chromaSet: [
+//           {
+//               value: 'orange',
+//               style: {
+//                   backgroundColor: '#e67e22',
+//                   fontWeight: 100
+//               }
+//           },
+//           {
+//               value: 'teal',
+//               style: {
+//                   backgroundColor: '#1abc9c',
+//                   fontFamily: 'Futura'
+//               }
+//           },
+//           {
+//               value: 'yellow',
+//               style: {
+//                   backgroundColor: '#f1c40f',
+//                   textDecoration: 'underline'
+//               }
+//           }
+//         ]
+//     }
+// );
+//   cubeSet.setValue({ prince: '1999', curtis: 'Roots' });
+//   cubeSet.getValue();
   // var folded = new OriDomi(!!!!!!!!!!!, {
   //   vPanels:         1,     // number of panels when folding left or right (vertically oriented)
   //   hPanels:         3,     // number of panels when folding top or bottom
@@ -1427,9 +1464,6 @@ document.addEventListener('DOMContentLoaded', function(){
   //   maxAngle:        100,    // keep the user's folds within a range of -40 to 40 degrees
   //   shading:         false // change the shading type
   // });
-  const removeList = function(){
-    list.classList.remove('list')
-  }
 
 
   if (window.innerWidth > 768) {  
@@ -1439,13 +1473,19 @@ document.addEventListener('DOMContentLoaded', function(){
       speed: 0.9
       });  
     $( '.list' ).makisu( 'open' );
-      // removeList()
-      list.classList.remove('list')
-
   } else {
-
-    // $( '#nav-column' ).makisu( 'open' );
-  }
+    const mobileMakisu = function(el){
+      $( el ).makisu({
+        selector: 'div',
+        overlap: 0.6,
+        speed: 0.9
+        });  
+      $( el ).makisu( 'open' );  
+    }
+    setTimeout(function(){ mobileMakisu('#mobile-1') }, 200)
+    setTimeout(function(){ mobileMakisu('#mobile-2') }, 400)
+    setTimeout(function(){ mobileMakisu('#mobile-3') }, 600)
+  } // Makisu adds styling that overides css. to get around this, two seperate nav bars have been created (one for destop and one for mobile) that way, site does not break if window is resized. html has to be altered slightly, as well, for mobile to make animation function properly
  }, false);
 
 },{"./makisu.min.js":3,"oridomi":1}],3:[function(require,module,exports){

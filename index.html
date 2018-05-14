@@ -23,6 +23,8 @@
 </head>
 <body>
 
+  <div id="cube" class="hexaflip-cube"></div>
+
   <div id="hex"></div>
   <div class="paper">
     <img src="build/images/FragaEdit.png" alt="">
@@ -45,6 +47,26 @@
           <p class="nav-buttons" id="nav-contact" data-target="#contact">Contact</p>
         </div>
       </div>
+
+      <div id="nav-column-mobile" class="center">
+          <div id="mobile-1" class="nav-container borderblack">
+            <div>
+              <p class="nav-buttons" id="nav-about" data-target="#about">About</p>
+            </div>
+          </div>
+          <div id="mobile-2" class="nav-container borderblack">
+            <div>
+            <p class="nav-buttons" id="nav-projects" data-target="#projects">Projects</p>
+            </div>
+          </div>
+          <div id="mobile-3" class="nav-container borderblack">
+            <div>
+              <p class="nav-buttons" id="nav-contact" data-target="#contact">Contact</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Makisu plugin adds styling that overides css. to get around this, two seperate nav bars have been created (one for destop and one for mobile) that way, site does not break if window is resized. html has to be altered slightly, as well, for mobile to make animation function properly -->
 
       <div id="content-column">
         <p>this is going to be a huge fucking column</p>

@@ -1,5 +1,16 @@
+.hexaflip-cube {
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+  font-smoothing: antialiased;
+  cursor: move;
+  cursor: grab;
+  display: inline-block;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s; }
+
 body {
-  margin: 0 auto; }
+  background-color: #f9f9f9; }
 
 .center {
   text-align: center; }
@@ -11,12 +22,18 @@ body {
   border: 2px solid black; }
 
 @media (max-width: 768px) {
-  #nav-column {
+  #nav-column-mobile {
     display: flex; }
 
   .nav-container {
-    flex: 1; } }
+    flex: 1; }
+
+  #nav-column {
+    display: none; } }
 @media (min-width: 769px) {
+  #nav-column-mobile {
+    display: none; }
+
   .parent-column {
     display: flex; }
 
