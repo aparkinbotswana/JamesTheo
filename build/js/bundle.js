@@ -1433,7 +1433,6 @@ document.addEventListener('DOMContentLoaded', function(){
   if (window.innerWidth < 769) {
     let intervalCount = 1  
     const mobileMakisu = function(el){
-      console.log('working');
       $(el).css('visibility', 'visible')
       $( el ).makisu({
         selector: 'div',

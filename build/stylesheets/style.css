@@ -14,9 +14,6 @@
   transform-style: preserve-3d;
   text-transform: uppercase; }
 
-.list .nav-buttons {
-  color: #fff; }
-
 .list .nav-buttons:hover {
   text-indent: 20px; }
 
@@ -26,8 +23,7 @@
   background: #2ec4b6;
   margin: 0;
   height: 55px;
-  width: 270px;
-  color: #fff; }
+  width: 270px; }
 
 .list .nav-buttons {
   border-top: 1px dashed rgba(255, 255, 255, 0.3);
@@ -48,6 +44,9 @@
   -o-transform-origin: 110% 25%;
   transform-origin: 110% 25%; }
 
+h1 {
+  color: #222222; }
+
 body {
   background-color: #f9f9f9; }
 
@@ -56,6 +55,7 @@ body {
 
 .nav-buttons {
   background-color: #2ec4b6;
+  color: #f9f9f9;
   padding: 15px;
   margin: 0; }
 
@@ -80,23 +80,21 @@ body {
 @media (max-width: 768px) {
   #nav-column-mobile {
     display: flex; }
-
-  .nav-container {
-    flex: 1;
-    visibility: hidden; }
+    #nav-column-mobile .nav-container {
+      flex: 1;
+      visibility: hidden; }
 
   #nav-column {
     display: none; } }
 @media (min-width: 769px) {
-  #nav-column-mobile {
-    display: none; }
-
   .parent-column {
     display: flex; }
+    .parent-column #nav-column {
+      flex: 1;
+      margin-right: 20px; }
 
-  #nav-column {
-    flex: 1;
-    margin-right: 20px; }
+  #nav-column-mobile {
+    display: none; }
 
   #content-column {
     flex: 3; } }
