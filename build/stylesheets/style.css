@@ -1,11 +1,68 @@
+.nav-buttons {
+  -webkit-transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+  -moz-transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+  -ms-transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+  text-decoration: none; }
+
+.list {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-stle: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  text-transform: uppercase;
+  position: absolute;
+  margin-left: -140px;
+  top: 20%; }
+
+.list .nav-buttons {
+  display: block;
+  color: #fff; }
+
+.list .nav-buttons:hover {
+  text-indent: 20px; }
+
+.list .nav-container {
+  text-indent: 10px;
+  line-height: 55px;
+  background: #2ec4b6;
+  margin: 0;
+  height: 55px;
+  width: 270px;
+  color: #fff; }
+
+.list .nav-buttons {
+  border-top: 1px dashed rgba(255, 255, 255, 0.3);
+  line-height: 35px;
+  font-size: 11px;
+  height: 35px;
+  margin: 0; }
+
+.list {
+  -webkit-transform: perspective(1200px) rotateY(40deg) !important;
+  -moz-transform: perspective(1200px) rotateY(40deg) !important;
+  -ms-transform: perspective(1200px) rotateY(40deg) !important;
+  -o-transform: perspective(1200px) rotateY(40deg) !important;
+  transform: perspective(1200px) rotateY(40deg) !important;
+  -webkit-transform-origin: 110% 25%;
+  -moz-transform-origin: 110% 25%;
+  -ms-transform-origin: 110% 25%;
+  -o-transform-origin: 110% 25%;
+  transform-origin: 110% 25%;
+  left: 20%; }
+
 body {
-  background-color: #222222; }
+  background-color: #f9f9f9; }
 
 .center {
   text-align: center; }
 
 .nav-buttons {
-  background-color: #00381A; }
+  background-color: #2ec4b6;
+  padding: 15px;
+  margin: 0; }
 
 .container {
   display: flex; }
@@ -13,13 +70,25 @@ body {
 .flex-1 {
   flex: 1; }
 
+.flex-3 {
+  flex: 3; }
+
+.letter {
+  border-bottom: 1px solid #ff9f1c; }
+
+#first-letter {
+  background-color: #ff9f1c; }
+
+#heading-name {
+  margin-bottom: 40px; }
+
 @media (max-width: 768px) {
   #nav-column-mobile {
     display: flex; }
 
   .nav-container {
     flex: 1;
-    display: none; }
+    visibility: hidden; }
 
   #nav-column {
     display: none; } }
@@ -31,7 +100,8 @@ body {
     display: flex; }
 
   #nav-column {
-    flex: 1; }
+    flex: 1;
+    margin-right: 20px; }
 
   #content-column {
     flex: 3; } }

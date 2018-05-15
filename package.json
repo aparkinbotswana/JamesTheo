@@ -8,7 +8,7 @@
     "bundle": "browserify ./source/js/main.js -o ./build/js/bundle.js",
     "watchbundle": "watchify ./source/js/main.js --outfile ./build/js/bundle.js",
     "sass": "source/stylesheets/style.scss build/stylesheets/style.css",
-    "watchsass": "sass --watch source/stylesheets:build/stylesheets"
+    "watchsass": "sass --watch source/stylesheets/style.scss:build/stylesheets/style.css"
   },
   "repository": {
     "type": "git",

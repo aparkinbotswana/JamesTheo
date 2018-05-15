@@ -24,84 +24,92 @@
 </head>
 <body>
 
-  <section>
+  <section id="heading-name">
     <div class="container center">
-      <div class="flex-1 name">        
-        <h1 class="">J</h1>
+      <div class="flex-1"></div>
+        <div class="flex-3">
+          <div class="container">
+            <div class="flex-1 name">        
+              <h1 id="first-letter" class="letter">J</h1>
+            </div>
+            <div class="flex-1">        
+              <h1 class="letter">A</h1>
+            </div>
+            <div class="flex-1">        
+              <h1 class="letter">M</h1>
+            </div>
+            <div class="flex-1">        
+              <h1 class="letter">E</h1>
+            </div>
+            <div class="flex-1">        
+              <h1 class="letter">S</h1>
+            </div>
+          </div>
       </div>
-      <div class="flex-1 name">        
-        <h1 class="">A</h1>
-      </div>
-      <div class="flex-1 name">        
-        <h1 class="">M</h1>
-      </div>
-      <div class="flex-1 name">        
-        <h1 class="">E</h1>
-      </div>
-      <div class="flex-1 name">        
-        <h1 class="">S</h1>
-      </div>
+      <!-- <div class="flex-1"></div>       -->
     </div>
     <div class="container center">
-      <div class="flex-1 name">        
-        <h1 class="">T</h1>
-      </div>
-      <div class="flex-1 name">        
-        <h1 class="">H</h1>
-      </div>
-      <div class="flex-1 name">        
-        <h1 class="">E</h1>
-      </div>
-      <div class="flex-1 name">        
-        <h1 class="">O</h1>
-      </div>
+      <div class="flex-1"></div>
+      <div class="flex-3">
+        <div class="container">
+          <div class="flex-1 name">        
+            <h1 id="first-letter" class="letter">T</h1>
+          </div>
+          <div class="flex-1">        
+            <h1 class="letter">H</h1>
+          </div>
+          <div class="flex-1">        
+            <h1 class="letter">E</h1>
+          </div>
+          <div class="flex-1">        
+            <h1 class="letter">O</h1>
+          </div>
+        </div>
+    </div>
+      <!-- <div class="flex-1"></div> -->
     </div>
   </section>
   
-
-
-  <div id='main-heading'><p id='title-name'>James Theo </p><p id='title-web'>Front End Developer</p>
-  </div>
-
   <section>
 
     <div class="parent-column">
+      <div id="nav-column" class="center list">
+        <!-- <div id="second"><p>this</p></div> -->
+        <div class="stupid"></div>
+        <div class="nav-container">
+          <p class="nav-buttons" id="nav-about" data-target="#about">About</p>
+        </div>
+        <div class="nav-container">
+          <p class="nav-buttons" id="nav-projects" data-target="#projects">Projects</p>
+        </div>
+        <div class="nav-container">
+          <p class="nav-buttons" id="nav-contact" data-target="#contact">Contact</p>
+        </div>
+      </div>
 
-        <div id="nav-column" class="center list">
-          <div class="nav-container">
+      <div id="nav-column-mobile" class="center">
+        <div id="mobile-1" class="nav-container">
+          <div>
             <p class="nav-buttons" id="nav-about" data-target="#about">About</p>
           </div>
-          <div class="nav-container">
-            <p class="nav-buttons" id="nav-projects" data-target="#projects">Projects</p>
+        </div>
+        <div id="mobile-2" class="nav-container">
+          <div>
+          <p class="nav-buttons" id="nav-projects" data-target="#projects">Projects</p>
           </div>
-          <div class="nav-container">
+        </div>
+        <div id="mobile-3" class="nav-container">
+          <div>
             <p class="nav-buttons" id="nav-contact" data-target="#contact">Contact</p>
           </div>
         </div>
+      </div>
 
-        <div id="nav-column-mobile" class="center">
-            <div id="mobile-1" class="nav-container">
-              <div>
-                <p class="nav-buttons" id="nav-about" data-target="#about">About</p>
-              </div>
-            </div>
-            <div id="mobile-2" class="nav-container">
-              <div>
-              <p class="nav-buttons" id="nav-projects" data-target="#projects">Projects</p>
-              </div>
-            </div>
-            <div id="mobile-3" class="nav-container">
-              <div>
-                <p class="nav-buttons" id="nav-contact" data-target="#contact">Contact</p>
-              </div>
-            </div>
-          </div>
+        <!-- Makisu plugin adds styling that overides css. to get around this, two seperate nav bars have been created (one for destop and one for mobile) that way, site does not break if window is resized. html has to be altered slightly, as well, for mobile to make animation function properly -->
 
-          <!-- Makisu plugin adds styling that overides css. to get around this, two seperate nav bars have been created (one for destop and one for mobile) that way, site does not break if window is resized. html has to be altered slightly, as well, for mobile to make animation function properly -->
-
-        <div id="content-column">
-          <p>this is going to be a huge fucking column</p>
-        </div>
+      <div id="content-column">
+        <p>this is going to be a huge fucking column</p>
+      </div>
 
 
         <!-- <div class="mainColumn">

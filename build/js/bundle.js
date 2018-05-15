@@ -1391,7 +1391,7 @@
 // const Maskew = require('./maskew.js')
 const OriDomi = require('oridomi')
 const makisu = require('./makisu.min.js')
-
+// const makisu = require('./makisu.js')
 
 document.addEventListener('DOMContentLoaded', function(){
 
@@ -1399,11 +1399,11 @@ document.addEventListener('DOMContentLoaded', function(){
   const list = document.getElementsByClassName('list')[0]
   const navBar = document.getElementById('nav-column')
   const navBarMobile = document.getElementById('nav-column-mobile')
-  const name = document.getElementsByClassName('name')
-
-  for (let i = 0; i < name.length; i++) {
-    new Maskew(name[i], 0.1, { touch: true, anchor: 'bottom', showElement: 'inline-block' });
-  }
+  
+  // const name = document.getElementsByClassName('name')
+  // for (let i = 0; i < name.length; i++) {
+  //   new Maskew(name[i], 0.1, { touch: true, anchor: 'left', showElement: 'inline-block' });
+  // }
 
   // maskew.skew(9);
   // var folded = new OriDomi(!!!!!!!!!!!, {
@@ -1430,28 +1430,32 @@ document.addEventListener('DOMContentLoaded', function(){
   // });
 
 
-  if (window.innerWidth < 769) {  
+  if (window.innerWidth < 769) {
+    let intervalCount = 1  
     const mobileMakisu = function(el){
-      $('.nav-container').css('display', 'block')
+      console.log('working');
+      $(el).css('visibility', 'visible')
       $( el ).makisu({
         selector: 'div',
         overlap: 0.6,
-        speed: 0.9
+        speed: 0.8
         });  
-      $( el ).makisu( 'open' );  
+      $( el ).makisu( 'open' ); 
+      intervalCount += 1  
+      if (intervalCount === 4) {
+        clearInterval(mobileMakisuInterval)
+      }
     }
-    setTimeout(function(){ mobileMakisu('#mobile-1') }, 400)
-    setTimeout(function(){ mobileMakisu('#mobile-2') }, 600)
-    setTimeout(function(){ mobileMakisu('#mobile-3') }, 800)
-
+    const mobileMakisuInterval = setInterval(function(){mobileMakisu(`#mobile-${intervalCount.toString()}`)}, 300)
   } else {
-    $('.nav-container').css('display', 'block')
+    $('.nav-container').css('visibility', 'visible')
     $( '.list' ).makisu({
-      selector: 'div',
-      overlap: 0.6,
-      speed: 0.9
+      selector: '.nav-container',
+      overlap: 0.65,
+      speed: 0.8
       });  
     $( '.list' ).makisu( 'open' );
+
 
   } // Makisu adds styling that overides css. to get around this, two seperate nav bars have been created (one for destop and one for mobile) that way, site does not break if window is resized. html has to be altered slightly, as well, for mobile to make animation function properly
  }, false);
