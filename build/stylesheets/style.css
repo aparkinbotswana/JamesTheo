@@ -82,11 +82,17 @@
   border: 1px solid black;
   background-color: #ff9f1c; }
 
+.sticky {
+  position: fixed;
+  width: 100%;
+  background-color: #f9f9f9; }
+
 h1 {
   color: #222222; }
 
 body {
-  background-color: #f9f9f9; }
+  background-color: #f9f9f9;
+  margin: 0 auto; }
 
 .display-none {
   display: none; }
@@ -119,7 +125,8 @@ body {
   background-color: #ff9f1c; }
 
 #heading-name {
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  margin-left: 0; }
 
 @media (max-width: 768px) {
   #nav-column-mobile {

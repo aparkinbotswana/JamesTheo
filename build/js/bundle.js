@@ -1411,8 +1411,8 @@ document.addEventListener('DOMContentLoaded', function(){
     let distance = getDistance() - window.pageYOffset;
     let offset = window.pageYOffset;
     if ( (distance <= 0) && !stuck) {
-      // h.style.position = 'fixed';
-      // h.style.top = '0px';
+      h.style.position = 'fixed';
+      h.style.top = '0px';
       stuck = true;
     } else if (stuck && (offset <= stickPoint)){
       h.style.position = 'static';
