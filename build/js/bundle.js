@@ -1388,10 +1388,9 @@
 
 
 },{}],2:[function(require,module,exports){
-// const Maskew = require('./maskew.js')
 const OriDomi = require('oridomi')
 const makisu = require('./makisu.min.js')
-// const makisu = require('./makisu.js')
+// const tiltedpage_scroll = require('./jquery.tiltedpage-scroll.min')
 
 document.addEventListener('DOMContentLoaded', function(){
 
@@ -1399,12 +1398,57 @@ document.addEventListener('DOMContentLoaded', function(){
   const list = document.getElementsByClassName('list')[0]
   const navBar = document.getElementById('nav-column')
   const navBarMobile = document.getElementById('nav-column-mobile')
-  
+ 
+  const h = document.getElementById("heading-name");
+  const content = document.getElementById("content");
+  let stuck = false;
+  let stickPoint = getDistance();
+  function getDistance() {
+    let topDist = h.offsetTop;
+    return topDist;
+  }
+  window.onscroll = function(e) {
+    let distance = getDistance() - window.pageYOffset;
+    let offset = window.pageYOffset;
+    if ( (distance <= 0) && !stuck) {
+      // h.style.position = 'fixed';
+      // h.style.top = '0px';
+      stuck = true;
+    } else if (stuck && (offset <= stickPoint)){
+      h.style.position = 'static';
+      stuck = false;
+    }
+  }
+
+  function anchorLinkHandler(e) {
+    const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
+
+    e.preventDefault();
+    const targetID = this.getAttribute("href");
+    const targetAnchor = document.querySelector(targetID);
+    if (!targetAnchor) return;
+    const originalTop = distanceToTop(targetAnchor);
+
+    window.scrollBy({ top: originalTop, left: 0, behavior: "smooth" });
+
+    const checkIfDone = setInterval(function() {
+        const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
+        if (distanceToTop(targetAnchor) === 0 || atBottom) {
+            targetAnchor.tabIndex = "-1";
+            window.history.pushState("", "", targetID);
+            clearInterval(checkIfDone);
+        }
+    }, 100);
+}
+
+const linksToAnchors = document.querySelectorAll('a[href^="#"]');
+
+linksToAnchors.forEach(each => (each.onclick = anchorLinkHandler));
+
   // const name = document.getElementsByClassName('name')
   // for (let i = 0; i < name.length; i++) {
   //   new Maskew(name[i], 0.1, { touch: true, anchor: 'left', showElement: 'inline-block' });
   // }
-
   // maskew.skew(9);
   // var folded = new OriDomi(!!!!!!!!!!!, {
   //   vPanels:         1,     // number of panels when folding left or right (vertically oriented)
@@ -1427,6 +1471,13 @@ document.addEventListener('DOMContentLoaded', function(){
   //   perspective:     800,   // smaller values exaggerate 3D distortion
   //   maxAngle:        100,    // keep the user's folds within a range of -40 to 40 degrees
   //   shading:         false // change the shading type
+  // });
+  // $(".main").tiltedpage_scroll({
+  //   sectionContainer: "> section",     // In case you don't want to use <section> tag, you can define your won CSS selector here
+  //   angle: 50,                         // You can define the angle of the tilted section here. Change this to false if you want to disable the tilted effect. The default value is 50 degrees.
+  //   opacity: true,                     // You can toggle the opacity effect with this option. The default value is true
+  //   scale: true,                       // You can toggle the scaling effect here as well. The default value is true.
+  //   outAnimation: true                 // In case you do not want the out animation, you can toggle this to false. The defaul value is true.
   // });
 
 
@@ -1454,10 +1505,8 @@ document.addEventListener('DOMContentLoaded', function(){
       speed: 0.8
       });  
     $( '.list' ).makisu( 'open' );
-
-
   } // Makisu adds styling that overides css. to get around this, two seperate nav bars have been created (one for destop and one for mobile) that way, site does not break if window is resized. html has to be altered slightly, as well, for mobile to make animation function properly
- }, false);
+}, false);
 
 },{"./makisu.min.js":3,"oridomi":1}],3:[function(require,module,exports){
 /**

@@ -1,3 +1,4 @@
+/*  ---- Makisu.scss ---- */
 .nav-buttons {
   -webkit-transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
   -moz-transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -44,20 +45,57 @@
   -o-transform-origin: 110% 25%;
   transform-origin: 110% 25%; }
 
+/*  ^^^^ Makisu.scss ^^^^ */
+/*  ---- tiltedpage-scroll.scss ---- */
+.tps-section {
+  width: 100%;
+  height: 500px;
+  -webkit-perspective: 10em;
+  -moz-perspective: 10em;
+  -ms-perspective: 10em;
+  -o-perspective: 10em;
+  perspective: 10em;
+  -webkit-perspective-origin: center bottom;
+  -moz-perspective-origin: center bottom;
+  -ms-perspective-origin: center bottom;
+  -o-perspective-origin: center bottom;
+  perspective-origin: center bottom;
+  -webkit-perspective-origin: 50% 50%;
+  -moz-perspective-origin: 50% 50%;
+  -ms-perspective-origin: 50% 50%;
+  -o-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
+
+.tps-wrapper {
+  float: left;
+  width: 100%;
+  height: 100%; }
+
+/*  ^^^^ tiltedpage-scroll.scss ^^^^ */
+.box {
+  height: 500px;
+  border: 1px solid black;
+  background-color: #ff9f1c; }
+
 h1 {
   color: #222222; }
 
 body {
   background-color: #f9f9f9; }
 
+.display-none {
+  display: none; }
+
+.fixed {
+  position: fixed; }
+
 .center {
   text-align: center; }
-
-.nav-buttons {
-  background-color: #2ec4b6;
-  color: #f9f9f9;
-  padding: 15px;
-  margin: 0; }
 
 .container {
   display: flex; }
@@ -67,6 +105,12 @@ body {
 
 .flex-3 {
   flex: 3; }
+
+.nav-buttons {
+  background-color: #2ec4b6;
+  color: #f9f9f9;
+  padding: 15px;
+  margin: 0; }
 
 .letter {
   border-bottom: 1px solid #ff9f1c; }

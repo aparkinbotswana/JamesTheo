@@ -16,14 +16,13 @@
 </script>
 
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" charset="utf-8"></script>
-  <script src="build/js/jquery.js"></script>
+  <script src="build/js/jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" href="build/stylesheets/style.css">
   <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Slabo|Marcellus+SC|Open+Sans:300|Poiret+One|Cinzel" rel="stylesheet">
   <script src="build/js/bundle.js" charset="utf-8"></script>
   <title>James Theo: Web Developer</title>
 </head>
 <body>
-
   <section id="heading-name">
     <div class="container center">
       <div class="flex-1"></div>
@@ -71,44 +70,77 @@
     </div>
   </section>
   
-  <section>
+  <section id="content">
 
     <div class="parent-column">
       <div id="nav-column" class="center list">
         <div class="nav-container">
-          <p class="nav-buttons" id="nav-about" data-target="#about">About</p>
+          <a class="nav-buttons" href="#about">About</a>
+          <!-- <a class="scroll nav-buttons" data-speed="1000" href="#about">About</a> -->
+          <!-- <p class="nav-buttons" id="nav-about" data-target="#about">About</p> -->
         </div>
         <div class="nav-container">
-          <p class="nav-buttons" id="nav-projects" data-target="#projects">Projects</p>
+          <a class="nav-buttons" href="#projects">Projects</a>
+          <!-- <p class="nav-buttons" id="nav-projects" data-target="#projects">Projects</p> -->
         </div>
         <div class="nav-container">
-          <p class="nav-buttons" id="nav-contact" data-target="#contact">Contact</p>
+          <!-- <p class="nav-buttons" id="nav-contact" data-target="#contact">Contact</p> -->
+          <a class="nav-buttons" href="#contact">Contact</a>
         </div>
       </div>
 
       <div id="nav-column-mobile" class="center">
         <div id="mobile-1" class="nav-container">
           <div>
-            <p class="nav-buttons" id="nav-about" data-target="#about">About</p>
+            <a class="nav-buttons" href="#about">About</a>
+            <!-- <p class="nav-buttons" id="nav-about" data-target="#about">About</p> -->
           </div>
         </div>
         <div id="mobile-2" class="nav-container">
           <div>
-          <p class="nav-buttons" id="nav-projects" data-target="#projects">Projects</p>
+            <a class="nav-buttons" href="#projects">Projects</a>
+
+            <!-- <p class="nav-buttons" id="nav-projects" data-target="#projects">Projects</p> -->
           </div>
         </div>
         <div id="mobile-3" class="nav-container">
           <div>
-            <p class="nav-buttons" id="nav-contact" data-target="#contact">Contact</p>
+            <a class="nav-buttons" href="#contact">Contact</a>
+            <!-- <p class="nav-buttons" id="nav-contact" data-target="#contact">Contact</p> -->
           </div>
         </div>
       </div>
 
         <!-- Makisu plugin adds styling that overides css. to get around this, two seperate nav bars have been created (one for destop and one for mobile) that way, site does not break if window is resized. html has to be altered slightly, as well, for mobile to make animation function properly -->
 
-      <div id="content-column">
-        <p>this is going to be a huge fucking column</p>
+      <div id="content-column" class="main">
+        <!-- <section class="page1"> -->
+        <div id="about">
+          <p class="box text">I’m a motivated and dedicated front-end web developer who loves having a nice balance of problem solving, logical thinking and creativity in my work. After being introduced to the world of coding by close friends, I realised the potential it offered for me to be creative and build programs that would give me a rewarding sense of fulfilment.</p>
+        </div>
+        <!-- </section> -->
+        <!-- <section class="page2"> -->
+        <div id="projects">
+          <p class="box">YASSSSSSSSSSSSS</p>
+        </div>
+        <!-- </section> -->
+        <!-- <section class="lastpage"> -->
+          <div class="content" id="contact">
+            <p class="text" class="linkedin-link" onclick="window.open('https://www.linkedin.com/in/james-theo/')">LinkedIn</p>
+            <p class="contact-details" onclick="window.open('https://www.linkedin.com/in/james-theo/')">https://www.linkedin.com/in/james-theo/</p>
+            
+            <p class="text" class="github-link" onclick="window.open('https://github.com/aparkinbotswana')">Github</p>
+            <p class="contact-details" onclick="window.open('https://github.com/aparkinbotswana')"> https://github.com/aparkinbotswana</p>
+
+            <p class="text">Email</p>
+            <p class="text">theojames1989@gmail.com</p>
+            <p class="text">Contact Number</p>
+            <p class="text">0432 665 747</p>
+            <p class="text">Resume available upon request</p>
+          </div>
+        <!-- </section>   -->
       </div>
+    </div>
 
 
         <!-- <div class="mainColumn">
@@ -188,6 +220,5 @@
 
     </div>
   </section>
-
 </body>
 </html>
