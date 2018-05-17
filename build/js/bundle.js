@@ -1402,22 +1402,24 @@ document.addEventListener('DOMContentLoaded', function(){
   const behindName = document.getElementById("behind-name")
   const h = document.getElementById("heading-name");
   const content = document.getElementById("content");
+
   let stuck = false;
-  let stickPoint = getDistance();
+  let stickPoint = getDistance(h);
   // console.log(stickPoint);
-  function getDistance() {
-    let topDist = h.offsetTop;
-    // console.log(topDist);
+  function getDistance(el) {
+    let topDist = el.offsetTop;
+    console.log(topDist);
     return topDist;
   }
   window.onscroll = function(e) {
-    
     // let contentOffset = content.offsetTop
     // let distance = getDistance() - window.pageYOffset + content.offsetTop;
-    let distance = getDistance() - window.pageYOffset;
+    let distance = getDistance(h) - window.pageYOffset;
     console.log(distance);
     let offset = window.pageYOffset;
     if ( (distance <= 0) && !stuck) {
+      let contentOffset = getDistance(content)
+      behindName.style.height = contentOffset + 'px'  
       h.style.position = 'fixed';
       h.style.top = '0px';
       stuck = true;
