@@ -1401,7 +1401,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
   // this chunk of code for sticky header
-  const behindName = document.getElementById("behind-name")
   const h = document.getElementById("heading-name");
   const content = document.getElementById("content");
   let stuck = false;
@@ -1413,14 +1412,15 @@ document.addEventListener('DOMContentLoaded', function(){
   window.onscroll = function(e) {
     let distance = getDistance(h) - window.pageYOffset;
     let offset = window.pageYOffset;
+    let contentOffset = getDistance(content)
     if ( (distance <= 0) && !stuck) {
-      let contentOffset = getDistance(content)
-      behindName.style.height = contentOffset + 'px'  
+      content.style.marginTop = contentOffset + 'px'  
       h.style.position = 'fixed';
       h.style.top = '0px';
       stuck = true;
     } else if (stuck && (offset <= stickPoint)){
       h.style.position = 'static';
+      content.style.marginTop = '0px'  
       stuck = false;
     }
   } // this chunk of code for sticky header
@@ -1428,13 +1428,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // this chunk of code for anchor tag scroll
   function anchorLinkHandler(e) {
+    let headerOffset = getDistance(content)
     const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
     e.preventDefault();
     const targetID = this.getAttribute("href");
     const targetAnchor = document.querySelector(targetID);
     if (!targetAnchor) return;
     const originalTop = distanceToTop(targetAnchor);
-    window.scrollBy({ top: originalTop, left: 0, behavior: "smooth" });
+    window.scrollBy({ top: originalTop - headerOffset, left: 0, behavior: "smooth" });
     const checkIfDone = setInterval(function() {
         const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
         if (distanceToTop(targetAnchor) === 0 || atBottom) {
