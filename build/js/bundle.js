@@ -1399,23 +1399,19 @@ document.addEventListener('DOMContentLoaded', function(){
   const navBar = document.getElementById('nav-column')
   const navBarMobile = document.getElementById('nav-column-mobile')
 
+
+  // this chunk of code for sticky header
   const behindName = document.getElementById("behind-name")
   const h = document.getElementById("heading-name");
   const content = document.getElementById("content");
-
   let stuck = false;
   let stickPoint = getDistance(h);
-  // console.log(stickPoint);
   function getDistance(el) {
     let topDist = el.offsetTop;
-    console.log(topDist);
     return topDist;
   }
   window.onscroll = function(e) {
-    // let contentOffset = content.offsetTop
-    // let distance = getDistance() - window.pageYOffset + content.offsetTop;
     let distance = getDistance(h) - window.pageYOffset;
-    console.log(distance);
     let offset = window.pageYOffset;
     if ( (distance <= 0) && !stuck) {
       let contentOffset = getDistance(content)
@@ -1427,19 +1423,18 @@ document.addEventListener('DOMContentLoaded', function(){
       h.style.position = 'static';
       stuck = false;
     }
-  }
+  } // this chunk of code for sticky header
 
+
+  // this chunk of code for anchor tag scroll
   function anchorLinkHandler(e) {
     const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
-
     e.preventDefault();
     const targetID = this.getAttribute("href");
     const targetAnchor = document.querySelector(targetID);
     if (!targetAnchor) return;
     const originalTop = distanceToTop(targetAnchor);
-
     window.scrollBy({ top: originalTop, left: 0, behavior: "smooth" });
-
     const checkIfDone = setInterval(function() {
         const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
         if (distanceToTop(targetAnchor) === 0 || atBottom) {
@@ -1448,11 +1443,10 @@ document.addEventListener('DOMContentLoaded', function(){
             clearInterval(checkIfDone);
         }
     }, 100);
-}
-
-const linksToAnchors = document.querySelectorAll('a[href^="#"]');
-
-linksToAnchors.forEach(each => (each.onclick = anchorLinkHandler));
+  } 
+  const linksToAnchors = document.querySelectorAll('a[href^="#"]');
+  linksToAnchors.forEach(each => (each.onclick = anchorLinkHandler));
+  // ^^^^ this chunk of code for anchor tag scroll ^^^^
 
   // const name = document.getElementsByClassName('name')
   // for (let i = 0; i < name.length; i++) {
@@ -1514,7 +1508,7 @@ linksToAnchors.forEach(each => (each.onclick = anchorLinkHandler));
       speed: 0.8
       });  
     $( '.list' ).makisu( 'open' );
-  } // Makisu adds styling that overides css. to get around this, two seperate nav bars have been created (one for destop and one for mobile) that way, site does not break if window is resized. html has to be altered slightly, as well, for mobile to make animation function properly
+  } // Makisu adds styling that overides css. to get around this, two seperate nav bars have been created (one for destop and one for mobile) that way, site does not break if window is resized. html has to be altered slightly, as well, for mobile to make animation function properly. GO OVER THIS CODE AGAIN AND CSS SO YOU DON'T NEED TWO NAVS, NUMBNUT! TOTES UNACCEPTABLE!
 }, false);
 
 },{"./makisu.min.js":3,"oridomi":1}],3:[function(require,module,exports){
