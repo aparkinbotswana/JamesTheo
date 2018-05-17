@@ -1398,17 +1398,24 @@ document.addEventListener('DOMContentLoaded', function(){
   const list = document.getElementsByClassName('list')[0]
   const navBar = document.getElementById('nav-column')
   const navBarMobile = document.getElementById('nav-column-mobile')
- 
+
+  const behindName = document.getElementById("behind-name")
   const h = document.getElementById("heading-name");
   const content = document.getElementById("content");
   let stuck = false;
   let stickPoint = getDistance();
+  // console.log(stickPoint);
   function getDistance() {
     let topDist = h.offsetTop;
+    // console.log(topDist);
     return topDist;
   }
   window.onscroll = function(e) {
+    
+    // let contentOffset = content.offsetTop
+    // let distance = getDistance() - window.pageYOffset + content.offsetTop;
     let distance = getDistance() - window.pageYOffset;
+    console.log(distance);
     let offset = window.pageYOffset;
     if ( (distance <= 0) && !stuck) {
       h.style.position = 'fixed';

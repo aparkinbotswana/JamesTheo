@@ -47,44 +47,16 @@
 
 /*  ^^^^ Makisu.scss ^^^^ */
 /*  ---- tiltedpage-scroll.scss ---- */
-.tps-section {
-  width: 100%;
-  height: 500px;
-  -webkit-perspective: 10em;
-  -moz-perspective: 10em;
-  -ms-perspective: 10em;
-  -o-perspective: 10em;
-  perspective: 10em;
-  -webkit-perspective-origin: center bottom;
-  -moz-perspective-origin: center bottom;
-  -ms-perspective-origin: center bottom;
-  -o-perspective-origin: center bottom;
-  perspective-origin: center bottom;
-  -webkit-perspective-origin: 50% 50%;
-  -moz-perspective-origin: 50% 50%;
-  -ms-perspective-origin: 50% 50%;
-  -o-perspective-origin: 50% 50%;
-  perspective-origin: 50% 50%;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  -o-transform-style: preserve-3d;
-  transform-style: preserve-3d; }
-
-.tps-wrapper {
-  float: left;
-  width: 100%;
-  height: 100%; }
-
 /*  ^^^^ tiltedpage-scroll.scss ^^^^ */
 .box {
-  height: 500px;
-  border: 1px solid black;
-  background-color: #ff9f1c; }
+  height: 500px; }
 
 .sticky {
   width: 100%;
   background-color: #f9f9f9; }
+
+a {
+  text-decoration: none; }
 
 h1 {
   color: #222222; }
@@ -92,6 +64,12 @@ h1 {
 body {
   background-color: #f9f9f9;
   margin: 0 auto; }
+
+.z-1 {
+  z-index: 1; }
+
+.z-2 {
+  z-index: 2; }
 
 .display-none {
   display: none; }
