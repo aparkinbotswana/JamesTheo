@@ -1435,7 +1435,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const targetAnchor = document.querySelector(targetID);
     if (!targetAnchor) return;
     const originalTop = distanceToTop(targetAnchor);
-    window.scrollBy({ top: originalTop - headerOffset, left: 0, behavior: "smooth" });
+    window.scrollBy({ top: originalTop - headerOffset + 40, left: 0, behavior: "smooth" });
     const checkIfDone = setInterval(function() {
         const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
         if (distanceToTop(targetAnchor) === 0 || atBottom) {
