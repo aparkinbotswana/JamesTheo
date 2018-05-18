@@ -1397,7 +1397,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   const list = document.getElementsByClassName('list')[0]
   const navBar = document.getElementById('nav-column')
-  const navBarMobile = document.getElementById('nav-column-mobile')
+  // const navBarMobile = document.getElementById('nav-column-mobile')
 
 
   // this chunk of code for sticky header
@@ -1486,7 +1486,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
   if (window.innerWidth < 769) {
+    navBar.classList.remove('list')
     let intervalCount = 1  
+
+    // TARGET A DIFFERENT FUCKING ELEMENT!
     const mobileMakisu = function(el){
       $(el).css('visibility', 'visible')
       $( el ).makisu({
@@ -1502,6 +1505,11 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     const mobileMakisuInterval = setInterval(function(){mobileMakisu(`#mobile-${intervalCount.toString()}`)}, 300)
   } else {
+    // let mobile = document.getElementsByClassName('mobile')
+    // for (let i = 0; i < mobile.length; i++) {
+    //   mobile[i].remove()
+    // }
+    navBar.classList.add('list')
     $('.nav-container').css('visibility', 'visible')
     $( '.list' ).makisu({
       selector: '.nav-container',
