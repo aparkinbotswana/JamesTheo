@@ -1493,12 +1493,12 @@ document.addEventListener('DOMContentLoaded', function(){
     const mobileMakisu = function(el){
       $(el).css('visibility', 'visible')
       $( el ).makisu({
-        selector: 'div',
+        selector: 'a',
         overlap: 0.6,
         speed: 0.8
         });  
       $( el ).makisu( 'open' ); 
-      intervalCount += 1  
+      intervalCount += 1
       if (intervalCount === 4) {
         clearInterval(mobileMakisuInterval)
       }
