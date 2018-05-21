@@ -66,6 +66,12 @@ body {
   width: 100%;
   background-color: #f9f9f9; }
 
+.scroll {
+  overflow: scroll; }
+
+.hidden {
+  overflow: hidden; }
+
 .display-none {
   display: none; }
 
@@ -123,6 +129,9 @@ body {
 
   #content-column {
     flex: 3; } }
+.top {
+  top: 0px; }
+
 /* @media only screen and (min-width: 900px)  {
   .columnParent{
     display: flex;

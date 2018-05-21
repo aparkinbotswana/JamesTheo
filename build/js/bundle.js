@@ -1485,6 +1485,39 @@ document.addEventListener('DOMContentLoaded', function(){
   // });
 
 
+  // if (window.CustomEvent) {
+  //   var event = new CustomEvent('my-event', {detail: {some: 'data'}});
+  // } else {
+  //   var event = document.createEvent('CustomEvent');
+  //   event.initCustomEvent('my-event', true, true, {some: 'data'});
+  // }
+  // window.dispatchEvent(event);
+  // window.dispatchEvent(new Event('resize'));
+
+
+  // var event; // The custom event that will be created
+
+  // if (document.createEvent) {
+  //   event = document.createEvent("HTMLEvents");
+  //   event.initEvent("windowResize", true, true);
+  // } else {
+  //   event = document.createEventObject();
+  //   event.eventType = "windowResize";
+  // }
+
+  // event.eventName = "windowResize";
+
+  // if (document.createEvent) {
+  //   element.dispatchEvent(event);
+  // } else {
+  //   element.fireEvent("on" + event.eventType, event);
+  // }
+
+  // document.addEventListener("windowResize", function() {
+  //   console.log('finally working'); // Prints "Example of an event"
+  // })
+
+
   if (window.innerWidth < 769) {
     navBar.classList.remove('list')
     let intervalCount = 1  
