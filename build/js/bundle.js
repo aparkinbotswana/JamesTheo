@@ -1397,6 +1397,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   const list = document.getElementsByClassName('list')[0]
   const navBar = document.getElementById('nav-column')
+  const navFlex = document.getElementById('nav-flex')
   // const navBarMobile = document.getElementById('nav-column-mobile')
 
 
@@ -1519,6 +1520,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
   if (window.innerWidth < 769) {
+    navFlex.classList.remove('flex-3')
+    navBar.classList.add('sticky')
     navBar.classList.remove('list')
     let intervalCount = 1  
 
@@ -1538,10 +1541,6 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     const mobileMakisuInterval = setInterval(function(){mobileMakisu(`#mobile-${intervalCount.toString()}`)}, 300)
   } else {
-    // let mobile = document.getElementsByClassName('mobile')
-    // for (let i = 0; i < mobile.length; i++) {
-    //   mobile[i].remove()
-    // }
     navBar.classList.add('list')
     $('.nav-container').css('visibility', 'visible')
     $( '.list' ).makisu({
@@ -1550,7 +1549,7 @@ document.addEventListener('DOMContentLoaded', function(){
       speed: 0.8
       });  
     $( '.list' ).makisu( 'open' );
-  } // Makisu adds styling that overides css. to get around this, two seperate nav bars have been created (one for destop and one for mobile) that way, site does not break if window is resized. html has to be altered slightly, as well, for mobile to make animation function properly. GO OVER THIS CODE AGAIN AND CSS SO YOU DON'T NEED TWO NAVS, NUMBNUT! TOTES UNACCEPTABLE!
+  }
 }, false);
 
 },{"./makisu.min.js":3,"oridomi":1}],3:[function(require,module,exports){
