@@ -95,12 +95,6 @@ body {
 .flex-3 {
   flex: 3; }
 
-.z-1 {
-  z-index: 1; }
-
-.z-2 {
-  z-index: 2; }
-
 .nav-buttons {
   background-color: #2ec4b6;
   color: #f9f9f9;
@@ -114,7 +108,6 @@ body {
   background-color: #ff9f1c; }
 
 #heading-name {
-  margin-bottom: 40px;
   margin-left: 0; }
 
 @media (max-width: 768px) {

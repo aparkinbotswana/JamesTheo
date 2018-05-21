@@ -1396,8 +1396,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
   const list = document.getElementsByClassName('list')[0]
-  const navBar = document.getElementById('nav-column')
+  const navColumn = document.getElementById('nav-column')
   const navFlex = document.getElementById('nav-flex')
+  const navBar = document.getElementById('nav-bar')
+
   // const navBarMobile = document.getElementById('nav-column-mobile')
 
 
@@ -1405,11 +1407,11 @@ document.addEventListener('DOMContentLoaded', function(){
   const h = document.getElementById("heading-name");
   const content = document.getElementById("content");
   let stuck = false;
-  let stickPoint = getDistance(h);
-  function getDistance(el) {
+  const getDistance = function(el) {
     let topDist = el.offsetTop;
     return topDist;
   }
+  let stickPoint = getDistance(h);
   window.onscroll = function(e) {
     let distance = getDistance(h) - window.pageYOffset;
     let offset = window.pageYOffset;
@@ -1430,13 +1432,14 @@ document.addEventListener('DOMContentLoaded', function(){
   // this chunk of code for anchor tag scroll
   function anchorLinkHandler(e) {
     let headerOffset = getDistance(content)
+    let navOffset = getDistance(navColumn)
     const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
     e.preventDefault();
     const targetID = this.getAttribute("href");
     const targetAnchor = document.querySelector(targetID);
     if (!targetAnchor) return;
     const originalTop = distanceToTop(targetAnchor);
-    window.scrollBy({ top: originalTop - headerOffset + 40, left: 0, behavior: "smooth" });
+    window.scrollBy({ top: originalTop - headerOffset + navOffset + 20, left: 0, behavior: "smooth" });
     const checkIfDone = setInterval(function() {
         const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
         if (distanceToTop(targetAnchor) === 0 || atBottom) {
@@ -1521,8 +1524,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
   if (window.innerWidth < 769) {
     navFlex.classList.remove('flex-3')
-    navBar.classList.add('sticky')
-    navBar.classList.remove('list')
+    navColumn.classList.add('sticky')
+    navColumn.classList.remove('list')
     let intervalCount = 1  
 
     // TARGET A DIFFERENT FUCKING ELEMENT!
@@ -1541,7 +1544,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     const mobileMakisuInterval = setInterval(function(){mobileMakisu(`#mobile-${intervalCount.toString()}`)}, 300)
   } else {
-    navBar.classList.add('list')
+    navColumn.classList.add('list')
     $('.nav-container').css('visibility', 'visible')
     $( '.list' ).makisu({
       selector: '.nav-container',
