@@ -1399,23 +1399,34 @@ document.addEventListener('DOMContentLoaded', function(){
   const navColumn = document.getElementById('nav-column')
   const navFlex = document.getElementById('nav-flex')
   const navBar = document.getElementById('nav-bar')
-
-  // const navBarMobile = document.getElementById('nav-column-mobile')
-
-
-  // this chunk of code for sticky header
   const h = document.getElementById("heading-name");
   const content = document.getElementById("content");
+  let resized = false
+  let fuckstick = document.getElementById("fuckstick")
+
+  // $( window ).resize(function() {
+  //   if (window.innerWidth < 769 && resized === false) {
+      // resized = true
+  //     navFlex.classList.remove('flex-3')
+  //     navColumn.classList.add('sticky')
+  //     navColumn.classList.remove('list')
+
+  //   } else {
+  //     navColumn.classList.add('list')
+  //   }
+  // });
+
+  // this chunk of code for sticky header
   let stuck = false;
   const getDistance = function(el) {
     let topDist = el.offsetTop;
     return topDist;
   }
+  let distance = getDistance(h) - window.pageYOffset;
+  let contentOffset = getDistance(content)
   let stickPoint = getDistance(h);
   window.onscroll = function(e) {
-    let distance = getDistance(h) - window.pageYOffset;
     let offset = window.pageYOffset;
-    let contentOffset = getDistance(content)
     if ( (distance <= 0) && !stuck) {
       content.style.marginTop = contentOffset + 'px'  
       h.style.position = 'fixed';
@@ -1428,6 +1439,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   } // this chunk of code for sticky header
 
+  // content.style.top = contentOffset - dispatchEvent + 'px'
 
   // this chunk of code for anchor tag scroll
   function anchorLinkHandler(e) {
