@@ -24,7 +24,7 @@
   background: #2ec4b6;
   margin: 0;
   height: 55px;
-  width: 270px; }
+  width: 24vw; }
 
 .list .nav-buttons {
   border-top: 1px dashed rgba(255, 255, 255, 0.3);
@@ -46,8 +46,6 @@
   transform-origin: 110% 25%; }
 
 /*  ^^^^ Makisu.scss ^^^^ */
-/*  ---- tiltedpage-scroll.scss ---- */
-/*  ^^^^ tiltedpage-scroll.scss ^^^^ */
 .fixed {
   position: fixed; }
 
