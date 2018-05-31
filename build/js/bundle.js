@@ -1588,6 +1588,7 @@ document.addEventListener('DOMContentLoaded', function(){
   const list = document.getElementsByClassName('list')[0];
   const navBar = document.getElementById('nav-column');
   const navBarMobile = document.getElementById('nav-column-mobile');
+  const mobileNav = document.getElementById('mobile-nav')
 
 
   // this chunk of code for sticky header
@@ -1641,7 +1642,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
   if (window.innerWidth < 769) {
-    let intervalCount = 1  
+    let intervalCount = 1
+    navBarMobile.classList.remove('list')
+    navBarMobile.remove()
+    navBarMobile.appendChild(mobileNav)
     const mobileMakisu = function(el){
       $(el).css('visibility', 'visible')
       $( el ).makisu({
@@ -1656,10 +1660,11 @@ document.addEventListener('DOMContentLoaded', function(){
       }
     }
     const mobileMakisuInterval = setInterval(function(){mobileMakisu(`#mobile-${intervalCount.toString()}`)}, 300)
-  } else {
-    $('.nav-container').css('visibility', 'visible')
+  } 
+  else {
+    // $('.nav-container').css('visibility', 'visible')
     $( '.list' ).makisu({
-      selector: '.nav-container',
+      selector: '.thatnav',
       overlap: 0.65,
       speed: 0.8
       });  
@@ -1667,6 +1672,7 @@ document.addEventListener('DOMContentLoaded', function(){
   } 
 }, false);
 
+// target the other div and see if that works instead =)
 },{"./makisu.min.js":3,"oridomi":1}],3:[function(require,module,exports){
 /**
  * Copyright (C) 2012 by Justin Windle

@@ -49,6 +49,9 @@
 .fixed {
   position: fixed; }
 
+.thatnav {
+  background-color: #2ec4b6; }
+
 .sticky {
   width: 100%;
   background-color: #f9f9f9; }
@@ -102,11 +105,10 @@ body {
     display: flex; }
 
   #nav-column-mobile .nav-container {
-    flex: 1;
-    visibility: hidden; }
+    flex: 1; }
 
-  #nav-column {
-    display: none; } }
+  .thatnav {
+    visibility: hidden; } }
 @media (min-width: 769px) {
   .parent-column {
     display: flex; }
@@ -114,9 +116,6 @@ body {
   .parent-column #nav-column {
     flex: 1;
     margin-right: 20px; }
-
-  #nav-column-mobile {
-    display: none; }
 
   #content-column {
     flex: 3; } }
