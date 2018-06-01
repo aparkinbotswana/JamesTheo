@@ -4,18 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="build/js/maskew.js"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105786823-1"></script> -->
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-105786823-1');
-</script>
-
-  <!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" charset="utf-8"></script> -->
   <script src="build/js/jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" href="build/stylesheets/style.css">
   <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Slabo|Marcellus+SC|Open+Sans:300|Poiret+One|Cinzel" rel="stylesheet">
@@ -30,7 +18,7 @@
         <div class="flex-3">
           <div class="container">
             <div class="flex-1 name">        
-              <h1 id="first-letter" class="letter">J</h1>
+              <h1 class="letter first-letter">J</h1>
             </div>
             <div class="flex-1">        
               <h1 class="letter">A</h1>
@@ -53,7 +41,7 @@
           <div class="container">
             <div class="flex-1"></div>    
             <div class="flex-1 name">        
-              <h1 id="first-letter" class="letter">T</h1>
+              <h1 class="letter first-letter">T</h1>
             </div>
             <div class="flex-1">        
               <h1 class="letter">H</h1>
@@ -72,8 +60,8 @@
     </div>
   </section>
   
-  <section id="content">
 
+  <section id="content">
     <div class="parent-column">
       <div id="nav-column">
         <div id="nav-column-mobile" class="center list fixed">
@@ -94,8 +82,6 @@
           </div>
         </div>
       </div>
-
-
       <div id="content-column" class="main">
         <div id="about">
           <p class="box text">I’m a motivated and dedicated front-end web developer who loves having a nice balance of problem solving, logical thinking and creativity in my work. After being introduced to the world of coding by close friends, I realised the potential it offered for me to be creative and build programs that would give me a rewarding sense of fulfilment.</p>
@@ -103,30 +89,31 @@
         <div id="projects">
           <p class="projects-description">Virtual Auslan  Interpreter - JavaScript/Leap Motion</p>
           <p>The Auslan Interpreter is designed to help those who are unable to understand Australian Sign Language, communicate with those who can. Currently, it recognises half the English alphabet. The browser app uses the Leap Motion to interpret hand gestures from the user. Based on these gestures, the program recognises which letter is being signed and displays, as well as speaks the recognised letter.</p>
-
           <div>
-            <p class="project-links" onclick="window.open('https://aparkinbotswana.github.io/Auslan-Interpreter/')">See the live site!</p>
-            <p class="project-links" onclick="window.open('https://github.com/aparkinbotswana/Auslan-Interpreter')">See the code!</p>
+            <p class="link" onclick="window.open('https://aparkinbotswana.github.io/Auslan-Interpreter/')">See the live site!</p>
+            <p class="link" onclick="window.open('https://github.com/aparkinbotswana/Auslan-Interpreter')">See the code!</p>
           </div>
-          
+          <div>
+            <!-- <img class="project-img"  src="build/images/AuslanInterpreter.png" alt=""> -->
+          </div>
+
 
           <p class="projects-description">Fråga - JavaScript/Ruby on Rails</p>
           <p>Social app with a focus on geolocation. Users can post any question they like relevant to a particular location. Other users within the vicinity can see and respond to the question.</p>
-
           <div>
-            <p class="project-links" onclick="window.open('https://fraga-app.herokuapp.com/')">See the live site!</p>
-            <p class="project-links" onclick="window.open('https://github.com/aparkinbotswana/Fraga')">See the code!</p>
+            <p class="link" onclick="window.open('https://fraga-app.herokuapp.com/')">See the live site!</p>
+            <p class="link" onclick="window.open('https://github.com/aparkinbotswana/Fraga')">See the code!</p>
           </div>
-          
-
-          <!-- <img class="project-img"  src="build/images/Fraga.png" alt=""> -->
+          <div>
+            <!-- <img class="project-img"  src="build/images/Fraga.png" alt=""> -->
+          </div>
         </div>
         <div class="content" id="contact">
           <p class="text" onclick="window.open('https://www.linkedin.com/in/james-theo/')">LinkedIn</p>
-          <p class="contact-details" onclick="window.open('https://www.linkedin.com/in/james-theo/')">https://www.linkedin.com/in/james-theo/</p>
+          <p class="contact-details link" onclick="window.open('https://www.linkedin.com/in/james-theo/')">https://www.linkedin.com/in/james-theo/</p>
           
           <p class="text" onclick="window.open('https://github.com/aparkinbotswana')">Github</p>
-          <p class="contact-details" onclick="window.open('https://github.com/aparkinbotswana')"> https://github.com/aparkinbotswana</p>
+          <p class="contact-details link" onclick="window.open('https://github.com/aparkinbotswana')"> https://github.com/aparkinbotswana</p>
 
           <p class="text">Email</p>
           <p class="text">theojames1989@gmail.com</p>
