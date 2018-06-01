@@ -1469,40 +1469,6 @@ document.addEventListener('DOMContentLoaded', function(){
   // linksToAnchors.forEach(each => (each.onclick = anchorLinkHandler));
   // // ^^^^ this chunk of code for anchor tag scroll ^^^^
 
-  // // const name = document.getElementsByClassName('name')
-  // // for (let i = 0; i < name.length; i++) {
-  // //   new Maskew(name[i], 0.1, { touch: true, anchor: 'left', showElement: 'inline-block' });
-  // // }
-  // // maskew.skew(9);
-  // // var folded = new OriDomi(!!!!!!!!!!!, {
-  // //   vPanels:         1,     // number of panels when folding left or right (vertically oriented)
-  // //   hPanels:         3,     // number of panels when folding top or bottom
-  // //   speed:           1000,  // folding duration in ms
-  // //   ripple:          2,     // backwards ripple effect when animating
-  // //   shadingIntensity: 0.4,    // lessen the shading effect
-  // //   perspective:     800,   // smaller values exaggerate 3D distortion
-  // //   maxAngle:        100,    // keep the user's folds within a range of -40 to 40 degrees
-  // //   shading:         false // change the shading type
-  // // });
-
-
-  // // const navFolded = new OriDomi(navBar, {
-  // //   vPanels:         [25, 25, 25, 25],     // number of panels when folding left or right (vertically oriented)
-  // //   hPanels:         1,     // number of panels when folding top or bottom
-  // //   speed:           1000,  // folding duration in ms
-  // //   ripple:          2,     // backwards ripple effect when animating
-  // //   shadingIntensity: 0.4,    // lessen the shading effect
-  // //   perspective:     800,   // smaller values exaggerate 3D distortion
-  // //   maxAngle:        100,    // keep the user's folds within a range of -40 to 40 degrees
-  // //   shading:         false // change the shading type
-  // // });
-  // // $(".main").tiltedpage_scroll({
-  // //   sectionContainer: "> section",     // In case you don't want to use <section> tag, you can define your won CSS selector here
-  // //   angle: 50,                         // You can define the angle of the tilted section here. Change this to false if you want to disable the tilted effect. The default value is 50 degrees.
-  // //   opacity: true,                     // You can toggle the opacity effect with this option. The default value is true
-  // //   scale: true,                       // You can toggle the scaling effect here as well. The default value is true.
-  // //   outAnimation: true                 // In case you do not want the out animation, you can toggle this to false. The defaul value is true.
-  // // });
 
 
   // // if (window.CustomEvent) {
@@ -1645,7 +1611,7 @@ document.addEventListener('DOMContentLoaded', function(){
     let intervalCount = 1
     navBarMobile.classList.remove('list')
     navBarMobile.remove()
-    navBarMobile.appendChild(mobileNav)
+    mobileNav.appendChild(navBarMobile)
     const mobileMakisu = function(el){
       $(el).css('visibility', 'visible')
       $( el ).makisu({
