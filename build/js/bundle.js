@@ -1630,7 +1630,7 @@ document.addEventListener('DOMContentLoaded', function(){
   else {
     // $('.nav-container').css('visibility', 'visible')
     $( '.list' ).makisu({
-      selector: '.thatnav',
+      selector: '.mobile',
       overlap: 0.65,
       speed: 0.8
       });  

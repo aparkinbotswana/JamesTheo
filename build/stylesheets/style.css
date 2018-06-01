@@ -122,7 +122,7 @@ body {
     #nav-column-mobile .nav-container {
       flex: 1; } }
 @media (min-width: 769px) {
-  .thatnav {
+  .mobile {
     background-color: #2ec4b6; }
 
   #nav-column {
