@@ -112,7 +112,7 @@ body {
   position: fixed; }
 
 @media (max-width: 768px) {
-  .thatnav {
+  .mobile {
     visibility: hidden;
     flex: 1; }
 
