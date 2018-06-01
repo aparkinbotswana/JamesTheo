@@ -112,6 +112,9 @@ body {
   position: fixed; }
 
 @media (max-width: 768px) {
+  #mobile-nav {
+    margin-bottom: 60px; }
+
   .mobile {
     visibility: hidden;
     flex: 1; }

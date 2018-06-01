@@ -1394,189 +1394,33 @@ const makisu = require('./makisu.min.js')
 
 document.addEventListener('DOMContentLoaded', function(){
 
-
-  // const list = document.getElementsByClassName('list')[0]
-  // const navColumn = document.getElementById('nav-column')
-  // const navFlex = document.getElementById('nav-flex')
-  // const navBar = document.getElementById('nav-bar')
-  // const h = document.getElementById("heading-name");
-  // const content = document.getElementById("content");
-  // // const test = document.getElementById("test")
-  // let resized = false
-
-  // // content.remove()
-  // // test.appendChild(content)
-  // // let fuckstick = document.getElementById("fuckstick")
-
-  // // $( window ).resize(function() {
-  // //   if (window.innerWidth < 769 && resized === false) {
-  //     // resized = true
-  // //     navFlex.classList.remove('flex-3')
-  // //     navColumn.classList.add('sticky')
-  // //     navColumn.classList.remove('list')
-
-  // //   } else {
-  // //     navColumn.classList.add('list')
-  // //   }
-  // // });
-
-  // // this chunk of code for sticky header
-  // let stuck = false;
-  // const getDistance = function(el) {
-  //   let topDist = el.offsetTop;
-  //   return topDist;
-  // }
-  // let distance = getDistance(h) - window.pageYOffset;
-  // let contentOffset = getDistance(content)
-  // let stickPoint = getDistance(h);
-  // window.onscroll = function(e) {
-  //   let offset = window.pageYOffset;
-  //   if ( (distance <= 0) && !stuck) {
-  //     content.style.marginTop = contentOffset + 'px'  
-  //     h.style.position = 'fixed';
-  //     h.style.top = '0px';
-  //     stuck = true;
-  //   } else if (stuck && (offset <= stickPoint)){
-  //     h.style.position = 'static';
-  //     content.style.marginTop = '0px'  
-  //     stuck = false;
-  //   }
-  // } // this chunk of code for sticky header
-
-  // // content.style.top = contentOffset - dispatchEvent + 'px'
-
-  // // this chunk of code for anchor tag scroll
-  // function anchorLinkHandler(e) {
-  //   let headerOffset = getDistance(content)
-  //   let navOffset = getDistance(navColumn)
-  //   const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
-  //   e.preventDefault();
-  //   const targetID = this.getAttribute("href");
-  //   const targetAnchor = document.querySelector(targetID);
-  //   if (!targetAnchor) return;
-  //   const originalTop = distanceToTop(targetAnchor);
-  //   window.scrollBy({ top: originalTop - headerOffset + navOffset + 20, left: 0, behavior: "smooth" });
-  //   const checkIfDone = setInterval(function() {
-  //       const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
-  //       if (distanceToTop(targetAnchor) === 0 || atBottom) {
-  //           targetAnchor.tabIndex = "-1";
-  //           window.history.pushState("", "", targetID);
-  //           clearInterval(checkIfDone);
-  //       }
-  //   }, 100);
-  // } 
-  // const linksToAnchors = document.querySelectorAll('a[href^="#"]');
-  // linksToAnchors.forEach(each => (each.onclick = anchorLinkHandler));
-  // // ^^^^ this chunk of code for anchor tag scroll ^^^^
-
-
-
-  // // if (window.CustomEvent) {
-  // //   var event = new CustomEvent('my-event', {detail: {some: 'data'}});
-  // // } else {
-  // //   var event = document.createEvent('CustomEvent');
-  // //   event.initCustomEvent('my-event', true, true, {some: 'data'});
-  // // }
-  // // window.dispatchEvent(event);
-  // // window.dispatchEvent(new Event('resize'));
-
-
-  // // var event; // The custom event that will be created
-
-  // // if (document.createEvent) {
-  // //   event = document.createEvent("HTMLEvents");
-  // //   event.initEvent("windowResize", true, true);
-  // // } else {
-  // //   event = document.createEventObject();
-  // //   event.eventType = "windowResize";
-  // // }
-
-  // // event.eventName = "windowResize";
-
-  // // if (document.createEvent) {
-  // //   element.dispatchEvent(event);
-  // // } else {
-  // //   element.fireEvent("on" + event.eventType, event);
-  // // }
-
-  // // document.addEventListener("windowResize", function() {
-  // //   console.log('finally working'); // Prints "Example of an event"
-  // // })
-
-
-  // // $(".main").tiltedpage_scroll({
-  // //   sectionContainer: "> section",     // In case you don't want to use <section> tag, you can define your won CSS selector here
-  // //   angle: 100,                         // You can define the angle of the tilted section here. Change this to false if you want to disable the tilted effect. The default value is 50 degrees.
-  // //   opacity: true,                     // You can toggle the opacity effect with this option. The default value is true
-  // //   scale: true,                       // You can toggle the scaling effect here as well. The default value is true.
-  // //   outAnimation: true                 // In case you do not want the out animation, you can toggle this to false. The defaul value is true.
-  // // });
-
-
-  // if (window.innerWidth < 769) {
-  //   navFlex.classList.remove('flex-3')
-  //   navColumn.classList.add('sticky')
-  //   navColumn.classList.remove('list')
-  //   let intervalCount = 1  
-
-  //   // TARGET A DIFFERENT FUCKING ELEMENT!
-  //   const mobileMakisu = function(el){
-  //     $(el).css('visibility', 'visible')
-  //     $( el ).makisu({
-  //       selector: 'a',
-  //       overlap: 0.6,
-  //       speed: 0.8
-  //       });  
-  //     $( el ).makisu( 'open' ); 
-  //     intervalCount += 1
-  //     if (intervalCount === 4) {
-  //       clearInterval(mobileMakisuInterval)
-  //     }
-  //   }
-  //   const mobileMakisuInterval = setInterval(function(){mobileMakisu(`#mobile-${intervalCount.toString()}`)}, 300)
-  // } else {
-  //   navColumn.classList.add('list')
-  //   $('.nav-container').css('visibility', 'visible')
-  //   $( '.list' ).makisu({
-  //     selector: '.nav-container',
-  //     overlap: 0.65,
-  //     speed: 0.8
-  //     });  
-  //   $( '.list' ).makisu( 'open' );
-  // }
-
-
-
-
-
-
-
   const list = document.getElementsByClassName('list')[0];
   const navBar = document.getElementById('nav-column');
   const navBarMobile = document.getElementById('nav-column-mobile');
   const mobileNav = document.getElementById('mobile-nav')
-
-
-  // this chunk of code for sticky header
-  const h = document.getElementById("heading-name");
+  const header = document.getElementById('header')
+  const headingName = document.getElementById("heading-name");
   const content = document.getElementById("content");
   let stuck = false;
-  let stickPoint = getDistance(h);
+
+  let stickPoint = getDistance(headingName);
+  
   function getDistance(el) {
     let topDist = el.offsetTop;
     return topDist;
   }
+  
   window.onscroll = function(e) {
-    let distance = getDistance(h) - window.pageYOffset;
+    let distance = getDistance(headingName) - window.pageYOffset;
     let offset = window.pageYOffset;
     let contentOffset = getDistance(content)
     if ( (distance <= 0) && !stuck) {
       content.style.marginTop = contentOffset + 'px'  
-      h.style.position = 'fixed';
-      h.style.top = '0px';
+      headingName.style.position = 'fixed';
+      headingName.style.top = '0px';
       stuck = true;
     } else if (stuck && (offset <= stickPoint)){
-      h.style.position = 'static';
+      headingName.style.position = 'static';
       content.style.marginTop = '0px'  
       stuck = false;
     }
@@ -1592,13 +1436,13 @@ document.addEventListener('DOMContentLoaded', function(){
     const targetAnchor = document.querySelector(targetID);
     if (!targetAnchor) return;
     const originalTop = distanceToTop(targetAnchor);
-    window.scrollBy({ top: originalTop - headerOffset + 40, left: 0, behavior: "smooth" });
+    window.scrollBy({ top: originalTop - headerOffset, left: 0, behavior: "smooth" });
     const checkIfDone = setInterval(function() {
         const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
         if (distanceToTop(targetAnchor) === 0 || atBottom) {
-            targetAnchor.tabIndex = "-1";
-            window.history.pushState("", "", targetID);
-            clearInterval(checkIfDone);
+          targetAnchor.tabIndex = "-1";
+          window.history.pushState("", "", targetID);
+          clearInterval(checkIfDone);
         }
     }, 100);
   } 
