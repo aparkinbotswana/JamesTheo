@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function(){
       intervalCount += 1  
       if (intervalCount === 4) {
         clearInterval(mobileMakisuInterval);
-        let animation = true
+        animation = true
       }
     }
     const mobileMakisuInterval = setInterval(function(){mobileMakisu(`#mobile-${intervalCount.toString()}`)}, 300)
