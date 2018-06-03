@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function(){
   const content = document.getElementById('content');
   const mobile = document.getElementsByClassName('mobile')
   let stuck = false;
-  let animation = false
 
   let stickPoint = getDistance(headingName);
   
@@ -62,25 +61,24 @@ document.addEventListener('DOMContentLoaded', function(){
   // ^^^^ this chunk of code for anchor tag scroll ^^^^
 
 
-  $(window).resize(function(){
-    if(window.innerWidth < 769) {
-      navBarMobile.classList.remove('list');
-      mobileNav.appendChild(navBarMobile);
-      navBarMobile.appendChild(document.getElementById('mobile-1'));
-      navBarMobile.appendChild(document.getElementById('mobile-2'));
-      navBarMobile.appendChild(document.getElementById('mobile-3'));
-      for (let i = 0; i < mobile.length; i++) {
-        mobile[i].style.visibility = 'visible';
+  // $(window).resize(function(){
+  //   if(window.innerWidth < 769) {
+  //     navBarMobile.classList.remove('list');
+  //     mobileNav.appendChild(navBarMobile);
+  //     navBarMobile.appendChild(document.getElementById('mobile-1'));
+  //     navBarMobile.appendChild(document.getElementById('mobile-2'));
+  //     navBarMobile.appendChild(document.getElementById('mobile-3'));
+  //     for (let i = 0; i < mobile.length; i++) {
+  //       mobile[i].style.visibility = 'visible';
         
-      }
-    } else {
-      navBarMobile.classList.add('list');
-    }
-  })
+  //     }
+  //   } else {
+  //     navBarMobile.classList.add('list');
+  //   }
+  // })
 
 
-  if (window.innerWidth < 769 && animation === false) {
-    animation = true
+  if (window.innerWidth < 769) {
     let intervalCount = 1;
     navBarMobile.classList.remove('list');
     navBarMobile.remove();
@@ -101,8 +99,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const mobileMakisuInterval = setInterval(function(){mobileMakisu(`#mobile-${intervalCount.toString()}`)}, 300)
 
   } 
-  else if (animation === false){
-    animation = true
+  else{
     $( '.list' ).makisu({
       selector: '.mobile',
       overlap: 0.65,

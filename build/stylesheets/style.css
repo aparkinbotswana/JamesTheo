@@ -94,7 +94,7 @@ body {
   margin: 0; }
 
 #about, #projects, #contact {
-  border-bottom: 1px solid gray; }
+  border-bottom: 1px solid #DCDCDC; }
 
 @media (max-width: 768px) {
   #mobile-nav {
