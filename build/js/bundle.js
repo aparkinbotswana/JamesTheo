@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function(){
   const headingName = document.getElementById('heading-name');
   const content = document.getElementById('content');
   const mobile = document.getElementsByClassName('mobile')
-  let animation = false
   let stuck = false;
+  let animation = false
 
   let stickPoint = getDistance(headingName);
   
@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
   if (window.innerWidth < 769 && animation === false) {
+    animation = true
     let intervalCount = 1;
     navBarMobile.classList.remove('list');
     navBarMobile.remove();
@@ -95,20 +96,19 @@ document.addEventListener('DOMContentLoaded', function(){
       intervalCount += 1  
       if (intervalCount === 4) {
         clearInterval(mobileMakisuInterval);
-        animation = true
       }
     }
     const mobileMakisuInterval = setInterval(function(){mobileMakisu(`#mobile-${intervalCount.toString()}`)}, 300)
 
   } 
-  else if (animation === false) {
+  else if (animation === false){
+    animation = true
     $( '.list' ).makisu({
       selector: '.mobile',
       overlap: 0.65,
       speed: 0.8
       });  
     $( '.list' ).makisu( 'open' );
-    animation = true
   } 
 }, false);
 

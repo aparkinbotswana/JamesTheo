@@ -93,6 +93,9 @@ body {
   padding: 15px;
   margin: 0; }
 
+#about, #projects, #contact {
+  border-bottom: 1px solid gray; }
+
 @media (max-width: 768px) {
   #mobile-nav {
     margin-bottom: 60px; }
