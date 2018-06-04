@@ -47,14 +47,16 @@
 
 /*  ^^^^ Makisu.scss ^^^^ */
 p {
-  font-family: "Lora", serif; }
+  font-family: "Raleway", serif;
+  font-size: 18px; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  font-size: 18px; }
 
 h1, h2 {
   color: #222222;
-  font-family: "Montserrat", sans-serif; }
+  font-family: "Raleway", serif; }
 
 body {
   background-color: #f9f9f9;
@@ -82,21 +84,23 @@ body {
   flex: 3; }
 
 .letter {
-  border-bottom: 1px solid #ff9f1c; }
+  border-bottom: 1px solid #2ec4b6; }
 
 .link {
   cursor: pointer;
   cursor: hand; }
 
 .first-letter {
-  background-color: #ff9f1c; }
+  background-color: #2ec4b6; }
 
 .nav-buttons {
   background-color: #2ec4b6;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Raleway", serif;
   color: #f9f9f9;
   padding: 15px;
   margin: 0; }
+  .nav-buttons:hover {
+    background: #28b5a8; }
 
 .project-img {
   width: 90%; }
