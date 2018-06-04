@@ -1,5 +1,6 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 const makisu = require('./makisu.min.js')
+let animated = false
 
 document.addEventListener('DOMContentLoaded', function(){
 
@@ -61,21 +62,25 @@ document.addEventListener('DOMContentLoaded', function(){
   // ^^^^ this chunk of code for anchor tag scroll ^^^^
 
 
-  // $(window).resize(function(){
-  //   if(window.innerWidth < 769) {
-  //     navBarMobile.classList.remove('list');
-  //     mobileNav.appendChild(navBarMobile);
-  //     navBarMobile.appendChild(document.getElementById('mobile-1'));
-  //     navBarMobile.appendChild(document.getElementById('mobile-2'));
-  //     navBarMobile.appendChild(document.getElementById('mobile-3'));
-  //     for (let i = 0; i < mobile.length; i++) {
-  //       mobile[i].style.visibility = 'visible';
-        
-  //     }
-  //   } else {
-  //     navBarMobile.classList.add('list');
-  //   }
-  // })
+  $(window).resize(function(){
+    if(window.innerWidth < 769) {
+      if( animated === false){
+        console.log('working');
+        navBarMobile.classList.remove('list');
+        mobileNav.appendChild(navBarMobile);
+        navBarMobile.appendChild(document.getElementById('mobile-1'));
+        navBarMobile.appendChild(document.getElementById('mobile-2'));
+        navBarMobile.appendChild(document.getElementById('mobile-3'));
+        for (let i = 0; i < mobile.length; i++) {
+          mobile[i].style.visibility = 'visible';
+          
+        }  
+        animated = true
+      }
+    } else {
+      navBarMobile.classList.add('list');
+    }
+  })
 
 
   if (window.innerWidth < 769) {
