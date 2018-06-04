@@ -106,7 +106,7 @@ body {
   width: 90%; }
 
 #about, #projects, #contact {
-  border-bottom: 1px solid #DCDCDC; }
+  border-bottom: 1px solid #ff9f1c; }
 
 @media (max-width: 768px) {
   #mobile-nav {
