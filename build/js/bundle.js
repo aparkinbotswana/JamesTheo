@@ -20,21 +20,21 @@ document.addEventListener('DOMContentLoaded', function(){
     return topDist;
   }
   
-  // window.onscroll = function(e) {
-  //   let distance = getDistance(headingName) - window.pageYOffset;
-  //   let offset = window.pageYOffset;
-  //   let contentOffset = getDistance(content)
-  //   if ( (distance <= 0) && !stuck) {
-  //     content.style.marginTop = contentOffset + 'px'  
-  //     headingName.style.position = 'fixed';
-  //     headingName.style.top = '0px';
-  //     stuck = true;
-  //   } else if (stuck && (offset <= stickPoint)){
-  //     headingName.style.position = 'static';
-  //     content.style.marginTop = '0px'  
-  //     stuck = false;
-  //   }
-  // } // this chunk of code for sticky header
+  window.onscroll = function(e) {
+    let distance = getDistance(headingName) - window.pageYOffset;
+    let offset = window.pageYOffset;
+    let contentOffset = getDistance(content)
+    if ( (distance <= 0) && !stuck) {
+      content.style.marginTop = contentOffset + 'px'  
+      headingName.style.position = 'fixed';
+      headingName.style.top = '0px';
+      stuck = true;
+    } else if (stuck && (offset <= stickPoint)){
+      headingName.style.position = 'static';
+      content.style.marginTop = '0px'  
+      stuck = false;
+    }
+  } // this chunk of code for sticky header
 
 
   // this chunk of code for anchor tag scroll

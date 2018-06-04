@@ -46,11 +46,16 @@
   transform-origin: 110% 25%; }
 
 /*  ^^^^ Makisu.scss ^^^^ */
+p {
+  font-family: "Lora", serif; }
+
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  font-family: "Lora", serif; }
 
 h1 {
-  color: #222222; }
+  color: #222222;
+  font-family: "Montserrat", sans-serif; }
 
 body {
   background-color: #f9f9f9;
@@ -93,6 +98,9 @@ body {
   padding: 15px;
   margin: 0; }
 
+.project-img {
+  width: 90%; }
+
 #about, #projects, #contact {
   border-bottom: 1px solid #DCDCDC; }
 
@@ -108,7 +116,10 @@ body {
     display: flex;
     width: 100%; }
     #nav-column-mobile .nav-container {
-      flex: 1; } }
+      flex: 1; }
+
+  #content {
+    margin: 0 10vw; } }
 @media (min-width: 769px) {
   .mobile {
     background-color: #2ec4b6; }
