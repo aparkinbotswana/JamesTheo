@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function(){
   $(window).resize(function(){
     if(window.innerWidth < 769) {
       if( animated === false){
-        console.log('working');
         navBarMobile.classList.remove('list');
         mobileNav.appendChild(navBarMobile);
         navBarMobile.appendChild(document.getElementById('mobile-1'));
@@ -73,12 +72,12 @@ document.addEventListener('DOMContentLoaded', function(){
         navBarMobile.appendChild(document.getElementById('mobile-3'));
         for (let i = 0; i < mobile.length; i++) {
           mobile[i].style.visibility = 'visible';
-          
         }  
         animated = true
       }
-    } else {
+    } else if(animated === true) {
       navBarMobile.classList.add('list');
+      animated = false
     }
   })
 
