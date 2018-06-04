@@ -50,8 +50,7 @@ p {
   font-family: "Lora", serif; }
 
 a {
-  text-decoration: none;
-  font-family: "Lora", serif; }
+  text-decoration: none; }
 
 h1, h2 {
   color: #222222;
@@ -94,6 +93,7 @@ body {
 
 .nav-buttons {
   background-color: #2ec4b6;
+  font-family: "Montserrat", sans-serif;
   color: #f9f9f9;
   padding: 15px;
   margin: 0; }
