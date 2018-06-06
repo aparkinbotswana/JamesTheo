@@ -130,6 +130,9 @@ body {
 .project-img {
   width: 90%; }
 
+.code-buttons {
+  padding: 35px 0; }
+
 #about, #projects, #contact {
   border-bottom: 1px solid #DCDCDC; }
 
