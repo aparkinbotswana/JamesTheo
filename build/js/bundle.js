@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // this chunk of code for anchor tag scroll
   function anchorLinkHandler(e) {
+    console.log('working');
     let headerOffset = getDistance(content);
     const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
     e.preventDefault();
