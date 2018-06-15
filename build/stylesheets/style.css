@@ -65,6 +65,9 @@ body {
 .sticky {
   width: 100%; }
 
+.portfolio {
+  margin: 0 40px; }
+
 .sticky-background {
   background-color: #f9f9f9; }
 
@@ -80,11 +83,11 @@ body {
 .flex-1 {
   flex: 1; }
 
-.flex-2 {
-  flex: 2; }
-
 .flex-3 {
   flex: 3; }
+
+.flex-8 {
+  flex: 8; }
 
 .letter {
   border-bottom: 1px solid #2ec4b6; }
@@ -174,6 +177,6 @@ body {
       margin: 0 50px; }
 
   .svg-image {
-    width: 15vw; } }
+    width: 5vw; } }
 
 /*# sourceMappingURL=style.css.map */
