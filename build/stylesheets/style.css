@@ -47,8 +47,7 @@
 
 /*  ^^^^ Makisu.scss ^^^^ */
 p {
-  font-family: "Raleway", serif;
-  font-size: 18px; }
+  font-family: "Raleway", serif; }
 
 a {
   text-decoration: none;
@@ -139,6 +138,9 @@ body {
 #about, #projects, #contact {
   border-bottom: 1px solid #DCDCDC;
   line-height: 1.4; }
+
+#projects, #contact {
+  font-size: 18px; }
 
 #about {
   font-size: 22px; }
