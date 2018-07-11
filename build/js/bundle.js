@@ -3,7 +3,6 @@ const makisu = require('./makisu.min.js')
 let animated = false
 
 document.addEventListener('DOMContentLoaded', function(){
-
   const list = document.getElementsByClassName('list')[0];
   const navBar = document.getElementById('nav-column');
   const navBarMobile = document.getElementById('nav-column-mobile');
@@ -13,9 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
   const content = document.getElementById('content');
   const mobile = document.getElementsByClassName('mobile')
   let stuck = false;
-
   let stickPoint = getDistance(headingName);
-  
   function getDistance(el) {
     let topDist = el.offsetTop;
     return topDist;
@@ -40,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // this chunk of code for anchor tag scroll
   function anchorLinkHandler(e) {
-    console.log('working');
     let headerOffset = getDistance(content);
     const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
     e.preventDefault();
