@@ -176,9 +176,9 @@ body {
     flex: 1;
     margin-right: 20px; }
 
-  .parent-column {
+  #parent-column {
     display: flex; }
-    .parent-column #content-column {
+    #parent-column #content-column {
       flex: 3;
       margin: 0 50px; }
 
