@@ -12,7 +12,7 @@
 <body>
   <!-- <div class="portfolio"> -->
     <header id="header">
-      <div id="heading-name" class="sticky sticky-background">
+      <div id="heading-name" class="sticky">
         <div class="container">
           <!-- <div class="flex-1"></div> -->
           <div class="flex-3">
@@ -86,40 +86,36 @@
             </div>
           </div>
         </nav>
-        <div id="content-column">
-          <div id="about">
+        <div id="content-column" class="content">
+          <div id="about" class="content__about">
             <p>I’m a motivated and dedicated front-end web developer who loves having a nice balance of problem solving, logical thinking and creativity in my work. After being introduced to the world of coding by close friends, I realised the potential it offered for me to be creative and build programs that would give me a rewarding sense of fulfilment.</p>
           </div>
-          <section id="projects">
+          <section id="projects" class="content__projects">
             <h1 class="center">Projects</h1>
             <h2>Virtual Auslan  Interpreter</h2>
             <h3>JavaScript/Leap Motion</h3>
             <p>The Auslan Interpreter is designed to help those who are unable to understand Australian Sign Language, communicate with those who can. Currently, it recognises half the English alphabet. The browser app uses the Leap Motion to interpret hand gestures from the user. Based on these gestures, the program recognises which letter is being signed and displays, as well as speaks the recognised letter.</p>
             <div class="code-buttons center">
-              <a class="button button-ghost" href="https://github.com/aparkinbotswana/Auslan-Interpreter" target="_blank" alt="Auslan Interpreter github link">Code</a>
+              <a class="content__button content__button--ghost" href="https://github.com/aparkinbotswana/Auslan-Interpreter" target="_blank" alt="Auslan Interpreter github link">Code</a>
             </div>
-            <div class="image-container center">
-              <figure>
-                <img class="project-img"  src="build/images/AuslanInterpreter.png" alt="Auslan Interpreter project image">
-              </figure>
-            </div>
+            <figure>
+              <img class="project-img"  src="build/images/AuslanInterpreter.png" alt="Auslan Interpreter project image">
+            </figure>
 
 
             <h2 class="projects-description">Fråga</h2>
             <h3>JavaScript/Ruby on Rails</h3>
             <p>Social app with a focus on geolocation. Users can post any question they like relevant to a particular location. Other users within the vicinity can see and respond to the question.</p>
             <div class="code-buttons center">
-              <a class="button" href="https://fraga-app.herokuapp.com/" target="_blank" alt="fraga demo link">Demo</a>
-              <a class="button button-ghost" href="https://github.com/aparkinbotswana/Fraga" target="_blank" alt="fraga github link">Code</a>
+              <a class="content__button" href="https://fraga-app.herokuapp.com/" target="_blank" alt="fraga demo link">Demo</a>
+              <a class="content__button content__button--ghost" href="https://github.com/aparkinbotswana/Fraga" target="_blank" alt="fraga github link">Code</a>
             </div>
-            <div class="image-container center">
               <figure>
                 <img class="project-img"  src="build/images/Fraga.png" alt="Fraga project image">
               </figure>
-            </div>
           </section>
 
-          <footer class="content center" id="contact">
+          <footer class="content__about" id="contact">
             <h1>Contact</h1>
             <div id="contact-container" class="container">
               <div class="flex-1">

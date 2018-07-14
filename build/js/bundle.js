@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function(){
   const mobile = document.getElementsByClassName('mobile')
   let stuck = false;
   let stickPoint = getDistance(headingName);
+
+  
   function getDistance(el) {
     let topDist = el.offsetTop;
     return topDist;

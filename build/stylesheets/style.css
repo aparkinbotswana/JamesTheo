@@ -46,6 +46,58 @@
   transform-origin: 110% 25%; }
 
 /*  ^^^^ Makisu.scss ^^^^ */
+figure {
+  margin: 0 auto; }
+
+.nav-buttons {
+  background-color: #2ec4b6;
+  font-family: "Raleway", serif;
+  color: #f9f9f9;
+  padding: 15px;
+  margin: 0; }
+  .nav-buttons:hover {
+    background: #28b5a8; }
+
+.content--font18 {
+  font-size: 18px; }
+
+.content--font22 {
+  font-size: 22px; }
+
+.content__button {
+  background-color: #2ec4b6;
+  width: 200px;
+  color: #f9f9f9;
+  padding: 1em;
+  border-radius: 2px;
+  font-weight: 300;
+  font-family: "Raleway", serif;
+  letter-spacing: 1px;
+  margin: 8px; }
+  .content__button:hover {
+    background-color: #28b5a8; }
+
+.content__button--ghost {
+  box-shadow: inset 0 0 0 2px #2ec4b6;
+  background-color: #f9f9f9;
+  color: #2ec4b6; }
+  .content__button--ghost:hover {
+    background-color: #28b5a8;
+    color: #f9f9f9; }
+
+.code-buttons {
+  padding: 35px 0; }
+
+#about, #projects, #contact {
+  border-bottom: 1px solid #DCDCDC;
+  line-height: 1.4; }
+
+#projects, #contact {
+  font-size: 18px; }
+
+#about {
+  font-size: 22px; }
+
 p {
   font-family: "Raleway", serif; }
 
@@ -62,12 +114,7 @@ body {
   margin: 0 auto; }
 
 .sticky {
-  width: 100%; }
-
-.portfolio {
-  margin: 0 40px; }
-
-.sticky-background {
+  width: 100%;
   background-color: #f9f9f9; }
 
 .fixed {
@@ -99,51 +146,8 @@ body {
   background-color: #2ec4b6;
   color: #f9f9f9; }
 
-.nav-buttons {
-  background-color: #2ec4b6;
-  font-family: "Raleway", serif;
-  color: #f9f9f9;
-  padding: 15px;
-  margin: 0; }
-  .nav-buttons:hover {
-    background: #28b5a8; }
-
-.button {
-  background-color: #2ec4b6;
-  width: 200px;
-  color: #f9f9f9;
-  padding: 1em;
-  border-radius: 2px;
-  font-weight: 300;
-  font-family: 'Raleway', sans-serif;
-  letter-spacing: 1px;
-  margin: 8px; }
-  .button:hover {
-    background-color: #28b5a8; }
-
-.button-ghost {
-  box-shadow: inset 0 0 0 2px #2ec4b6;
-  background-color: #f9f9f9;
-  color: #2ec4b6; }
-  .button-ghost:hover {
-    background-color: #28b5a8;
-    color: #f9f9f9; }
-
 .project-img {
   width: 90%; }
-
-.code-buttons {
-  padding: 35px 0; }
-
-#about, #projects, #contact {
-  border-bottom: 1px solid #DCDCDC;
-  line-height: 1.4; }
-
-#projects, #contact {
-  font-size: 18px; }
-
-#about {
-  font-size: 22px; }
 
 @media (max-width: 768px) {
   #mobile-nav {
