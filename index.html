@@ -10,50 +10,47 @@
   <title>James Theo: Web Developer</title>
 </head>
 <body>
-  <!-- <main class="portfolio"> -->
-    <section id="header">
-      <div id="heading-name" class="sticky sticky-background">
+    <header id="header">
+      <div id="heading-name" class="sticky">
         <div class="container">
-          <!-- <div class="flex-1"></div> -->
           <div class="flex-3">
             <div class="container center">
               <div class="flex-8"></div>    
               <div class="flex-1 name">        
-                <h1 class="letter first-letter">J</h1>
+                <p class="letter first-letter">J</p>
               </div>
               <div class="flex-1">        
-                <h1 class="letter">A</h1>
+                <p class="letter">A</p>
               </div>
               <div class="flex-1">        
-                <h1 class="letter">M</h1>
+                <p class="letter">M</p>
               </div>
               <div class="flex-1">        
-                <h1 class="letter">E</h1>
+                <p class="letter">E</p>
               </div>
               <div class="flex-1">        
-                <h1 class="letter">S</h1>
+                <p class="letter">S</p>
               </div>
               <div class="flex-1"></div>
             </div>
           </div>
         </div>
         <div class="container">
-          <!-- <div class="flex-1"></div> -->
           <div class="flex-3">
             <div class="container center">
               <div class="flex-8"></div>
               <div class="flex-1"></div>        
               <div class="flex-1 name">        
-                <h1 class="letter first-letter">T</h1>
+                <p class="letter first-letter">T</p>
               </div>
               <div class="flex-1">        
-                <h1 class="letter">H</h1>
+                <p class="letter">H</p>
               </div>
               <div class="flex-1">        
-                <h1 class="letter">E</h1>
+                <p class="letter">E</p>
               </div>
               <div class="flex-1">        
-                <h1 class="letter">O</h1>
+                <p class="letter">O</p>
               </div>
               <div class="flex-1"></div>
             </div>
@@ -62,73 +59,75 @@
         <div id="mobile-nav">
         </div>    
       </div>
-    </section>
+    </header >
     
 
-    <section id="content">
-      <div class="parent-column">
-        <div id="nav-column">
-          <div id="nav-column-mobile" class="list fixed">
+    <div id="content">
+      <div id="parent-column">
+        <nav id="nav-column">
+          <div id="nav-column-mobile" class="list navbar">
             <div id="mobile-1" class="mobile">
-              <div class="nav-container">
-                <a id="nav-contact" href="#about"><p class="nav-buttons">About</p></a>
+              <div class="navbar__container">
+                <a id="nav-contact" href="#about" class="navbar__anchor"><p class="navbar__button">About</p></a>
               </div>
             </div>
             <div id="mobile-2" class="mobile">
-              <div class="nav-container">
-                <a href="#projects"><p class="nav-buttons">Projects</p></a>
+              <div class="navbar__container">
+                <a href="#projects" class="navbar__anchor"><p class="navbar__button">Projects</p></a>
               </div>
             </div>
             <div id="mobile-3" class="mobile">
-              <div class="nav-container">
-                <a href="#contact"><p class="nav-buttons">Contact</p></a>
+              <div class="navbar__container">
+                <a href="#contact" class="navbar__anchor"><p class="navbar__button">Contact</p></a>
               </div>
             </div>
           </div>
-        </div>
-        <div id="content-column">
-          <div id="about">
+        </nav>
+        <div id="content-column" class="content">
+          <div id="about" class="content__segment content__segment--font22">
             <p>I’m a motivated and dedicated front-end web developer who loves having a nice balance of problem solving, logical thinking and creativity in my work. After being introduced to the world of coding by close friends, I realised the potential it offered for me to be creative and build programs that would give me a rewarding sense of fulfilment.</p>
           </div>
-          <div id="projects">
-            <h1>Virtual Auslan  Interpreter - JavaScript/Leap Motion</h1>
+          <section id="projects" class="content__segment">
+            <h1>Projects</h1>
+            <h2>Virtual Auslan  Interpreter</h2>
+            <h3>JavaScript/Leap Motion</h3>
             <p>The Auslan Interpreter is designed to help those who are unable to understand Australian Sign Language, communicate with those who can. Currently, it recognises half the English alphabet. The browser app uses the Leap Motion to interpret hand gestures from the user. Based on these gestures, the program recognises which letter is being signed and displays, as well as speaks the recognised letter.</p>
             <div class="code-buttons center">
-              <a class="button button-ghost" href="https://github.com/aparkinbotswana/Auslan-Interpreter" target="_blank">Code</a>
+              <a class="content__button content__button--ghost" href="https://github.com/aparkinbotswana/Auslan-Interpreter" target="_blank" alt="Auslan Interpreter github link">Code</a>
             </div>
-            <div class="image-container center">
-              <img class="project-img"  src="build/images/AuslanInterpreter.png" alt="Auslan Interpreter project image">
-            </div>
+            <figure class="photo">
+              <img class="photo__img"  src="build/images/AuslanInterpreter.png" alt="Auslan Interpreter project image">
+            </figure>
 
 
-            <h1 class="projects-description">Fråga - JavaScript/Ruby on Rails</h1>
-            <p>Social app with a focus on geolocation. Users can post any question they like relevant to a particular location. Other users within the vicinity can see and respond to the question.</p>
+            <h2 class="projects-description">Fråga</h2>
+            <h3>JavaScript/Ruby on Rails</h3>
+            <p class="content--font18">Social app with a focus on geolocation. Users can post any question they like relevant to a particular location. Other users within the vicinity can see and respond to the question.</p>
             <div class="code-buttons center">
-              <a class="button" href="https://fraga-app.herokuapp.com/" target="_blank">Demo</a>
-              <a class="button button-ghost" href="https://github.com/aparkinbotswana/Fraga" target="_blank">Code</a>
+              <a class="content__button" href="https://fraga-app.herokuapp.com/" target="_blank" alt="fraga demo link">Demo</a>
+              <a class="content__button content__button--ghost" href="https://github.com/aparkinbotswana/Fraga" target="_blank" alt="fraga github link">Code</a>
             </div>
-            <div class="image-container center">
-              <img class="project-img"  src="build/images/Fraga.png" alt="Fraga project image">
-            </div>
-          </div>
+              <figure class="photo">
+                <img class="photo__img"  src="build/images/Fraga.png" alt="Fraga project image">
+              </figure>
+          </section>
 
-          <div class="content center" id="contact">
+          <footer class="content__segment content__segment--padding content--align-center" id="contact">
             <h1>Contact</h1>
-            <div id="contact-container" class="container">
-              <div class="flex-1">
-                <img class="svg-image link" src="build/images/002-github.svg" alt="github link" href="https://github.com/aparkinbotswana" target="_blank">
-              </div>
-              <div class="flex-1">
-                <img class="svg-image link" src="build/images/001-linkedin.svg" alt="linkedin link" href="https://www.linkedin.com/in/james-theo/" target="_blank">
-              </div>
-              <div class="flex-1">
-                <a href="mailto:theojames1989@gmail.com"><img class="svg-image link" src="build/images/003-mail.svg" alt="email address"></a>
-              </div>
+            <div class="container">
+              <figure class="flex-1">
+                <a href="https://github.com/aparkinbotswana" target="_blank"><img class="svg-image" src="build/images/002-github.svg" alt="github link"></a>
+              </figure>
+              <figure class="flex-1">
+                <a href="https://www.linkedin.com/in/james-theo/" target="_blank"><img class="svg-image" src="build/images/001-linkedin.svg" alt="linkedin link"></a>
+              </figure>
+              <figure class="flex-1">
+                <a href="mailto:theojames1989@gmail.com"><img class="svg-image" src="build/images/003-mail.svg" alt="email address"></a>
+              </figure>
             </div>
-          </div>
+          </footer>
         </div>
       </div>
-    </section>
-  <!-- </main> -->
+    </div>
 </body>
 </html>
