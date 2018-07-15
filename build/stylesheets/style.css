@@ -46,9 +46,21 @@
   transform-origin: 110% 25%; }
 
 /*  ^^^^ Makisu.scss ^^^^ */
+body {
+  background-color: #f9f9f9;
+  margin: 0 auto; }
+
+p, a, h1, h2, h3 {
+  font-family: "Raleway", serif; }
+
 .navbar {
-  font-family: "Raleway", serif;
   position: fixed; }
+
+.navbar__anchor {
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+  cursor: hand; }
 
 .navbar__button {
   color: #f9f9f9;
@@ -58,20 +70,25 @@
   .navbar__button:hover {
     background: #28b5a8; }
 
-.content--font18 {
-  font-size: 18px; }
+.content {
+  border-bottom: 1px solid #DCDCDC;
+  line-height: 1.4; }
 
-.content--font22 {
-  font-size: 22px; }
+.photo {
+  text-align: center; }
+
+.photo__img {
+  width: 90%; }
 
 .content__button {
+  text-decoration: none;
+  font-size: 18px;
   background-color: #2ec4b6;
   width: 200px;
   color: #f9f9f9;
   padding: 1em;
   border-radius: 2px;
   font-weight: 300;
-  font-family: "Raleway", serif;
   letter-spacing: 1px;
   margin: 8px; }
   .content__button:hover {
@@ -85,35 +102,16 @@
     background-color: #28b5a8;
     color: #f9f9f9; }
 
+.content--font18 {
+  font-size: 18px; }
+
+.content--font22 {
+  font-size: 22px; }
+
 .code-buttons {
   padding: 35px 0; }
 
 figure {
-  margin: 0 auto; }
-
-#about, #projects, #contact {
-  border-bottom: 1px solid #DCDCDC;
-  line-height: 1.4; }
-
-#projects, #contact {
-  font-size: 18px; }
-
-#about {
-  font-size: 22px; }
-
-p {
-  font-family: "Raleway", serif; }
-
-a {
-  text-decoration: none;
-  font-size: 18px; }
-
-h1, h2, h3 {
-  color: #404040;
-  font-family: "Raleway", serif; }
-
-body {
-  background-color: #f9f9f9;
   margin: 0 auto; }
 
 .sticky {
@@ -141,16 +139,9 @@ body {
 .letter {
   border-bottom: 1px solid #2ec4b6; }
 
-.link {
-  cursor: pointer;
-  cursor: hand; }
-
 .first-letter {
   background-color: #2ec4b6;
   color: #f9f9f9; }
-
-.project-img {
-  width: 90%; }
 
 @media (max-width: 768px) {
   #mobile-nav {

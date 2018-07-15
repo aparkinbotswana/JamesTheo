@@ -10,11 +10,9 @@
   <title>James Theo: Web Developer</title>
 </head>
 <body>
-  <!-- <div class="portfolio"> -->
     <header id="header">
       <div id="heading-name" class="sticky">
         <div class="container">
-          <!-- <div class="flex-1"></div> -->
           <div class="flex-3">
             <div class="container center">
               <div class="flex-8"></div>    
@@ -38,7 +36,6 @@
           </div>
         </div>
         <div class="container">
-          <!-- <div class="flex-1"></div> -->
           <div class="flex-3">
             <div class="container center">
               <div class="flex-8"></div>
@@ -71,67 +68,66 @@
           <div id="nav-column-mobile" class="list navbar">
             <div id="mobile-1" class="mobile">
               <div class="nav-container">
-                <a id="nav-contact" href="#about"><p class="navbar__button">About</p></a>
+                <a id="nav-contact" href="#about" class="navbar__anchor"><p class="navbar__button">About</p></a>
               </div>
             </div>
             <div id="mobile-2" class="mobile">
               <div class="nav-container">
-                <a href="#projects"><p class="navbar__button">Projects</p></a>
+                <a href="#projects" class="navbar__anchor"><p class="navbar__button">Projects</p></a>
               </div>
             </div>
             <div id="mobile-3" class="mobile">
               <div class="nav-container">
-                <a href="#contact"><p class="navbar__button">Contact</p></a>
+                <a href="#contact" class="navbar__anchor"><p class="navbar__button">Contact</p></a>
               </div>
             </div>
           </div>
         </nav>
         <div id="content-column" class="content">
           <div id="about" class="content__about">
-            <p>I’m a motivated and dedicated front-end web developer who loves having a nice balance of problem solving, logical thinking and creativity in my work. After being introduced to the world of coding by close friends, I realised the potential it offered for me to be creative and build programs that would give me a rewarding sense of fulfilment.</p>
+            <p class="content--font22">I’m a motivated and dedicated front-end web developer who loves having a nice balance of problem solving, logical thinking and creativity in my work. After being introduced to the world of coding by close friends, I realised the potential it offered for me to be creative and build programs that would give me a rewarding sense of fulfilment.</p>
           </div>
-          <section id="projects" class="content__projects">
-            <h1 class="center">Projects</h1>
+          <section id="projects" class="content__projects content--font18">
+            <h1>Projects</h1>
             <h2>Virtual Auslan  Interpreter</h2>
             <h3>JavaScript/Leap Motion</h3>
             <p>The Auslan Interpreter is designed to help those who are unable to understand Australian Sign Language, communicate with those who can. Currently, it recognises half the English alphabet. The browser app uses the Leap Motion to interpret hand gestures from the user. Based on these gestures, the program recognises which letter is being signed and displays, as well as speaks the recognised letter.</p>
             <div class="code-buttons center">
               <a class="content__button content__button--ghost" href="https://github.com/aparkinbotswana/Auslan-Interpreter" target="_blank" alt="Auslan Interpreter github link">Code</a>
             </div>
-            <figure>
-              <img class="project-img"  src="build/images/AuslanInterpreter.png" alt="Auslan Interpreter project image">
+            <figure class="photo">
+              <img class="photo__img"  src="build/images/AuslanInterpreter.png" alt="Auslan Interpreter project image">
             </figure>
 
 
             <h2 class="projects-description">Fråga</h2>
             <h3>JavaScript/Ruby on Rails</h3>
-            <p>Social app with a focus on geolocation. Users can post any question they like relevant to a particular location. Other users within the vicinity can see and respond to the question.</p>
+            <p class="content--font18">Social app with a focus on geolocation. Users can post any question they like relevant to a particular location. Other users within the vicinity can see and respond to the question.</p>
             <div class="code-buttons center">
               <a class="content__button" href="https://fraga-app.herokuapp.com/" target="_blank" alt="fraga demo link">Demo</a>
               <a class="content__button content__button--ghost" href="https://github.com/aparkinbotswana/Fraga" target="_blank" alt="fraga github link">Code</a>
             </div>
-              <figure>
-                <img class="project-img"  src="build/images/Fraga.png" alt="Fraga project image">
+              <figure class="photo">
+                <img class="photo__img"  src="build/images/Fraga.png" alt="Fraga project image">
               </figure>
           </section>
 
           <footer class="content__about" id="contact">
             <h1>Contact</h1>
             <div id="contact-container" class="container">
-              <div class="flex-1">
-                <img class="svg-image link" src="build/images/002-github.svg" alt="github link" href="https://github.com/aparkinbotswana" target="_blank">
-              </div>
-              <div class="flex-1">
-                <img class="svg-image link" src="build/images/001-linkedin.svg" alt="linkedin link" href="https://www.linkedin.com/in/james-theo/" target="_blank">
-              </div>
-              <div class="flex-1">
-                <a href="mailto:theojames1989@gmail.com"><img class="svg-image link" src="build/images/003-mail.svg" alt="email address"></a>
-              </div>
+              <figure class="flex-1">
+                <a href="https://github.com/aparkinbotswana" target="_blank"><img class="svg-image" src="build/images/002-github.svg" alt="github link"></a>
+              </figure>
+              <figure class="flex-1">
+                <a href="https://www.linkedin.com/in/james-theo/" target="_blank"><img class="svg-image" src="build/images/001-linkedin.svg" alt="linkedin link"></a>
+              </figure>
+              <figure class="flex-1">
+                <a href="mailto:theojames1989@gmail.com"><img class="svg-image" src="build/images/003-mail.svg" alt="email address"></a>
+              </figure>
             </div>
           </footer>
         </div>
       </div>
     </div>
-  <!-- </main> -->
 </body>
 </html>
