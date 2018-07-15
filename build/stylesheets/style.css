@@ -18,7 +18,7 @@
 .list .navbar__button:hover {
   text-indent: 20px; }
 
-.list .nav-container {
+.list .navbar__container {
   text-indent: 10px;
   line-height: 55px;
   background: #2ec4b6;
@@ -50,6 +50,9 @@ body {
   background-color: #f9f9f9;
   margin: 0 auto; }
 
+figure {
+  margin: 0 auto; }
+
 p, a, h1, h2, h3 {
   font-family: "Raleway", serif; }
 
@@ -72,13 +75,22 @@ p, a, h1, h2, h3 {
 
 .content {
   border-bottom: 1px solid #DCDCDC;
+  line-height: 1.4;
+  color: #404040; }
+
+.content__segment {
+  font-size: 18px;
+  border-bottom: 1px solid #DCDCDC;
   line-height: 1.4; }
 
-.photo {
-  text-align: center; }
+.content__segment--font22 {
+  font-size: 22px; }
 
-.photo__img {
-  width: 90%; }
+.content__segment--padding {
+  padding: 50px 0; }
+
+.content--align-center {
+  text-align: center; }
 
 .content__button {
   text-decoration: none;
@@ -102,17 +114,17 @@ p, a, h1, h2, h3 {
     background-color: #28b5a8;
     color: #f9f9f9; }
 
-.content--font18 {
-  font-size: 18px; }
+.photo {
+  text-align: center; }
 
-.content--font22 {
-  font-size: 22px; }
+.photo__img {
+  width: 90%; }
+
+.container {
+  display: flex; }
 
 .code-buttons {
   padding: 35px 0; }
-
-figure {
-  margin: 0 auto; }
 
 .sticky {
   width: 100%;
@@ -124,11 +136,11 @@ figure {
 .center {
   text-align: center; }
 
-.container {
-  display: flex; }
-
 .flex-1 {
-  flex: 1; }
+  flex: 1;
+  font-size: 24px;
+  font-weight: 700;
+  color: #404040; }
 
 .flex-3 {
   flex: 3; }
@@ -154,7 +166,7 @@ figure {
   #nav-column-mobile {
     display: flex;
     width: 100%; }
-    #nav-column-mobile .nav-container {
+    #nav-column-mobile .navbar__container {
       flex: 1; }
 
   #content {
