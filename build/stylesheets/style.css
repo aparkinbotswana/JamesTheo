@@ -56,6 +56,21 @@ figure {
 p, a, h1, h2, h3 {
   font-family: "Raleway", serif; }
 
+.header {
+  width: 100%;
+  background-color: #f9f9f9; }
+
+.header__letter {
+  border-bottom: 1px solid #2ec4b6;
+  font-size: 24px;
+  font-weight: 700;
+  color: #404040;
+  text-align: center; }
+
+.header--first-letter {
+  background-color: #2ec4b6;
+  color: #f9f9f9; }
+
 .navbar {
   position: fixed; }
 
@@ -92,7 +107,11 @@ p, a, h1, h2, h3 {
 .content--align-center {
   text-align: center; }
 
-.content__button {
+.button {
+  padding: 35px 0;
+  text-align: center; }
+
+.button__link {
   text-decoration: none;
   font-size: 18px;
   background-color: #2ec4b6;
@@ -103,14 +122,14 @@ p, a, h1, h2, h3 {
   font-weight: 300;
   letter-spacing: 1px;
   margin: 8px; }
-  .content__button:hover {
+  .button__link:hover {
     background-color: #28b5a8; }
 
-.content__button--ghost {
+.button__link--ghost {
   box-shadow: inset 0 0 0 2px #2ec4b6;
   background-color: #f9f9f9;
   color: #2ec4b6; }
-  .content__button--ghost:hover {
+  .button__link--ghost:hover {
     background-color: #28b5a8;
     color: #f9f9f9; }
 
@@ -123,37 +142,14 @@ p, a, h1, h2, h3 {
 .container {
   display: flex; }
 
-.code-buttons {
-  padding: 35px 0; }
+.container__flex1 {
+  flex: 1; }
 
-.sticky {
-  width: 100%;
-  background-color: #f9f9f9; }
-
-.fixed {
-  position: fixed; }
-
-.center {
-  text-align: center; }
-
-.flex-1 {
-  flex: 1;
-  font-size: 24px;
-  font-weight: 700;
-  color: #404040; }
-
-.flex-3 {
+.container__flex3 {
   flex: 3; }
 
-.flex-8 {
+.container__flex8 {
   flex: 8; }
-
-.letter {
-  border-bottom: 1px solid #2ec4b6; }
-
-.first-letter {
-  background-color: #2ec4b6;
-  color: #f9f9f9; }
 
 @media (max-width: 768px) {
   #mobile-nav {
