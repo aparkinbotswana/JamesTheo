@@ -152,6 +152,9 @@ p, a, h1, h2, h3 {
   flex: 8; }
 
 @media (max-width: 768px) {
+  .container__flex3--mobile {
+    flex: 3; }
+
   #mobile-nav {
     margin-bottom: 60px; }
 
