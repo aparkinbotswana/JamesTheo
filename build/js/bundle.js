@@ -8,15 +8,14 @@ document.addEventListener('DOMContentLoaded', function(){
   const headingName = document.getElementById('heading-name');
   const content = document.getElementById('content');
   const mobile = document.getElementsByClassName('mobile')
-  const contentText = document.getElementsByClassName('content-text')
-  const pic = document.getElementById('pic');
-
+  const contentMargin = document.getElementsByClassName('content__margin')
+  const picture = document.getElementById('picture');
 
 
   function contentWidth() {
-    let picWidth = pic.getBoundingClientRect().width
-    for (let i = 0; i < contentText.length; i++) {
-      contentText[i].style.width = `${picWidth}px`;
+    let pictureWidth = picture.getBoundingClientRect().width
+    for (let i = 0; i < contentMargin.length; i++) {
+      contentMargin[i].style.width = `${pictureWidth}px`;
     }
   }
 
@@ -114,7 +113,6 @@ document.addEventListener('DOMContentLoaded', function(){
       }
     }
     const mobileMakisuInterval = setInterval(function(){mobileMakisu(`#mobile-${intervalCount.toString()}`)}, 300)
-
   } 
   else{
     $( '.list' ).makisu({

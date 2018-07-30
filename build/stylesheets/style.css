@@ -46,9 +46,6 @@
   transform-origin: 110% 25%; }
 
 /*  ^^^^ Makisu.scss ^^^^ */
-.content-text {
-  margin: 0 auto; }
-
 body {
   background-color: #f9f9f9;
   margin: 0 auto; }
@@ -100,6 +97,9 @@ p, a, h1, h2, h3 {
   font-size: 18px;
   border-bottom: 1px solid #DCDCDC;
   line-height: 1.4; }
+
+.content__margin {
+  margin: 0 auto; }
 
 .content__segment--font22 {
   font-size: 22px; }
