@@ -8,8 +8,20 @@ document.addEventListener('DOMContentLoaded', function(){
   const headingName = document.getElementById('heading-name');
   const content = document.getElementById('content');
   const mobile = document.getElementsByClassName('mobile')
+  const contentMargin = document.getElementsByClassName('content__margin')
+  const picture = document.getElementById('picture');
 
-  let stuck = false;
+
+  function contentWidth() {
+    let pictureWidth = picture.getBoundingClientRect().width
+    for (let i = 0; i < contentMargin.length; i++) {
+      contentMargin[i].style.width = `${pictureWidth}px`;
+    }
+  }
+
+  contentWidth();
+
+
   let stickPoint = getDistance(headingName);
 
   
@@ -18,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function(){
     return topDist;
   }
   
+  let stuck = false;
   window.onscroll = function(e) {
     let distance = getDistance(headingName) - window.pageYOffset;
     let offset = window.pageYOffset;
@@ -60,6 +73,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
   $(window).resize(function(){
+    contentWidth();
+
     if(window.innerWidth < 769) {
       if( animated === false){
         navBarMobile.classList.remove('list');
@@ -98,7 +113,6 @@ document.addEventListener('DOMContentLoaded', function(){
       }
     }
     const mobileMakisuInterval = setInterval(function(){mobileMakisu(`#mobile-${intervalCount.toString()}`)}, 300)
-
   } 
   else{
     $( '.list' ).makisu({

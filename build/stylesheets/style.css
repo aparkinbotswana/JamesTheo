@@ -98,6 +98,9 @@ p, a, h1, h2, h3 {
   border-bottom: 1px solid #DCDCDC;
   line-height: 1.4; }
 
+.content__margin {
+  margin: 0 auto; }
+
 .content__segment--font22 {
   font-size: 22px; }
 
