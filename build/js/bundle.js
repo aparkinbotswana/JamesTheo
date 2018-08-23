@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function(){
   const contentMargin = document.getElementsByClassName('content__margin');
   const picture = document.getElementById('picture');
   const myIframe = document.getElementById('iframe');
-  const about = document.getElementById('about1');
 
   function contentWidth() {
     let pictureWidth = picture.getBoundingClientRect().width
