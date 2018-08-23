@@ -109,35 +109,39 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   });
 
-
-  if (window.innerWidth < 769) {
-    let intervalCount = 1;
-    navBarMobile.classList.remove('list');
-    navBarMobile.remove();
-    mobileNav.appendChild(navBarMobile);
-    const mobileMakisu = function(el){
-      $(el).css('visibility', 'visible');
-      $( el ).makisu({
-        selector: 'div',
-        overlap: 0.6,
-        speed: 0.8
-        });  
-      $( el ).makisu( 'open' ); 
-      intervalCount += 1  
-      if (intervalCount === 4) {
-        clearInterval(mobileMakisuInterval);
+  if (typeof InstallTrigger !== 'undefined') {
+    return // Fireforx does not like appending makisu classes for some reason and screws around with the anchor scroll
+          // in order to keep scroll working, this works to check if the browser being run is Firefox and if so, breaks out of the function. No fancy Makisu, but the nav bar works this way.
+  } else {
+    if (window.innerWidth < 769) {
+      let intervalCount = 1;
+      navBarMobile.classList.remove('list');
+      navBarMobile.remove();
+      mobileNav.appendChild(navBarMobile);
+      const mobileMakisu = function (el) {
+        $(el).css('visibility', 'visible');
+        $(el).makisu({
+          selector: 'div',
+          overlap: 0.6,
+          speed: 0.8
+        });
+        $(el).makisu('open');
+        intervalCount += 1
+        if (intervalCount === 4) {
+          clearInterval(mobileMakisuInterval);
+        }
       }
+      const mobileMakisuInterval = setInterval(function () { mobileMakisu(`#mobile-${intervalCount.toString()}`) }, 300)
     }
-    const mobileMakisuInterval = setInterval(function(){mobileMakisu(`#mobile-${intervalCount.toString()}`)}, 300)
-  } 
-  else{
-    $( '.list' ).makisu({
-      selector: '.mobile',
-      overlap: 0.65,
-      speed: 0.8
-      });  
-    $( '.list' ).makisu( 'open' );
-  } // ^^^^ this IF statement dictaates how makisu nav animation behaves between mobile and desktop devices ^^^^
+    else {
+      $('.list').makisu({
+        selector: '.mobile',
+        overlap: 0.65,
+        speed: 0.8
+      });
+      $('.list').makisu('open');
+    } // ^^^^ this IF statement dictaates how makisu nav animation behaves between mobile and desktop devices ^^^^
+  }
 }, false);
 
 
