@@ -2,24 +2,33 @@
 const makisu = require('./makisu.min.js')
 let animated = false
 
+
 document.addEventListener('DOMContentLoaded', function(){
   const navBarMobile = document.getElementById('nav-column-mobile');
   const mobileNav = document.getElementById('mobile-nav')
   const headingName = document.getElementById('heading-name');
   const content = document.getElementById('content');
-  const mobile = document.getElementsByClassName('mobile')
-  const contentMargin = document.getElementsByClassName('content__margin')
+  const mobile = document.getElementsByClassName('mobile');
+  const contentMargin = document.getElementsByClassName('content__margin');
   const picture = document.getElementById('picture');
-
+  const myIframe = document.getElementById('iframe');
+  const about = document.getElementById('about1');
 
   function contentWidth() {
     let pictureWidth = picture.getBoundingClientRect().width
     for (let i = 0; i < contentMargin.length; i++) {
       contentMargin[i].style.width = `${pictureWidth}px`;
     }
-  }
+    if (myIframe != null) {
+      myIframe.style.width = picture.getBoundingClientRect().width + "px";
+      myIframe.style.height = picture.getBoundingClientRect().height + "px";
+    } // meant to act as a safegaurd in case Iframe does not load. The rest of site will still properly function
+  } // resizes the iframe and images 
 
-  contentWidth();
+  picture.addEventListener("load", function () {
+    contentWidth();
+  }); // This is for the benefit of Firefox. Chrome loads and executes everything properly
+      // But for some reason Firefox images in the DOM have not fully loaded yet and this ensures they have before taking width measurement.
 
 
   let stickPoint = getDistance(headingName);
@@ -30,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function(){
     return topDist;
   }
   
+  // this chunk of code for sticky header
   let stuck = false;
   window.onscroll = function(e) {
     let distance = getDistance(headingName) - window.pageYOffset;
@@ -71,12 +81,19 @@ document.addEventListener('DOMContentLoaded', function(){
   linksToAnchors.forEach(each => (each.onclick = anchorLinkHandler));
   // ^^^^ this chunk of code for anchor tag scroll ^^^^
 
+  if (myIframe != null) {
+    myIframe.addEventListener("load", function () {
+      myIframe.style.width = picture.getBoundingClientRect().width + "px" ;
+      myIframe.style.height = picture.getBoundingClientRect().height + "px";
+    }); // Waits for Iframe to load before executing code
+  } // meant to act as a safegaurd in case Iframe does not load. The rest of site will still properly function
 
-  $(window).resize(function(){
+
+  window.addEventListener("resize", function () {
     contentWidth();
 
-    if(window.innerWidth < 769) {
-      if( animated === false){
+    if (window.innerWidth < 769) {
+      if (animated === false) {
         navBarMobile.classList.remove('list');
         mobileNav.appendChild(navBarMobile);
         navBarMobile.appendChild(document.getElementById('mobile-1'));
@@ -84,14 +101,14 @@ document.addEventListener('DOMContentLoaded', function(){
         navBarMobile.appendChild(document.getElementById('mobile-3'));
         for (let i = 0; i < mobile.length; i++) {
           mobile[i].style.visibility = 'visible';
-        }  
+        }
         animated = true
       }
-    } else if(animated === true) {
+    } else if (animated === true) {
       navBarMobile.classList.add('list');
       animated = false
     }
-  })
+  });
 
 
   if (window.innerWidth < 769) {
@@ -121,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function(){
       speed: 0.8
       });  
     $( '.list' ).makisu( 'open' );
-  } 
+  } // ^^^^ this IF statement dictaates how makisu nav animation behaves between mobile and desktop devices ^^^^
 }, false);
 
 
