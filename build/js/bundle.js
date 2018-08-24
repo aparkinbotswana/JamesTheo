@@ -18,10 +18,8 @@ document.addEventListener('DOMContentLoaded', function(){
     for (let i = 0; i < contentMargin.length; i++) {
       contentMargin[i].style.width = `${pictureWidth}px`;
     }
-    if (myIframe != null) {
       myIframe.style.width = picture.getBoundingClientRect().width + "px";
       myIframe.style.height = picture.getBoundingClientRect().height + "px";
-    } // meant to act as a safegaurd in case Iframe does not load. The rest of site will still properly function
   } // resizes the iframe and images 
 
   picture.addEventListener("load", function () {
@@ -80,12 +78,10 @@ document.addEventListener('DOMContentLoaded', function(){
   linksToAnchors.forEach(each => (each.onclick = anchorLinkHandler));
   // ^^^^ this chunk of code for anchor tag scroll ^^^^
 
-  if (myIframe != null) {
     myIframe.addEventListener("load", function () {
       myIframe.style.width = picture.getBoundingClientRect().width + "px" ;
       myIframe.style.height = picture.getBoundingClientRect().height + "px";
     }); // Waits for Iframe to load before executing code
-  } // meant to act as a safegaurd in case Iframe does not load. The rest of site will still properly function
 
 
   window.addEventListener("resize", function () {
