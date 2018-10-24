@@ -1,4 +1,11 @@
-body {
+$offwhite: #f9f9f9;
+$gray: #DCDCDC;
+$charcoal: #404040	;
+$main-font: 'Raleway', serif;
+
+html, body {
+  // setting the html and body to position: relative seems to be how safari needs it css setup in order for overflow property to work
+  // position: relative;
   margin: 0;
   overflow-x: hidden;
 
@@ -12,40 +19,28 @@ body {
 }
 
 .background {
-  background-color: white;
+  background-color:  $offwhite;
   height: 100vh;
 }
 
 .background__transform {
-  background-color:red;
-  transition: transform 1.4s cubic-bezier(.77, 0, .175, 1).1s;
+  // background-color: $offwhite;
+  background-color: red;
   position: absolute;
   height: 225px;
   width: 120%;
   left: 50%;
-  // top: 87vh;
-  -webkit-transform: rotate(-5deg)translateX(-50%);
-  -ms-transform: rotate(-5deg)translateX(-50%);
-  transform: rotate(-5deg)translateX(-50%);
+  -webkit-transform: rotate(-5deg) translate(-50%, -50%);
+  -ms-transform: rotate(-5deg) translate(-50%, -50%);
+  transform: rotate(-5deg) translate(-50%, -50%);
   -webkit-transform-origin: left top;
   -ms-transform-origin: left top;
   transform-origin: left top;
-
-
-
-      // text-align: center;
-      // background-color: white;
-      // transform: rotate(-5deg);
-      // height: 150px;
-      // width: 120vw;
-      // top: 90%;
-      // left: -10vw;
-      // position: absolute;
-
+  
 }
 
 .background--alternate {
-  background-color: grey;
+  background-color: $charcoal;
 }
 
 .projects {
@@ -57,13 +52,6 @@ body {
 //   display: flex;
 // }
 
-
-// $offwhite: #f9f9f9;
-// $gray: #DCDCDC;
-// $blue: #2ec4b6;
-// $blue-ghost: #28b5a8;
-// $charcoal: #404040	;
-// $main-font: 'Raleway', serif;
 
 
 // body {

@@ -1,4 +1,4 @@
-body {
+html, body {
   margin: 0;
   overflow-x: hidden; }
 
@@ -9,25 +9,24 @@ body {
   transform: scale(0); }
 
 .background {
-  background-color: white;
+  background-color: #f9f9f9;
   height: 100vh; }
 
 .background__transform {
   background-color: red;
-  transition: transform 1.4s cubic-bezier(0.77, 0, 0.175, 1) 0.1s;
   position: absolute;
   height: 225px;
   width: 120%;
   left: 50%;
-  -webkit-transform: rotate(-5deg) translateX(-50%);
-  -ms-transform: rotate(-5deg) translateX(-50%);
-  transform: rotate(-5deg) translateX(-50%);
+  -webkit-transform: rotate(-5deg) translate(-50%, -50%);
+  -ms-transform: rotate(-5deg) translate(-50%, -50%);
+  transform: rotate(-5deg) translate(-50%, -50%);
   -webkit-transform-origin: left top;
   -ms-transform-origin: left top;
   transform-origin: left top; }
 
 .background--alternate {
-  background-color: grey; }
+  background-color: #404040; }
 
 .projects {
   margin: 0 auto; }

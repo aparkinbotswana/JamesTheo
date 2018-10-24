@@ -1,10 +1,5 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 document.addEventListener('DOMContentLoaded', function(){
-
-  const slantDiv = document.getElementById('slant-div');
-  slantDiv.style.top = `${(document.getElementById('background').getBoundingClientRect().height - 112).toString()}px`
-  // offsetting the position of transformed div to always fall between the grey and white background.
-
   const projects = document.getElementsByClassName('projects')
   const projectsArray = Array.from(projects);
 
@@ -17,13 +12,6 @@ document.addEventListener('DOMContentLoaded', function(){
       document.getElementById(project.dataset.target).classList.add('noscale')
     })
   })
-
-  window.addEventListener('resize', () => {
-    slantDiv.style.top = `${(document.getElementById('background').getBoundingClientRect().height - 112).toString()}px`
-    // make sure that transformed div stays in place if the browser is resized.
-  });
-
-
 }, false);
 
   // const navBarMobile = document.getElementById('nav-column-mobile');
