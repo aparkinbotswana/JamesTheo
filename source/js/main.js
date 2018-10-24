@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function(){
 
-  const auslanInterpreter = document.getElementById('auslanInterpreteraus');
-  const usernameChecker = document.getElementById('usernameChecker');
-  const fraga = document.getElementById('fraga');
+  const slantDiv = document.getElementById('slant-div');
+  slantDiv.style.top = `${(slantDiv.offsetTop - 112).toString()}px`
+
   const projects = document.getElementsByClassName('projects')
   const projectsArray = Array.from(projects);
 
