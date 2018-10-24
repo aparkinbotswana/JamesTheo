@@ -2,7 +2,8 @@
 document.addEventListener('DOMContentLoaded', function(){
 
   const slantDiv = document.getElementById('slant-div');
-  slantDiv.style.top = `${(slantDiv.offsetTop - 112).toString()}px`
+  slantDiv.style.top = `${(document.getElementById('background').getBoundingClientRect().height - 112).toString()}px`
+  // offsetting the position of transformed div to always fall between the grey and white background.
 
   const projects = document.getElementsByClassName('projects')
   const projectsArray = Array.from(projects);
@@ -16,6 +17,12 @@ document.addEventListener('DOMContentLoaded', function(){
       document.getElementById(project.dataset.target).classList.add('noscale')
     })
   })
+
+  window.addEventListener('resize', () => {
+    slantDiv.style.top = `${(document.getElementById('background').getBoundingClientRect().height - 112).toString()}px`
+    // make sure that transformed div stays in place if the browser is resized.
+  });
+
 
 }, false);
 
