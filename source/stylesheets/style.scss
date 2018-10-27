@@ -3,13 +3,37 @@ $gray: #DCDCDC;
 $charcoal: #404040	;
 $main-font: 'Raleway', serif;
 
+// font-family: 'Nanum Gothic', sans-serif;
+// font-family: 'Dosis', sans-serif;
+// font-family: 'Rubik', sans-serif;
+// font-family: 'Julius Sans One', sans-serif;
+
+#one{
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+#four{
+  font-family: 'Julius Sans One', sans-serif;
+}
+#five{
+  font-family: 'Raleway', sans-serif;
+}
+
+.angled-svg {
+  width: 100%;
+  height: 5vw;
+  fill: $offwhite;
+}
+
+.angled-svg--charcoal {
+  fill: $charcoal;
+}
+
 html, body {
   // setting the html and body to position: relative seems to be how safari needs it css setup in order for overflow property to work
-  // position: relative;
   margin: 0;
-  overflow-x: hidden;
-
 }
+
 .text {
   transition: all .2s ease-in-out
 }
@@ -23,22 +47,6 @@ html, body {
   height: 100vh;
 }
 
-.background__transform {
-  // background-color: $offwhite;
-  background-color: red;
-  position: absolute;
-  height: 225px;
-  width: 120%;
-  left: 50%;
-  -webkit-transform: rotate(-5deg) translate(-50%, -50%);
-  -ms-transform: rotate(-5deg) translate(-50%, -50%);
-  transform: rotate(-5deg) translate(-50%, -50%);
-  -webkit-transform-origin: left top;
-  -ms-transform-origin: left top;
-  transform-origin: left top;
-  
-}
-
 .background--alternate {
   background-color: $charcoal;
 }
@@ -47,11 +55,14 @@ html, body {
   margin: 0 auto;
 }
 
-// .content {
-//   z-index: 150;
-//   display: flex;
-// }
+.content {
+  z-index: -150;
+  display: flex;
+}
 
+.svg-image {
+  width: 10%;
+}
 
 
 // body {
