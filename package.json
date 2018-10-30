@@ -2,13 +2,11 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "js/main.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx babel ./source/js/main.js -o ./build/js/bundle.js",
-    "watchbundle": "watchify ./source/js/main.js --outfile ./build/js/bundle.js",
     "sass": " sass source/stylesheets/style.scss build/stylesheets/style.css",
-    "watchsass": "sass --watch source/stylesheets/style.scss:build/stylesheets/style.css"
+    "watchsass": "sass --watch source/stylesheets/style.scss:build/stylesheets/style.css",
+    "build": "browserify source/js/main.js -t babelify --outfile build/js/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -20,11 +18,12 @@
     "url": "https://github.com/aparkinbotswana/Portfolio/issues"
   },
   "homepage": "https://github.com/aparkinbotswana/Portfolio#readme",
-  "dependencies": {
-    "babel-preset-env": "^1.7.0"
-  },
   "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2"
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^6.26.3",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
+    "p5": "^0.7.2"
   }
 }

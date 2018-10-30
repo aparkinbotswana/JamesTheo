@@ -1,3 +1,38 @@
+import p5 from 'p5'
+
+new p5(function(p5) {
+  p5.setup = () => {
+    let canvas = p5.createCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
+    canvas.parent('canvas-container')
+    p5.colorMode(p5.HSB, 255); // Use Hue Saturation Brightness, with a range of 0-255 for each
+    // p5.blendMode(p5.LIGHTEST);
+  }; // setup function sets up the initial properties of our canvas
+
+  p5.draw = () => {
+    p5.ellipse(50, 50, 80, 80);
+    p5.fill(172)
+  }
+
+  p5.windowResized = () => {
+    p5.resizeCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
+  }
+})
+// p5.setup = () => {
+//   let canvas = p5.createCanvas(((80 / 100) * windowWidth), ((80 / 100) * windowHeight));
+//   canvas.parent('canvas-container')
+//   colorMode(HSB, 255); // Use Hue Saturation Brightness, with a range of 0-255 for each
+//   // blendMode(LIGHTEST);
+// }; // setup function sets up the initial properties of our canvas
+
+// p5.draw = () => {
+//   ellipse(50, 50, 80, 80);
+//   fill(172)
+// }
+
+// p5.windowResized = () => {
+//   resizeCanvas(((80 / 100) * windowWidth), ((80 / 100) * windowHeight));
+// }
+
 document.addEventListener('DOMContentLoaded', function(){
   const projects = document.getElementsByClassName('projects')
   const projectsArray = Array.from(projects);
@@ -11,6 +46,20 @@ document.addEventListener('DOMContentLoaded', function(){
       document.getElementById(project.dataset.target).classList.add('noscale')
     })
   })
+
+
+  const downloadCanvas = (link, canvasId, filename) => {
+    link.href = document.getElementById(canvasId).toDataURL();
+    link.download = filename;
+  }
+  document.getElementById('jpeg').addEventListener('click', function () {
+    downloadCanvas(this, 'defaultCanvas0', 'download.jpeg');
+  }, false);
+  document.getElementById('png').addEventListener('click', function () {
+    downloadCanvas(this, 'defaultCanvas0', 'download.png');
+  }, false);
+  //  The event handler for the link's onclick event. We give THIS as a
+  //  parameter (=the link element), ID of the canvas and a filename.
 }, false);
 
   // const navBarMobile = document.getElementById('nav-column-mobile');
