@@ -25,7 +25,7 @@
     </nav>
   </header >
     
-  <section class="background">
+  <section class="content content__p5">
     <div id="canvas-container">
       <!-- canvas element created and appended here through p5.js library -->
     </div>
@@ -36,60 +36,70 @@
   </section>
  
 
-  <section class=" background background--alternate">
+  <section class=" content content__projects content--charcoal">
     <svg class="angled-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
       <polygon points="0,0 100,0 0,100" />
     </svg>
+
     <h2>PROJECTS</h2>
     <h3 id="auslanInterpreter" class="projects" data-target="auslanInterpreterContent">Auslan Interpreter</h3>
     <h3 id="usernameChecker" class="projects" data-target="usernameCheckerContent">Username Checker</h3>
     <h3 id="fraga" class="projects" data-target="fragaContent">Fraga</h3>
-    <div id="auslanInterpreterContent" class="text noscale">Auslan</div>
-    <div id="usernameCheckerContent" class="text noscale">Username</div>
-    <div id="fragaContent" class="text noscale">Fraga</div>
-    <!-- <div class="content__margin">
-                <h1>Projects</h1>
-                <h2>Virtual Auslan  Interpreter</h2>
-                <h3>JavaScript/Leap Motion</h3>
-                <p>The Auslan Interpreter is designed to help those who are unable to understand Australian Sign Language, communicate with those who can. Currently, it recognises half the English alphabet. The browser app uses the Leap Motion to interpret hand gestures from the user. Based on these gestures, the program recognises which letter is being signed and displays, as well as speaks the recognised letter.</p>
-              </div>
-              <div class="button">
-                <a class="button__link button__link--ghost" href="https://github.com/aparkinbotswana/Auslan-Interpreter" target="_blank" alt="Auslan Interpreter github link">Code</a>
-              </div>
-              <figure class="photo">
-                <iframe id="iframe" src="https://www.youtube.com/embed/Swy6URGIUbA" frameborder="0" allow="autoplay; encrypted-media"
-    allowfullscreen></iframe>
-              </figure>
+    <div id="auslanInterpreterContent" class="text">
+      <h3>Virtual Auslan Interpreter</h3>
+      <h3>JavaScript/Leap Motion</h3>
+      <p>The Auslan Interpreter is designed to help those who are unable to understand Australian Sign Language, communicate
+        with those who can. Currently, it recognises half the English alphabet. The browser app uses the Leap Motion to
+        interpret hand gestures from the user. Based on these gestures, the program recognises which letter is being signed
+        and displays, as well as speaks the recognised letter.</p>
+      </div>
+      <div class="button">
+        <a class="button__link button__link--ghost" href="https://github.com/aparkinbotswana/Auslan-Interpreter" target="_blank"
+          alt="Auslan Interpreter github link">Code</a>
+      </div>
+      <figure class="photo-container">
+        <iframe id="iframe" src="https://www.youtube.com/embed/Swy6URGIUbA" frameborder="0" allow="autoplay; encrypted-media"
+          allowfullscreen></iframe>
+      </figure>
+    </div>
 
-              <div class="content__margin">
-                <h2 class="projects-description">Fråga</h2>
-                <h3>JavaScript/Ruby on Rails</h3>
-                <p class="content--font18">Social app with a focus on geolocation. Users can post any question they like relevant to a particular location. Other users within the vicinity can see and respond to the question.</p>
-              </div>
-              <div class="button">
-                <a class="button__link" href="https://fraga-app.herokuapp.com/" target="_blank" alt="fraga demo link">Demo</a>
-                <a class="button__link button__link--ghost" href="https://github.com/aparkinbotswana/Fraga" target="_blank" alt="fraga github link">Code</a>
-              </div>
-                <figure class="photo">
-                  <img id="picture" class="photo__img" src="build/images/Fraga.png" alt="Fraga project image">
-                </figure> -->
+
+    <div id="usernameCheckerContent" class="text noscale">Username</div>
+
+
+    <div id="fragaContent" class="text">
+      <h3 class="projects-description">Fråga</h3>
+      <h3>JavaScript/Ruby on Rails</h3>
+      <p class="content--font18">Social app with a focus on geolocation. Users can post any question they like relevant to a
+        particular location. Other users within the vicinity can see and respond to the question.</p>
+      <div class="button">
+        <a class="button__link" href="https://fraga-app.herokuapp.com/" target="_blank" alt="fraga demo link">Demo</a>
+        <a class="button__link button__link--ghost" href="https://github.com/aparkinbotswana/Fraga" target="_blank" alt="fraga github link">Code</a>
+      </div>
+      <figure class="photo-container">
+        <img id="picture" class="photo__img" src="build/images/Fraga.png" alt="Fraga project image">
+      </figure>
+    </div>
   </section>
 
-  <footer class="background" id="contact">
-<svg class="angled-svg angled-svg--charcoal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <footer class="content" id="contact">
+    <svg class="angled-svg angled-svg--charcoal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
       <polygon points="0,0 100,0 0,100" />
     </svg>
-    <h2>CONTACT</h2>
-    <div class="container">
-      <figure class="container__flex1">
-        <a href="https://github.com/aparkinbotswana" target="_blank"><img class="svg-image" src="build/images/002-github.svg" alt="github link"></a>
-      </figure>
-      <figure class="container__flex1">
-        <a href="https://www.linkedin.com/in/james-theo/" target="_blank"><img class="svg-image" src="build/images/001-linkedin.svg" alt="linkedin link"></a>
-      </figure>
-      <figure class="container__flex1">
-        <a href="mailto:theojames1989@gmail.com"><img class="svg-image" src="build/images/003-mail.svg" alt="email address"></a>
-      </figure>
+
+    <div class="content__contact">
+      <h2>CONTACT</h2>
+      <div class="container">
+        <figure class="container__flex1 container--align-right">
+          <a href="https://github.com/aparkinbotswana" target="_blank"><img class="contact-image" src="build/images/002-github.svg" alt="github link"></a>
+        </figure>
+        <figure class="container__flex1">
+          <a href="https://www.linkedin.com/in/james-theo/" target="_blank"><img class="contact-image" src="build/images/001-linkedin.svg" alt="linkedin link"></a>
+        </figure>
+        <figure class="container__flex1 container--align-left">
+          <a href="mailto:theojames1989@gmail.com"><img class="contact-image" src="build/images/003-mail.svg" alt="email address"></a>
+        </figure>
+      </div>
     </div>
   </footer>
 </body>

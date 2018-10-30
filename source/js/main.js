@@ -17,35 +17,20 @@ new p5(function(p5) {
     p5.resizeCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
   }
 })
-// p5.setup = () => {
-//   let canvas = p5.createCanvas(((80 / 100) * windowWidth), ((80 / 100) * windowHeight));
-//   canvas.parent('canvas-container')
-//   colorMode(HSB, 255); // Use Hue Saturation Brightness, with a range of 0-255 for each
-//   // blendMode(LIGHTEST);
-// }; // setup function sets up the initial properties of our canvas
-
-// p5.draw = () => {
-//   ellipse(50, 50, 80, 80);
-//   fill(172)
-// }
-
-// p5.windowResized = () => {
-//   resizeCanvas(((80 / 100) * windowWidth), ((80 / 100) * windowHeight));
-// }
 
 document.addEventListener('DOMContentLoaded', function(){
-  const projects = document.getElementsByClassName('projects')
-  const projectsArray = Array.from(projects);
+  // const projects = document.getElementsByClassName('projects')
+  // const projectsArray = Array.from(projects);
 
-  projectsArray.map((project) => {
-    project.addEventListener('mouseover', function(){
-      document.getElementById(project.dataset.target).classList.remove('noscale')
-    })
+  // projectsArray.map((project) => {
+  //   project.addEventListener('mouseover', function(){
+  //     document.getElementById(project.dataset.target).classList.remove('noscale')
+  //   })
 
-    project.addEventListener('mouseleave', function () {
-      document.getElementById(project.dataset.target).classList.add('noscale')
-    })
-  })
+  //   project.addEventListener('mouseleave', function () {
+  //     document.getElementById(project.dataset.target).classList.add('noscale')
+  //   })
+  // })
 
 
   const downloadCanvas = (link, canvasId, filename) => {

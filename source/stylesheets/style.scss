@@ -3,11 +3,6 @@ $gray: #DCDCDC;
 $charcoal: #404040	;
 $main-font: 'Raleway', serif;
 
-// font-family: 'Nanum Gothic', sans-serif;
-// font-family: 'Dosis', sans-serif;
-// font-family: 'Rubik', sans-serif;
-// font-family: 'Julius Sans One', sans-serif;
-
 #one{
   font-family: 'Nanum Gothic', sans-serif;
 }
@@ -17,6 +12,9 @@ $main-font: 'Raleway', serif;
 }
 #five{
   font-family: 'Raleway', sans-serif;
+}
+html, body, figure {
+  margin: 0;
 }
 
 .angled-svg {
@@ -29,40 +27,102 @@ $main-font: 'Raleway', serif;
   fill: $charcoal;
 }
 
-html, body {
-  // setting the html and body to position: relative seems to be how safari needs it css setup in order for overflow property to work
-  margin: 0;
-}
-
 .text {
   transition: all .2s ease-in-out
 }
-
 .noscale {
   transform: scale(0.0);
 }
 
-.background {
-  background-color:  $offwhite;
-  height: 100vh;
+.content {
+  background-color: $offwhite;
 }
 
-.background--alternate {
+.content__p5{
+
+}
+
+.content__projects{
+
+}
+
+.content__contact{
+padding-bottom: 40px;
+text-align: center
+}
+
+
+.content--charcoal {
   background-color: $charcoal;
 }
+
+.container {
+  display: flex;
+  text-align: center;
+}
+.container--align-left {
+  text-align: left;
+}
+.container--align-right {
+  text-align: right;
+}
+
+.container__flex1 {
+  flex: 1;
+}
+
+.button {
+  padding: 35px 0;
+  text-align: center;
+}
+
+.button__link {
+  text-decoration: none;
+  font-size: 18px;
+  // background-color: $blue;
+  width: 200px;
+  color: $offwhite;
+  padding: 1em;
+  border-radius: 2px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin: 8px;
+
+  &:hover {
+    background-color: #28b5a8;
+  }
+}
+
+.button__link--ghost {
+  box-shadow: inset 0 0 0 2px #2ec4b6;
+  background-color: $offwhite;
+  // color: $blue;
+
+  &:hover {
+    // background-color: $blue-ghost;
+    color: $offwhite;
+  }
+}
+
 
 .projects {
   margin: 0 auto;
 }
 
-.content {
-  z-index: -150;
-  display: flex;
+.photo-container {
+  text-align: center;
 }
 
-.svg-image {
-  width: 10%;
+.photo__img {
+    width: 80vw;
+
 }
+
+.contact-image {
+  width: 10vw;
+}
+
+
 
 
 // body {
@@ -129,74 +189,6 @@ html, body {
 //   line-height: 1.4;
 // }
 
-// .content__margin {
-//   margin: 0 auto;
-// }
-
 // .content__segment--font22 {
 //   font-size: 22px;
-// }
-
-// .content__segment--padding {
-//   padding: 50px 0;
-// }
-
-// .content--align-center {
-//   text-align: center;
-// }
-
-// .button {
-//   padding: 35px 0;
-//   text-align: center;
-// }
-
-// .button__link {
-  
-//   text-decoration: none;
-//   font-size: 18px;
-//   background-color: $blue;
-//   width: 200px;
-//   color: $offwhite;
-//   padding: 1em;
-//   border-radius: 2px;
-//   font-weight: 300;
-//   letter-spacing: 1px;
-//   margin: 8px;
-//   &:hover {
-//     background-color: #28b5a8;
-//   }
-// }
-
-// .button__link--ghost {
-//   box-shadow: inset 0 0 0 2px #2ec4b6;
-//   background-color: $offwhite;
-//   color: $blue;
-//   &:hover {
-//     background-color: $blue-ghost;
-//     color: $offwhite;
-//   }
-// }
-
-// .photo {
-//   text-align: center;
-// }
-
-// .photo__img {
-//   width: 90%;
-// }
-
-// .container {
-//   display: flex;
-// }
-
-// .container__flex1{
-//   flex: 1;
-// }
-
-// .container__flex3 {
-//   flex: 3;
-// }
-
-// .container__flex8 {
-//   flex: 8;
 // }
