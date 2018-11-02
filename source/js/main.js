@@ -33,16 +33,16 @@ document.addEventListener('DOMContentLoaded', function(){
   // })
 
 
-  const downloadCanvas = (link, canvasId, filename) => {
-    link.href = document.getElementById(canvasId).toDataURL();
-    link.download = filename;
-  }
-  document.getElementById('jpeg').addEventListener('click', function () {
-    downloadCanvas(this, 'defaultCanvas0', 'download.jpeg');
-  }, false);
-  document.getElementById('png').addEventListener('click', function () {
-    downloadCanvas(this, 'defaultCanvas0', 'download.png');
-  }, false);
+  // const downloadCanvas = (link, canvasId, filename) => {
+  //   link.href = document.getElementById(canvasId).toDataURL();
+  //   link.download = filename;
+  // }
+  // document.getElementById('jpeg').addEventListener('click', function () {
+  //   downloadCanvas(this, 'defaultCanvas0', 'download.jpeg');
+  // }, false);
+  // document.getElementById('png').addEventListener('click', function () {
+  //   downloadCanvas(this, 'defaultCanvas0', 'download.png');
+  // }, false);
   //  The event handler for the link's onclick event. We give THIS as a
   //  parameter (=the link element), ID of the canvas and a filename.
 }, false);
