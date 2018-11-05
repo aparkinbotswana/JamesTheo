@@ -1,16 +1,34 @@
 import p5 from 'p5'
 
 new p5(function(p5) {
+  const randomNum = (max) => {
+    return Math.floor(Math.random() * Math.floor(max))
+  }
+
+  const drawLine = () => {
+
+  }
+  
+  let startY = randomNum((p5.windowHeight - 200))
+  let startX = randomNum((p5.windowWidth - 200))
+  let increment = 1 // probably needs to be scoped elsewhere
+
   p5.setup = () => {
     let canvas = p5.createCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
     canvas.parent('canvas-container')
+
     p5.colorMode(p5.HSB, 255); // Use Hue Saturation Brightness, with a range of 0-255 for each
-    // p5.blendMode(p5.LIGHTEST);
   }; // setup function sets up the initial properties of our canvas
 
   p5.draw = () => {
-    p5.ellipse(50, 50, 80, 80);
-    p5.fill(172)
+    
+    p5.line(startX, startY, startX + increment, startY + increment);
+    p5.stroke(randomNum(255), 220, 220)
+    p5.strokeWeight(4)
+    increment += 2;
+    if (increment === 100) {
+      p5.line.remove()
+    }
   }
 
   p5.windowResized = () => {
@@ -31,20 +49,6 @@ document.addEventListener('DOMContentLoaded', function(){
   //     document.getElementById(project.dataset.target).classList.add('noscale')
   //   })
   // })
-
-
-  // const downloadCanvas = (link, canvasId, filename) => {
-  //   link.href = document.getElementById(canvasId).toDataURL();
-  //   link.download = filename;
-  // }
-  // document.getElementById('jpeg').addEventListener('click', function () {
-  //   downloadCanvas(this, 'defaultCanvas0', 'download.jpeg');
-  // }, false);
-  // document.getElementById('png').addEventListener('click', function () {
-  //   downloadCanvas(this, 'defaultCanvas0', 'download.png');
-  // }, false);
-  //  The event handler for the link's onclick event. We give THIS as a
-  //  parameter (=the link element), ID of the canvas and a filename.
 }, false);
 
   // const navBarMobile = document.getElementById('nav-column-mobile');
@@ -125,59 +129,4 @@ document.addEventListener('DOMContentLoaded', function(){
   //     myIframe.style.width = picture.getBoundingClientRect().width + "px" ;
   //     myIframe.style.height = picture.getBoundingClientRect().height + "px";
   //   }); // Waits for Iframe to load before executing code
-
-
-  // window.addEventListener("resize", function () {
-  //   contentWidth();
-
-  //   if (window.innerWidth < 769) {
-  //     if (animated === false) {
-  //       navBarMobile.classList.remove('list');
-  //       mobileNav.appendChild(navBarMobile);
-  //       navBarMobile.appendChild(document.getElementById('mobile-1'));
-  //       navBarMobile.appendChild(document.getElementById('mobile-2'));
-  //       navBarMobile.appendChild(document.getElementById('mobile-3'));
-  //       for (let i = 0; i < mobile.length; i++) {
-  //         mobile[i].style.visibility = 'visible';
-  //       }
-  //       animated = true
-  //     }
-  //   } else if (animated === true) {
-  //     navBarMobile.classList.add('list');
-  //     animated = false
-  //   }
-  // });
-
-  // if (typeof InstallTrigger !== 'undefined') {
-  //   return // Fireforx does not like appending makisu classes for some reason and screws around with the anchor scroll
-  //         // in order to keep scroll working, this works to check if the browser being run is Firefox and if so, breaks out of the function. No fancy Makisu, but the nav bar works this way.
-  // } else {
-  //   if (window.innerWidth < 769) {
-  //     let intervalCount = 1;
-  //     navBarMobile.classList.remove('list');
-  //     navBarMobile.remove();
-  //     mobileNav.appendChild(navBarMobile);
-  //     const mobileMakisu = function (el) {
-  //       $(el).css('visibility', 'visible');
-  //       $(el).makisu({
-  //         selector: 'div',
-  //         overlap: 0.6,
-  //         speed: 0.8
-  //       });
-  //       $(el).makisu('open');
-  //       intervalCount += 1
-  //       if (intervalCount === 4) {
-  //         clearInterval(mobileMakisuInterval);
-  //       }
-  //     }
-  //     const mobileMakisuInterval = setInterval(function () { mobileMakisu(`#mobile-${intervalCount.toString()}`) }, 300)
-  //   }
-  //   else {
-  //     $('.list').makisu({
-  //       selector: '.mobile',
-  //       overlap: 0.65,
-  //       speed: 0.8
-  //     });
-  //     $('.list').makisu('open');
-  //   } // ^^^^ this IF statement dictaates how makisu nav animation behaves between mobile and desktop devices ^^^^
-  // }
+  // can probably do this with css. why am i doing it in JS? Confirm that shit.
