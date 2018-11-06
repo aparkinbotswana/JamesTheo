@@ -1,39 +1,108 @@
-import p5 from 'p5'
+import p5 from 'p5';
 
 new p5(function(p5) {
-  const randomNum = (max) => {
-    return Math.floor(Math.random() * Math.floor(max))
-  }
-
-  const drawLine = () => {
-
-  }
+  // let lines;
+  // let increment = 1; // probably needs to be scoped elsewhere
+  // const drawLine = () => {
+  //   let startY = p5.random(0, ( p5.windowHeight - 200));
+  //   let startX = p5.random(0, (p5.windowWidth - 200)); 
+  //   p5.stroke(p5.random(0, 255), 120, 255);
+  //   p5.line(startX, startY, startX + p5.random((startX + 100), (startX + 100)), startY + p5.random((startY + 100), (startY + 100)));
+  //   p5.strokeWeight(4);
+  //   increment += 2;
+  //   if (increment > 300) {
+  //     p5.line.remove();
+  //   }
+  // }
   
-  let startY = randomNum((p5.windowHeight - 200))
-  let startX = randomNum((p5.windowWidth - 200))
-  let increment = 1 // probably needs to be scoped elsewhere
+  // p5.setup = () => {
+  //   let canvas = p5.createCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
+  //   canvas.parent('canvas-container');
+  //   p5.colorMode(p5.HSB, 255); // Use Hue Saturation Brightness, with a range of 0-255 for each
+  // }; // setup function sets up the initial properties of our canvas
+
+  // p5.draw = () => {
+  //   // drawLine();
+
+  // }
+
+  // p5.windowResized = () => {
+  //   p5.resizeCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
+  //   increment = 1
+  // }
+  let lines;
+  let increment = 1;
 
   p5.setup = () => {
-    let canvas = p5.createCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
-    canvas.parent('canvas-container')
+    let canvas = p5.createCanvas(720, 400);
+    p5.background('black');
+    canvas.parent('canvas-container');
 
-    p5.colorMode(p5.HSB, 255); // Use Hue Saturation Brightness, with a range of 0-255 for each
-  }; // setup function sets up the initial properties of our canvas
+    lines = new ParticleSystem(p5.createVector(p5.width / 2, 50));
+    console.log(lines);
+
+  }
 
   p5.draw = () => {
-    
-    p5.line(startX, startY, startX + increment, startY + increment);
-    p5.stroke(randomNum(255), 220, 220)
-    p5.strokeWeight(4)
-    increment += 2;
-    if (increment === 100) {
-      p5.line.remove()
-    }
+    p5.background('black');
+    lines.addParticle();
+    lines.run();
+    // console.log(lines)
   }
 
-  p5.windowResized = () => {
-    p5.resizeCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
-  }
+  // A simple Particle class
+  var Particle = function (position) {
+    this.acceleration = p5.createVector(0, 0.05);
+    this.velocity = p5.createVector(p5.random(-1, 1), p5.random(-1, 0));
+    this.position = position.copy();
+    this.lifespan = 255;
+  };
+
+  Particle.prototype.run = function () {
+    this.update();
+    this.display();
+  };
+
+  // Method to update position
+  Particle.prototype.update = function () {
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+    this.lifespan -= 2;
+  };
+
+  // Method to display
+  Particle.prototype.display = function () {
+    let startY = p5.random(0, ( p5.windowHeight - 200));
+    let startX = p5.random(0, (p5.windowWidth - 200)); 
+    p5.stroke(p5.random(0, 255), 120, 255);
+    p5.line(startX, startY, startX + p5.random((startX + 100), (startX + 100)), startY + p5.random((startY + 100), (startY + 100)));
+    p5.strokeWeight(4);
+
+  };
+
+  // Is the particle still useful?
+  Particle.prototype.isDead = function () {
+    return this.lifespan < 0;
+  };
+
+  var ParticleSystem = function (position) {
+    this.origin = position.copy();
+    this.particles = [];
+  };
+
+  ParticleSystem.prototype.addParticle = function () {
+    this.particles.push(new Particle(this.origin));
+  };
+
+  ParticleSystem.prototype.run = function () {
+    for (var i = this.particles.length - 1; i >= 0; i--) {
+      var line = this.particles[i];
+      line.run();
+      if (line.isDead()) {
+        this.particles.splice(i, 1);
+      }
+    }
+  };
 })
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -49,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function(){
   //     document.getElementById(project.dataset.target).classList.add('noscale')
   //   })
   // })
+
 }, false);
 
   // const navBarMobile = document.getElementById('nav-column-mobile');

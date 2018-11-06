@@ -6,7 +6,8 @@
   "scripts": {
     "sass": " sass source/stylesheets/style.scss build/stylesheets/style.css",
     "watchsass": "sass --watch source/stylesheets/style.scss:build/stylesheets/style.css",
-    "build": "browserify source/js/main.js -t babelify --outfile build/js/bundle.js"
+    "build": "browserify source/js/main.js -t babelify --outfile build/js/bundle.js",
+    "watchbuild": "watchify source/js/main.js -t babelify --outfile build/js/bundle.js"
   },
   "repository": {
     "type": "git",
