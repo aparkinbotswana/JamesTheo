@@ -1,83 +1,73 @@
 import p5 from 'p5';
 
 new p5(function(p5) {
-  // let lines;
-  // let increment = 1; // probably needs to be scoped elsewhere
-  // const drawLine = () => {
-  //   let startY = p5.random(0, ( p5.windowHeight - 200));
-  //   let startX = p5.random(0, (p5.windowWidth - 200)); 
-  //   p5.stroke(p5.random(0, 255), 120, 255);
-  //   p5.line(startX, startY, startX + p5.random((startX + 100), (startX + 100)), startY + p5.random((startY + 100), (startY + 100)));
-  //   p5.strokeWeight(4);
-  //   increment += 2;
-  //   if (increment > 300) {
-  //     p5.line.remove();
-  //   }
-  // }
-  
-  // p5.setup = () => {
-  //   let canvas = p5.createCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
-  //   canvas.parent('canvas-container');
-  //   p5.colorMode(p5.HSB, 255); // Use Hue Saturation Brightness, with a range of 0-255 for each
-  // }; // setup function sets up the initial properties of our canvas
-
-  // p5.draw = () => {
-  //   // drawLine();
-
-  // }
-
-  // p5.windowResized = () => {
-  //   p5.resizeCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
-  //   increment = 1
-  // }
   let lines;
-  let increment = 1;
+
 
   p5.setup = () => {
-    let canvas = p5.createCanvas(720, 400);
-    p5.background('black');
+    let canvas = p5.createCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
     canvas.parent('canvas-container');
+    p5.colorMode(p5.HSB, 255); // Use Hue Saturation Brightness, with a range of 0-255 for each
+    lines = new ParticleSystem(p5.width / 2, 50);
+  }
 
-    lines = new ParticleSystem(p5.createVector(p5.width / 2, 50));
-    console.log(lines);
+
+  p5.draw = () => {
+    p5.background('#f9f9f9')
+
+    lines.run();
+    lines.addParticle();
+    debugger
 
   }
 
-  p5.draw = () => {
-    p5.background('black');
-    lines.addParticle();
-    lines.run();
-    // console.log(lines)
+  p5.windowResized = () => {
+    p5.resizeCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
   }
 
   // A simple Particle class
-  var Particle = function (position) {
-    this.acceleration = p5.createVector(0, 0.05);
-    this.velocity = p5.createVector(p5.random(-1, 1), p5.random(-1, 0));
-    this.position = position.copy();
-    this.lifespan = 255;
-  };
+  const Particle = function (position) {
+    // this.acceleration = p5.createVector(0, 0.05);
+    // this.velocity = p5.createVector(p5.random(-1, 1), p5.random(-1, 0));
+    // this.position = position.copy();
+    this.lifespan = 40;
+    this.vectorHistory = [];
+    this.increment = 1;
+    this.colour = Math.floor(p5.random(0, 255))
 
+  };
+ 
   Particle.prototype.run = function () {
-    this.update();
+    // this.update();
     this.display();
   };
 
   // Method to update position
   Particle.prototype.update = function () {
-    this.velocity.add(this.acceleration);
-    this.position.add(this.velocity);
+    // this.velocity.add(this.acceleration);
+    // this.position.add(this.velocity);
+    // let v = createVector
     this.lifespan -= 2;
   };
 
   // Method to display
   Particle.prototype.display = function () {
-    let startY = p5.random(0, ( p5.windowHeight - 200));
-    let startX = p5.random(0, (p5.windowWidth - 200)); 
-    p5.stroke(p5.random(0, 255), 120, 255);
-    p5.line(startX, startY, startX + p5.random((startX + 100), (startX + 100)), startY + p5.random((startY + 100), (startY + 100)));
-    p5.strokeWeight(4);
+    this.lifespan -= 2;
 
+    // let y = p5.random(0, ( p5.windowHeight - 200));
+    // let x = p5.random(0, (p5.windowWidth - 200)); 
+    let y = Math.floor(p5.random(0, 500));
+    let x = 0;
+    console.log(x + this.increment)
+    console.log(y + this.increment)
+    let v = p5.createVector(x + this.increment, y + this.increment)
+    this.vectorHistory.push(v)
+    // console.log(this.vectorHistory)
+
+    p5.stroke( this.colour, 120, 255);
+    // p5.line(x, y, x + p5.random((x + 100), (x + 100)), y + p5.random((y + 100), (y + 100)));
+    p5.line(x, y, x + this.increment, y + this.increment);
+    p5.strokeWeight(4);
   };
 
   // Is the particle still useful?
@@ -85,8 +75,8 @@ new p5(function(p5) {
     return this.lifespan < 0;
   };
 
-  var ParticleSystem = function (position) {
-    this.origin = position.copy();
+  const ParticleSystem = function (position) {
+    // this.origin = position.copy();
     this.particles = [];
   };
 
@@ -95,13 +85,16 @@ new p5(function(p5) {
   };
 
   ParticleSystem.prototype.run = function () {
-    for (var i = this.particles.length - 1; i >= 0; i--) {
-      var line = this.particles[i];
+    for (let i = this.particles.length - 1; i >= 0; i--) {
+      let line = this.particles[i];
+      line.increment += 100 // making sure increment increases for every instance of Particle, not every Particle simultaneously 
       line.run();
       if (line.isDead()) {
         this.particles.splice(i, 1);
       }
     }
+    console.log(this.particles)
+
   };
 })
 
