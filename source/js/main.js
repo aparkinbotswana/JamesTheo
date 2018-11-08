@@ -3,7 +3,6 @@ import p5 from 'p5';
 new p5(function(p5) {
   let lines;
 
-
   p5.setup = () => {
     let canvas = p5.createCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
     canvas.parent('canvas-container');
@@ -17,7 +16,7 @@ new p5(function(p5) {
 
     lines.run();
     lines.addParticle();
-    debugger
+    // debugger
 
   }
 
@@ -25,22 +24,24 @@ new p5(function(p5) {
     p5.resizeCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
   }
 
-  // A simple Particle class
+  // Particle class
   const Particle = function (position) {
     // this.acceleration = p5.createVector(0, 0.05);
     // this.velocity = p5.createVector(p5.random(-1, 1), p5.random(-1, 0));
     // this.position = position.copy();
-    this.lifespan = 40;
-    this.vectorHistory = [];
-    this.increment = 1;
-    this.colour = Math.floor(p5.random(0, 255))
+    this.lifespan = 40; // How long a line "lives" before it is taken out of the array of Particles. Taken out when it gets to 0.
+    this.vectorHistory = []; // initialise an empty array to track the X and Y coordinates of the entire line. Data from createVector gets dumped into this.
+    this.increment = 1; // make sure every line has its own increment counter
+    this.colour = Math.floor(p5.random(0, 255)); // Set a random colour for every line
+    this.x = p5.random(0, (p5.windowWidth - 200)); // unique X coordinate for this particular particle
+    this.y = p5.random(0, (p5.windowHeight - 200)); // unique Y coordinate for this particular particle
 
   };
  
   Particle.prototype.run = function () {
     // this.update();
     this.display();
-  };
+  }; // may not need this function? Might be able to move functionality to other areas. Check this at the end when everything else is working.
 
   // Method to update position
   Particle.prototype.update = function () {
@@ -56,17 +57,17 @@ new p5(function(p5) {
 
     // let y = p5.random(0, ( p5.windowHeight - 200));
     // let x = p5.random(0, (p5.windowWidth - 200)); 
-    let y = Math.floor(p5.random(0, 500));
-    let x = 0;
-    console.log(x + this.increment)
-    console.log(y + this.increment)
-    let v = p5.createVector(x + this.increment, y + this.increment)
+    // let y = Math.floor(p5.random(0, 500));
+    // let x = 0;
+    // console.log(x + this.increment)
+    // console.log(y + this.increment)
+    let v = p5.createVector(this.x + this.increment, this.y + this.increment)
     this.vectorHistory.push(v)
-    // console.log(this.vectorHistory)
+    console.log(this.vectorHistory[0].x)
 
     p5.stroke( this.colour, 120, 255);
     // p5.line(x, y, x + p5.random((x + 100), (x + 100)), y + p5.random((y + 100), (y + 100)));
-    p5.line(x, y, x + this.increment, y + this.increment);
+    p5.line(this.vectorHistory[0].x, this.vectorHistory[0].y, this.vectorHistory[(this.vectorHistory.length - 1)].x + this.increment, this.vectorHistory[(this.vectorHistory.length - 1)].y + this.increment);
     p5.strokeWeight(4);
   };
 
@@ -87,13 +88,13 @@ new p5(function(p5) {
   ParticleSystem.prototype.run = function () {
     for (let i = this.particles.length - 1; i >= 0; i--) {
       let line = this.particles[i];
-      line.increment += 100 // making sure increment increases for every instance of Particle, not every Particle simultaneously 
+      line.increment += 10 // making sure increment increases for every instance of Particle, not every Particle simultaneously 
       line.run();
       if (line.isDead()) {
         this.particles.splice(i, 1);
       }
     }
-    console.log(this.particles)
+    // console.log(this.particles)
 
   };
 })
