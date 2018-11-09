@@ -136,6 +136,18 @@ text-align: center
   // border: 1px solid #c7c5c5;
 }
 
+.name-container {
+  position: relative; 
+  z-index: 1;
+  top: 50vh;
+  left: 50vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  // display: inline;
+  padding: 20px;
+}
+
+.name-container__text{
+}
 
 
 

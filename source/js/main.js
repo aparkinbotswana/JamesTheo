@@ -14,7 +14,6 @@ new p5(function(p5) {
     p5.background('#f9f9f9')
     lines.run();
     lines.addParticle();
-    // debugger
   }
 
   p5.windowResized = () => {
@@ -22,39 +21,39 @@ new p5(function(p5) {
   }
 
   // Setting up Line class with relevant "blueprint values"
-  const Line = function (position) {
+  const Line = function () {
     this.lifespan = 40; // How long a line "lives" before it is taken out of the array of Particles. Taken out when it gets to 0.
-    this.vectorHistory = []; // initialise an empty array to track the X and Y coordinates of the entire line. Data from createVector gets dumped into this.
     this.increment = 1; // make sure every line has its own increment counter
     this.colour = Math.floor(p5.random(0, 255)); // Set a random colour for every line
     this.x = p5.random(0, (p5.windowWidth - 200)); // unique X coordinate for this particular particle
     this.y = p5.random(0, (p5.windowHeight - 200)); // unique Y coordinate for this particular particle
-    this.isDead = false
+    this.isDead = false;
+    this.vectorHistory = [p5.createVector(this.x, this.y)]; // initialise an array with the first coordinate ready to access for the draw function.
   };
 
   // Method to display
   Line.prototype.display = function () {
     if (!this.isDead) {
       this.lifespan -= 1;
-      let v = p5.createVector(this.x + this.increment, this.y + this.increment)
+      let v = p5.createVector(this.x + this.increment, this.y + this.increment);
       // at every iteration, we save the current coordinate into an array so we have access to all the coordinates later on for use.
-      this.vectorHistory.push(v)
-    } 
+      this.vectorHistory.push(v);
+      if (this.lifespan <= 0) {
+        this.isDead = true;
+      }
+    } // we only want to use createVector function if the line is still "alive"
+     
 
     // var startY = p5.random(0, p5.windowHeight - 200);
     // var startX = p5.random(0, p5.windowWidth - 200);
     // p5.stroke(p5.random(0, 255), 120, 255);
     // p5.line(startX, startY, startX + p5.random(startX + 100, startX + 100), startY + p5.random(startY + 100, startY + 100));
-
     p5.stroke( this.colour, 120, 255);
-    p5.line(this.vectorHistory[0].x, this.vectorHistory[0].y, this.vectorHistory[this.vectorHistory.length - 1].x + this.increment, this.vectorHistory[this.vectorHistory.length - 1].y + this.increment);
+    p5.line(this.vectorHistory[0].x, this.vectorHistory[0].y, this.vectorHistory[this.vectorHistory.length - 1].x, this.vectorHistory[this.vectorHistory.length - 1].y);
     // Every new coordinate is stored in the vectorHistory array by the createVector function
-    // At every loop of the draw function, we reset the background colour which effectively whips everything clear.
-    // The coordinate is incremented by a given amount to look and then we take the first X and Y value in the stored vectoryHistory and final X and Y value in the same array (which represents the most recent increment) and draw a line between both points.
+    // At every loop of the draw function, we reset the background colour which effectively makes everything clear.
+    // The coordinate is incremented by a given amount  and then we take the first X and Y value in the stored vectoryHistory and final X and Y value in the same array (which represents the most recent increment) and draw a line between both points.
     p5.strokeWeight(4);
-    if (this.lifespan <= 0) {
-      this.isDead = true;
-    }
   };
 
   // once the line has been fully drawn, make it incrementally disappear
@@ -68,7 +67,7 @@ new p5(function(p5) {
   };
 
   LineSystem.prototype.addParticle = function () {
-    this.lines.push(new Line(this.origin));
+    this.lines.push(new Line());
   };
 
   LineSystem.prototype.run = function () {
@@ -85,7 +84,7 @@ new p5(function(p5) {
         line.display();
       }
     }
-    console.log(this.lines[0]);
+    // console.log(this.lines[0]);
 // for (let index = 0; index < array.length; index++) {
 //   const element = array[index];
   
@@ -94,8 +93,9 @@ new p5(function(p5) {
 
   };
 })
-
 document.addEventListener('DOMContentLoaded', function(){
+  // const canvas = document.getElementById('defaultCanvas0')
+  // console.log(canvas)
   // const projects = document.getElementsByClassName('projects')
   // const projectsArray = Array.from(projects);
 

@@ -88,4 +88,12 @@ html, body, figure {
   width: 80vw;
   text-align: center; }
 
+.name-container {
+  position: relative;
+  z-index: 1;
+  top: 50vh;
+  left: 50vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px; }
+
 /*# sourceMappingURL=style.css.map */
