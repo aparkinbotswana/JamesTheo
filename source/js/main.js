@@ -7,94 +7,90 @@ new p5(function(p5) {
     let canvas = p5.createCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
     canvas.parent('canvas-container');
     p5.colorMode(p5.HSB, 255); // Use Hue Saturation Brightness, with a range of 0-255 for each
-    lines = new ParticleSystem(p5.width / 2, 50);
+    lines = new LineSystem();
   }
-
 
   p5.draw = () => {
     p5.background('#f9f9f9')
-
     lines.run();
     lines.addParticle();
     // debugger
-
   }
 
   p5.windowResized = () => {
     p5.resizeCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
   }
 
-  // Particle class
-  const Particle = function (position) {
-    // this.acceleration = p5.createVector(0, 0.05);
-    // this.velocity = p5.createVector(p5.random(-1, 1), p5.random(-1, 0));
-    // this.position = position.copy();
+  // Setting up Line class with relevant "blueprint values"
+  const Line = function (position) {
     this.lifespan = 40; // How long a line "lives" before it is taken out of the array of Particles. Taken out when it gets to 0.
     this.vectorHistory = []; // initialise an empty array to track the X and Y coordinates of the entire line. Data from createVector gets dumped into this.
     this.increment = 1; // make sure every line has its own increment counter
     this.colour = Math.floor(p5.random(0, 255)); // Set a random colour for every line
     this.x = p5.random(0, (p5.windowWidth - 200)); // unique X coordinate for this particular particle
     this.y = p5.random(0, (p5.windowHeight - 200)); // unique Y coordinate for this particular particle
-
-  };
- 
-  Particle.prototype.run = function () {
-    // this.update();
-    this.display();
-  }; // may not need this function? Might be able to move functionality to other areas. Check this at the end when everything else is working.
-
-  // Method to update position
-  Particle.prototype.update = function () {
-    // this.velocity.add(this.acceleration);
-    // this.position.add(this.velocity);
-    // let v = createVector
-    this.lifespan -= 2;
+    this.isDead = false
   };
 
   // Method to display
-  Particle.prototype.display = function () {
-    this.lifespan -= 2;
+  Line.prototype.display = function () {
+    if (!this.isDead) {
+      this.lifespan -= 1;
+      let v = p5.createVector(this.x + this.increment, this.y + this.increment)
+      // at every iteration, we save the current coordinate into an array so we have access to all the coordinates later on for use.
+      this.vectorHistory.push(v)
+    } 
 
-    // let y = p5.random(0, ( p5.windowHeight - 200));
-    // let x = p5.random(0, (p5.windowWidth - 200)); 
-    // let y = Math.floor(p5.random(0, 500));
-    // let x = 0;
-    // console.log(x + this.increment)
-    // console.log(y + this.increment)
-    let v = p5.createVector(this.x + this.increment, this.y + this.increment)
-    this.vectorHistory.push(v)
-    console.log(this.vectorHistory[0].x)
+    // var startY = p5.random(0, p5.windowHeight - 200);
+    // var startX = p5.random(0, p5.windowWidth - 200);
+    // p5.stroke(p5.random(0, 255), 120, 255);
+    // p5.line(startX, startY, startX + p5.random(startX + 100, startX + 100), startY + p5.random(startY + 100, startY + 100));
 
     p5.stroke( this.colour, 120, 255);
-    // p5.line(x, y, x + p5.random((x + 100), (x + 100)), y + p5.random((y + 100), (y + 100)));
-    p5.line(this.vectorHistory[0].x, this.vectorHistory[0].y, this.vectorHistory[(this.vectorHistory.length - 1)].x + this.increment, this.vectorHistory[(this.vectorHistory.length - 1)].y + this.increment);
+    p5.line(this.vectorHistory[0].x, this.vectorHistory[0].y, this.vectorHistory[this.vectorHistory.length - 1].x + this.increment, this.vectorHistory[this.vectorHistory.length - 1].y + this.increment);
+    // Every new coordinate is stored in the vectorHistory array by the createVector function
+    // At every loop of the draw function, we reset the background colour which effectively whips everything clear.
+    // The coordinate is incremented by a given amount to look and then we take the first X and Y value in the stored vectoryHistory and final X and Y value in the same array (which represents the most recent increment) and draw a line between both points.
     p5.strokeWeight(4);
+    if (this.lifespan <= 0) {
+      this.isDead = true;
+    }
   };
 
-  // Is the particle still useful?
-  Particle.prototype.isDead = function () {
-    return this.lifespan < 0;
+  // once the line has been fully drawn, make it incrementally disappear
+  Line.prototype.disappear = function () {
+    this.vectorHistory.splice(0, 1);
+    this.display();
   };
 
-  const ParticleSystem = function (position) {
-    // this.origin = position.copy();
-    this.particles = [];
+  const LineSystem = function () {
+    this.lines = [];
   };
 
-  ParticleSystem.prototype.addParticle = function () {
-    this.particles.push(new Particle(this.origin));
+  LineSystem.prototype.addParticle = function () {
+    this.lines.push(new Line(this.origin));
   };
 
-  ParticleSystem.prototype.run = function () {
-    for (let i = this.particles.length - 1; i >= 0; i--) {
-      let line = this.particles[i];
-      line.increment += 10 // making sure increment increases for every instance of Particle, not every Particle simultaneously 
-      line.run();
-      if (line.isDead()) {
-        this.particles.splice(i, 1);
+  LineSystem.prototype.run = function () {
+    for (let i = 0; i < this.lines.length; i++) {
+      let line = this.lines[i];
+      if (line.isDead) {
+        if (line.vectorHistory.length === 1) {
+          this.lines.splice(0, 1);
+        } else {
+          line.disappear();
+        }
+      } else {
+        line.increment += 5; // making sure increment increases for every instance of Line, not every Line simultaneously 
+        line.display();
       }
     }
-    // console.log(this.particles)
+    console.log(this.lines[0]);
+// for (let index = 0; index < array.length; index++) {
+//   const element = array[index];
+  
+// }
+    // console.log(this.lines)
 
   };
 })
