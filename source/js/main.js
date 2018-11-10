@@ -27,20 +27,16 @@ new p5(function(p5) {
     this.colour = Math.floor(p5.random(0, 255)); // Set a random colour for every line
     this.x = p5.random(0, (p5.windowWidth - 200)); // unique X coordinate for this particular particle
     this.y = p5.random(0, (p5.windowHeight - 200)); // unique Y coordinate for this particular particle
-    this.isDead = false;
     this.vectorHistory = [p5.createVector(this.x, this.y)]; // initialise an array with the first coordinate ready to access for the draw function.
   };
 
   // Method to display
   Line.prototype.display = function () {
-    if (!this.isDead) {
+    if (!this.isDead()) {
       this.lifespan -= 1;
       let v = p5.createVector(this.x + this.increment, this.y + this.increment);
       // at every iteration, we save the current coordinate into an array so we have access to all the coordinates later on for use.
       this.vectorHistory.push(v);
-      if (this.lifespan <= 0) {
-        this.isDead = true;
-      }
     } // we only want to use createVector function if the line is still "alive"
      
 
@@ -62,6 +58,10 @@ new p5(function(p5) {
     this.display();
   };
 
+  Line.prototype.isDead = function () {
+    return this.lifespan < 0;
+  };
+
   const LineSystem = function () {
     this.lines = [];
   };
@@ -73,7 +73,7 @@ new p5(function(p5) {
   LineSystem.prototype.run = function () {
     for (let i = 0; i < this.lines.length; i++) {
       let line = this.lines[i];
-      if (line.isDead) {
+      if (line.isDead()) {
         if (line.vectorHistory.length === 1) {
           this.lines.splice(0, 1);
         } else {
@@ -84,13 +84,6 @@ new p5(function(p5) {
         line.display();
       }
     }
-    // console.log(this.lines[0]);
-// for (let index = 0; index < array.length; index++) {
-//   const element = array[index];
-  
-// }
-    // console.log(this.lines)
-
   };
 })
 document.addEventListener('DOMContentLoaded', function(){

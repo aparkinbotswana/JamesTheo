@@ -81619,21 +81619,16 @@ new _p.default(function (p5) {
 
     this.y = p5.random(0, p5.windowHeight - 200); // unique Y coordinate for this particular particle
 
-    this.isDead = false;
     this.vectorHistory = [p5.createVector(this.x, this.y)]; // initialise an array with the first coordinate ready to access for the draw function.
   }; // Method to display
 
 
   Line.prototype.display = function () {
-    if (!this.isDead) {
+    if (!this.isDead()) {
       this.lifespan -= 1;
       var v = p5.createVector(this.x + this.increment, this.y + this.increment); // at every iteration, we save the current coordinate into an array so we have access to all the coordinates later on for use.
 
       this.vectorHistory.push(v);
-
-      if (this.lifespan <= 0) {
-        this.isDead = true;
-      }
     } // we only want to use createVector function if the line is still "alive"
     // var startY = p5.random(0, p5.windowHeight - 200);
     // var startX = p5.random(0, p5.windowWidth - 200);
@@ -81655,6 +81650,10 @@ new _p.default(function (p5) {
     this.display();
   };
 
+  Line.prototype.isDead = function () {
+    return this.lifespan < 0;
+  };
+
   var LineSystem = function LineSystem() {
     this.lines = [];
   };
@@ -81667,7 +81666,7 @@ new _p.default(function (p5) {
     for (var i = 0; i < this.lines.length; i++) {
       var line = this.lines[i];
 
-      if (line.isDead) {
+      if (line.isDead()) {
         if (line.vectorHistory.length === 1) {
           this.lines.splice(0, 1);
         } else {
@@ -81678,12 +81677,7 @@ new _p.default(function (p5) {
 
         line.display();
       }
-    } // console.log(this.lines[0]);
-    // for (let index = 0; index < array.length; index++) {
-    //   const element = array[index];
-    // }
-    // console.log(this.lines)
-
+    }
   };
 });
 document.addEventListener('DOMContentLoaded', function () {// const canvas = document.getElementById('defaultCanvas0')
