@@ -11,9 +11,10 @@ new p5(function(p5) {
   }
 
   p5.draw = () => {
-    p5.background('#f9f9f9')
+    p5.background('#f9f9f9');
     lines.run();
     lines.addParticle();
+    
   }
 
   p5.windowResized = () => {
@@ -22,28 +23,25 @@ new p5(function(p5) {
 
   // Setting up Line class with relevant "blueprint values"
   const Line = function () {
-    this.lifespan = 40; // How long a line "lives" before it is taken out of the array of Particles. Taken out when it gets to 0.
-    this.increment = 1; // make sure every line has its own increment counter
     this.colour = Math.floor(p5.random(0, 255)); // Set a random colour for every line
     this.x = p5.random(0, (p5.windowWidth - 200)); // unique X coordinate for this particular particle
     this.y = p5.random(0, (p5.windowHeight - 200)); // unique Y coordinate for this particular particle
+    this.lifespan = 40; // How long a line "lives" before it is taken out of the array of Particles. Taken out when it gets to 0.
+    this.baseIncrementX = this.x / this.lifespan; // make sure every line has its own increment counter. Division by the lifespan enables use to get different angled lines that are incremented at a steady rate.
+    this.baseIncrementY = this.y / this.lifespan; // make sure every line has its own increment counter. Division by the lifespan enables use to get different angled lines that are incremented at a steady rate.
+    this.incrementLineX = 0; // need to keep a seperate counter between how much the line increments and how much it is incremented by so that the rate it increments remains constant. 
+    this.incrementLineY = 0; // need to keep a seperate counter between how much the line increments and how much it is incremented by so that the rate it increments remains constant.     
     this.vectorHistory = [p5.createVector(this.x, this.y)]; // initialise an array with the first coordinate ready to access for the draw function.
   };
 
-  // Method to display
+  // Method to display the line.
   Line.prototype.display = function () {
     if (!this.isDead()) {
       this.lifespan -= 1;
-      let v = p5.createVector(this.x + this.increment, this.y + this.increment);
+      let v = p5.createVector(this.x + this.incrementLineX, this.y + this.incrementLineY);
       // at every iteration, we save the current coordinate into an array so we have access to all the coordinates later on for use.
       this.vectorHistory.push(v);
     } // we only want to use createVector function if the line is still "alive"
-     
-
-    // var startY = p5.random(0, p5.windowHeight - 200);
-    // var startX = p5.random(0, p5.windowWidth - 200);
-    // p5.stroke(p5.random(0, 255), 120, 255);
-    // p5.line(startX, startY, startX + p5.random(startX + 100, startX + 100), startY + p5.random(startY + 100, startY + 100));
     p5.stroke( this.colour, 120, 255);
     p5.line(this.vectorHistory[0].x, this.vectorHistory[0].y, this.vectorHistory[this.vectorHistory.length - 1].x, this.vectorHistory[this.vectorHistory.length - 1].y);
     // Every new coordinate is stored in the vectorHistory array by the createVector function
@@ -80,7 +78,8 @@ new p5(function(p5) {
           line.disappear();
         }
       } else {
-        line.increment += 5; // making sure increment increases for every instance of Line, not every Line simultaneously 
+        line.incrementLineX += line.baseIncrementX; // adding the base increment so that the line is increased at a smooth rate.
+        line.incrementLineY += line.baseIncrementY; // adding the base increment so that the line is increased at a smooth rate.
         line.display();
       }
     }
