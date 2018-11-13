@@ -81598,7 +81598,7 @@ new _p.default(function (p5) {
   };
 
   p5.draw = function () {
-    p5.background('#f9f9f9');
+    p5.background('#ffffff');
     lines.run();
     lines.addParticle();
   };
@@ -81611,9 +81611,9 @@ new _p.default(function (p5) {
   var Line = function Line() {
     this.colour = Math.floor(p5.random(0, 255)); // Set a random colour for every line
 
-    this.x = p5.random(0, p5.windowWidth - 200); // unique X coordinate for this particular particle
+    this.x = p5.random(0, p5.windowWidth); // unique X coordinate for this particular particle
 
-    this.y = p5.random(0, p5.windowHeight - 200); // unique Y coordinate for this particular particle
+    this.y = p5.random(0, p5.windowHeight); // unique Y coordinate for this particular particle
 
     this.lifespan = 40; // How long a line "lives" before it is taken out of the array of Particles. Taken out when it gets to 0.
 
@@ -81684,9 +81684,21 @@ new _p.default(function (p5) {
     }
   };
 });
-document.addEventListener('DOMContentLoaded', function () {// const canvas = document.getElementById('defaultCanvas0')
-  // console.log(canvas)
-  // const projects = document.getElementsByClassName('projects')
+document.addEventListener('DOMContentLoaded', function () {
+  console.log("%c You should hire me because my mum thinks I'm cool! ", "background: #000080; color: #bada55");
+  var name = document.getElementById('name');
+  var p5 = document.getElementById('p5');
+
+  var positionName = function positionName() {
+    name.style.top = (p5.getBoundingClientRect().height - name.getBoundingClientRect().height) / 2 + "px";
+    name.style.left = (p5.getBoundingClientRect().width - name.getBoundingClientRect().width) / 2 + "px";
+  }; // css keeps offsetting the position for some reason when I try to center vertically and horizontally. This remedies.
+
+
+  positionName();
+  window.addEventListener('resize', function () {
+    positionName();
+  }); // const projects = document.getElementsByClassName('projects')
   // const projectsArray = Array.from(projects);
   // projectsArray.map((project) => {
   //   project.addEventListener('mouseover', function(){
@@ -81696,11 +81708,8 @@ document.addEventListener('DOMContentLoaded', function () {// const canvas = doc
   //     document.getElementById(project.dataset.target).classList.add('noscale')
   //   })
   // })
-}, false); // const navBarMobile = document.getElementById('nav-column-mobile');
-// const mobileNav = document.getElementById('mobile-nav')
-// const headingName = document.getElementById('heading-name');
+}, false); // const headingName = document.getElementById('heading-name');
 // const content = document.getElementById('content');
-// const mobile = document.getElementsByClassName('mobile');
 // const contentMargin = document.getElementsByClassName('content__margin');
 // const picture = document.getElementById('picture');
 // const myIframe = document.getElementById('iframe');
