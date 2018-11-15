@@ -43,11 +43,11 @@ new p5(function(p5) {
       this.vectorHistory.push(v);
     } // we only want to use createVector function if the line is still "alive"
     p5.stroke( this.colour, 120, 255);
+    p5.strokeWeight(4);
     p5.line(this.vectorHistory[0].x, this.vectorHistory[0].y, this.vectorHistory[this.vectorHistory.length - 1].x, this.vectorHistory[this.vectorHistory.length - 1].y);
     // Every new coordinate is stored in the vectorHistory array by the createVector function
     // At every loop of the draw function, we reset the background colour which effectively makes everything clear.
     // The coordinate is incremented by a given amount  and then we take the first X and Y value in the stored vectoryHistory and final X and Y value in the same array (which represents the most recent increment) and draw a line between both points.
-    p5.strokeWeight(4);
   };
 
   // once the line has been fully drawn, make it incrementally disappear
@@ -90,12 +90,20 @@ document.addEventListener('DOMContentLoaded', function(){
 
   const name = document.getElementById('name');
   const p5 = document.getElementById('p5');
+  const menuButton = document.getElementsByClassName("js-menu-button")[0];
+  const menuIcon = document.getElementsByClassName("menu-icon")[0];
+
   const positionName = () => {
     name.style.top = (p5.getBoundingClientRect().height - name.getBoundingClientRect().height) / 2 + "px";
     name.style.left = (p5.getBoundingClientRect().width - name.getBoundingClientRect().width) / 2 + "px";
   } // css keeps offsetting the position for some reason when I try to center vertically and horizontally. This remedies.
 
   positionName();
+
+  menuButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    menuIcon.classList.toggle('is-active');
+  }, false);
 
   window.addEventListener('resize', function() {
     positionName();
