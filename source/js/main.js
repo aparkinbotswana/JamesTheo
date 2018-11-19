@@ -1,4 +1,5 @@
 import p5 from 'p5';
+import Siema from 'siema';
 
 new p5(function(p5) {
   let lines;
@@ -160,7 +161,7 @@ new p5(function(p5) {
 
 document.addEventListener('DOMContentLoaded', function(){
   console.log("%c The biggest reason you should hire me is because my mum thinks I'm cool.", "background: #000080; color: #bada55");
-  console.log("%c Like the p5 animation? Want to change the colour (cause you are boring and don't like rainbow colours)? Call changeColour() and pass it string for a colour you like! Eg changeColour('red') .", "background: #000080; color: #bada55");
+  console.log("%c Like the p5 animation? Want to change the colour (cause you are boring and don't like the rainbow)? Call changeColour() and pass it string for a colour you like! Eg changeColour('red') .", "background: #000080; color: #bada55");
 
   const name = document.getElementById('name');
   const p5 = document.getElementById('p5');
@@ -175,6 +176,12 @@ document.addEventListener('DOMContentLoaded', function(){
 
   positionName();
 
+  new Siema({
+    duration: 600,
+    loop: true
+  });
+  // Code for carousel
+
   navbarButton.addEventListener("click", function (e) {
     e.preventDefault();
     navbarIcon.classList.toggle('is-active');
@@ -184,17 +191,4 @@ document.addEventListener('DOMContentLoaded', function(){
   window.addEventListener('resize', function() {
     positionName();
   }) 
-
-  // const projects = document.getElementsByClassName('projects')
-  // const projectsArray = Array.from(projects);
-
-  // projectsArray.map((project) => {
-  //   project.addEventListener('mouseover', function(){
-  //     document.getElementById(project.dataset.target).classList.remove('noscale')
-  //   })
-
-  //   project.addEventListener('mouseleave', function () {
-  //     document.getElementById(project.dataset.target).classList.add('noscale')
-  //   })
-  // })
 }, false);

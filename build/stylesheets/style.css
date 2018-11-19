@@ -68,9 +68,6 @@ p {
   height: 5vw;
   fill: #f9f9f9; }
 
-.text {
-  transition: all 0.2s ease-in-out; }
-
 #canvas-container {
   margin: auto auto; }
 

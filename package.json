@@ -26,5 +26,8 @@
     "babelify": "^10.0.0",
     "browserify": "^16.2.3",
     "p5": "^0.7.2"
+  },
+  "dependencies": {
+    "siema": "^1.5.1"
   }
 }
