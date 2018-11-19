@@ -2,6 +2,60 @@ import p5 from 'p5';
 
 new p5(function(p5) {
   let lines;
+  let lineColour = {
+    rainbow: true,
+    orange: false,
+    yellow: false,
+    red: false,
+    purple: false,
+    pink: false,
+    green: false,
+    blue: false 
+  } // data structure to allow users to set line colours on function call in console
+
+  window.changeColour = (colour) => {
+    lineColour = {
+      rainbow: false,
+      orange: false,
+      yellow: false,
+      red: false,
+      purple: false,
+      pink: false,
+      green: false,
+      blue: false
+    }
+
+    const printMessage = () => {
+      return console.log("%c Try other colours!", "background: #000080; color: #bada55");
+    }
+
+    if (colour === 'orange') {
+      lineColour.orange = true;
+      printMessage();
+    } else if (colour === 'yellow') {
+      lineColour.yellow = true;
+      printMessage();
+    } else if (colour === 'red') {
+      lineColour.red = true;
+      printMessage();
+    } else if (colour === 'purple') {
+      lineColour.purple = true;
+      printMessage();
+    } else if (colour === 'pink') {
+      lineColour.pink = true;
+      printMessage();
+    } else if (colour === 'green') {
+      lineColour.green = true;
+      printMessage();
+    } else if (colour === 'blue') {
+      lineColour.blue = true;
+      printMessage();
+    } else {
+      lineColour.rainbow = true;
+      printMessage();
+    }
+  } // allows for user to set colour when calling function in console
+
 
   p5.setup = () => {
     let canvas = p5.createCanvas(((80 / 100) * p5.windowWidth), ((80 / 100) * p5.windowHeight));
@@ -14,7 +68,6 @@ new p5(function(p5) {
     p5.background('#ffffff');
     lines.run();
     lines.addParticle();
-    
   }
 
   p5.windowResized = () => {
@@ -23,7 +76,26 @@ new p5(function(p5) {
 
   // Setting up Line class with relevant "blueprint values"
   const Line = function () {
-    this.colour = Math.floor(p5.random(0, 255)); // Set a random colour for every line
+    this.currentColour = () => {
+      const colourRange = {
+        rainbow: Math.floor(p5.random(0, 255)),
+        orange: Math.floor(p5.random(5, 40)),
+        yellow: Math.floor(p5.random(35, 55)),
+        red: Math.floor(p5.random(220, 255)),
+        purple: Math.floor(p5.random(160, 210)),
+        pink: Math.floor(p5.random(200, 230)),
+        green: Math.floor(p5.random(50, 110)),
+        blue: Math.floor(p5.random(110, 170))
+      }
+
+      for (const key in lineColour) {
+        if (lineColour[key]) {
+          return colourRange[key]
+        }
+      }
+    }
+    
+    this.colour = this.currentColour(); // Set a random colour for every line
     this.x = p5.random(0, (p5.windowWidth)); // unique X coordinate for this particular particle
     this.y = p5.random(0, (p5.windowHeight)); // unique Y coordinate for this particular particle
     this.lifespan = 40; // How long a line "lives" before it is taken out of the array of Particles. Taken out when it gets to 0.
@@ -85,13 +157,16 @@ new p5(function(p5) {
     }
   };
 })
+
 document.addEventListener('DOMContentLoaded', function(){
-  console.log("%c You should hire me because my mum thinks I'm cool! ", "background: #000080; color: #bada55");
+  console.log("%c The biggest reason you should hire me is because my mum thinks I'm cool.", "background: #000080; color: #bada55");
+  console.log("%c Like the p5 animation? Want to change the colour (cause you are boring and don't like rainbow colours)? Call changeColour() and pass it string for a colour you like! Eg changeColour('red') .", "background: #000080; color: #bada55");
 
   const name = document.getElementById('name');
   const p5 = document.getElementById('p5');
-  const menuButton = document.getElementsByClassName("js-menu-button")[0];
-  const menuIcon = document.getElementsByClassName("menu-icon")[0];
+  const navbarButton = document.getElementsByClassName("js-navbar-button")[0];
+  const navbarIcon = document.getElementsByClassName("navbar-icon")[0];
+  const navbar = document.getElementById('navbar');
 
   const positionName = () => {
     name.style.top = (p5.getBoundingClientRect().height - name.getBoundingClientRect().height) / 2 + "px";
@@ -100,9 +175,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
   positionName();
 
-  menuButton.addEventListener("click", function (e) {
+  navbarButton.addEventListener("click", function (e) {
     e.preventDefault();
-    menuIcon.classList.toggle('is-active');
+    navbarIcon.classList.toggle('is-active');
+    navbar.classList.toggle('navbar-container--transition');
   }, false);
 
   window.addEventListener('resize', function() {
@@ -122,80 +198,3 @@ document.addEventListener('DOMContentLoaded', function(){
   //   })
   // })
 }, false);
-
-  // const headingName = document.getElementById('heading-name');
-  // const content = document.getElementById('content');
-  // const contentMargin = document.getElementsByClassName('content__margin');
-  // const picture = document.getElementById('picture');
-  // const myIframe = document.getElementById('iframe');
-
-  // function contentWidth() {
-  //   let pictureWidth = picture.getBoundingClientRect().width
-  //   for (let i = 0; i < contentMargin.length; i++) {
-  //     contentMargin[i].style.width = `${pictureWidth}px`;
-  //   }
-  //     myIframe.style.width = picture.getBoundingClientRect().width + "px";
-  //     myIframe.style.height = picture.getBoundingClientRect().height + "px";
-  // } // resizes the iframe and images 
-
-  // picture.addEventListener("load", function () {
-  //   contentWidth();
-  // }); // This is for the benefit of Firefox. Chrome loads and executes everything properly
-  //     // But for some reason Firefox images in the DOM have not fully loaded yet and this ensures they have before taking width measurement.
-
-
-  // let stickPoint = getDistance(headingName);
-
-
-  // function getDistance(el) {
-  //   let topDist = el.offsetTop;
-  //   return topDist;
-  // }
-
-  // // this chunk of code for sticky header
-  // let stuck = false;
-  // window.onscroll = function(e) {
-  //   let distance = getDistance(headingName) - window.pageYOffset;
-  //   let offset = window.pageYOffset;
-  //   let contentOffset = getDistance(content)
-  //   if ( (distance <= 0) && !stuck) {
-  //     content.style.marginTop = contentOffset + 'px'  
-  //     headingName.style.position = 'fixed';
-  //     headingName.style.top = '0px';
-  //     stuck = true;
-  //   } else if (stuck && (offset <= stickPoint)){
-  //     headingName.style.position = 'static';
-  //     content.style.marginTop = '0px'  
-  //     stuck = false;
-  //   }
-  // } // this chunk of code for sticky header
-
-
-  // // this chunk of code for anchor tag scroll
-  // function anchorLinkHandler(e) {
-  //   let headerOffset = getDistance(content);
-  //   const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
-  //   e.preventDefault();
-  //   const targetID = this.getAttribute("href");
-  //   const targetAnchor = document.querySelector(targetID);
-  //   if (!targetAnchor) return;
-  //   const originalTop = distanceToTop(targetAnchor);
-  //   window.scrollBy({ top: originalTop - headerOffset, left: 0, behavior: "smooth" });
-  //   const checkIfDone = setInterval(function() {
-  //       const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
-  //       if (distanceToTop(targetAnchor) === 0 || atBottom) {
-  //         targetAnchor.tabIndex = "-1";
-  //         window.history.pushState("", "", targetID);
-  //         clearInterval(checkIfDone);
-  //       }
-  //   }, 100);
-  // } 
-  // const linksToAnchors = document.querySelectorAll('a[href^="#"]');
-  // linksToAnchors.forEach(each => (each.onclick = anchorLinkHandler));
-  // // ^^^^ this chunk of code for anchor tag scroll ^^^^
-
-  //   myIframe.addEventListener("load", function () {
-  //     myIframe.style.width = picture.getBoundingClientRect().width + "px" ;
-  //     myIframe.style.height = picture.getBoundingClientRect().height + "px";
-  //   }); // Waits for Iframe to load before executing code
-  // can probably do this with css. why am i doing it in JS? Confirm that shit.

@@ -10,56 +10,67 @@
   <title>James Theo: Web Developer</title>
 </head>
 <body>
-  <div class="menu-container">
-    <a href="#" class="menu-button [ js-menu-button ]">
-      <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-        <g fill="none" fill-rule="evenodd" stroke="#979797">
-          <path d="M13,26.5 L88,26.5" />
-          <path d="M13,50.5 L88,50.5" />
-          <path d="M13,50.5 L88,50.5" />
-          <path d="M13,74.5 L88,74.5" />
-        </g>
-      </svg>
-    </a>
-  </div>
-  <!-- <header>
-    <h1>JAMES THEO</h1>
-    <p>Frontend Developer</p>
-    <nav>
-        <a href="#art" class="navbar__anchor"><p class="navbar__button">ART!!!</p></a>
-      </div>
-      <div class="navbar__container">
-        <a href="#projects" class="navbar__anchor"><p class="navbar__button">Projects</p></a>
-      </div>
-      <div class="navbar__container">
-        <a href="#contact" class="navbar__anchor"><p class="navbar__button">Contact</p></a>
+  <header>
+    <div class="navbar-icon-container">
+      <a href="#" class="navbar-icon__button [ js-navbar-button ]">
+        <svg class="navbar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <g fill="none" fill-rule="evenodd" stroke="#979797">
+            <path d="M13,26.5 L88,26.5" />
+            <path d="M13,50.5 L88,50.5" />
+            <path d="M13,50.5 L88,50.5" />
+            <path d="M13,74.5 L88,74.5" />
+          </g>
+        </svg>
+      </a>
+    </div>
+    <nav id="navbar" class="navbar-container navbar-container--transition">
+      <div class="container">
+        <div class="container__flex1 container--align-right">
+          <a href="#about" class="navbar-container__button"><p>ABOUT</p></a>
+        </div>
+        <div class="container__flex1">
+          <a href="#projects" class="navbar-container__button"><p>PROJECTS</p></a>
+        </div>
+        <div class="container__flex1 container--align-left">
+          <a href="#contact" class="navbar-container__button"><p>CONTACT</p></a>
+        </div>
       </div>
     </nav>
-  </header > -->
+  </header >
 
   <div id="name" class="name-container">
-    <p class="name-container__text">James Theo</p>
-    <p class="name-container__text">Frontend Devloper (Developer)</p>
+    <p class="name-container__text five">JAMES THEO</p>
+    <p class="name-container__text five name-container__text--sml">FRONTEND DEVELOPER</p>
   </div>
   <section id="p5" class="content content__p5">
     <div id="canvas-container">
       <!-- canvas element created and appended here through p5.js library -->
     </div>
   </section>
+
+  <section class="content content__projects" id="about">
+    <!-- <svg class="angled-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,0 100,0 0,100" />
+    </svg> -->
+
+    <h1>WHY SHOULD YOU HIRE ME?</h1>
+    
+  </section>
  
 
-  <section class=" content content__projects content--charcoal">
-    <svg class="angled-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <section id="projects" class="content content__projects">
+    <!-- <svg class="angled-svg angled-svg--charcoal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+      preserveAspectRatio="none">
       <polygon points="0,0 100,0 0,100" />
-    </svg>
+    </svg> -->
 
-    <h2>PROJECTS</h2>
-    <h3 id="auslanInterpreter" class="projects" data-target="auslanInterpreterContent">Auslan Interpreter</h3>
-    <h3 id="usernameChecker" class="projects" data-target="usernameCheckerContent">Username Checker</h3>
-    <h3 id="fraga" class="projects" data-target="fragaContent">Fraga</h3>
+    <h1>PROJECTS</h1>
+    <h2 id="auslanInterpreter" class="projects" data-target="auslanInterpreterContent">Auslan Interpreter</h2>
+    <h2 id="usernameChecker" class="projects" data-target="usernameCheckerContent">Username Checker</h2>
+    <h2 id="fraga" class="projects" data-target="fragaContent">Fraga</h2>
     <div id="auslanInterpreterContent" class="text">
-      <h3>Virtual Auslan Interpreter</h3>
-      <h3>JavaScript/Leap Motion</h3>
+      <h2>Virtual Auslan Interpreter</h2>
+      <h2>JavaScript/Leap Motion</h2>
       <p>The Auslan Interpreter is designed to help those who are unable to understand Australian Sign Language, communicate
         with those who can. Currently, it recognises half the English alphabet. The browser app uses the Leap Motion to
         interpret hand gestures from the user. Based on these gestures, the program recognises which letter is being signed
@@ -75,13 +86,22 @@
       </figure> -->
     </div>
 
-
-    <div id="usernameCheckerContent" class="text noscale">Username</div>
-
+    <div id="usernameCheckerContent" class="text noscale">
+      <h2 class="projects-description">Username Checker</h2>
+      <h2>React/Webpack</h2>
+      <p></p>
+      <div class="button">
+        <a class="button__link" href="https://aparkinbotswana.github.io/username-checker/" target="_blank" alt="Username Checker demo link">Demo</a>
+        <a class="button__link button__link--ghost" href="https://github.com/aparkinbotswana/username-checker" target="_blank" alt="Username Checker github link">Code</a>
+      </div>
+      <figure class="photo-container">
+        <img class="photo__img" src="" alt="Username Checker image">
+      </figure>
+    </div>
 
     <div id="fragaContent" class="text">
-      <h3 class="projects-description">Fråga</h3>
-      <h3>JavaScript/Ruby on Rails</h3>
+      <h2 class="projects-description">Fråga</h2>
+      <h2>JavaScript/Ruby on Rails</h2>
       <p class="content--font18">Social app with a focus on geolocation. Users can post any question they like relevant to a
         particular location. Other users within the vicinity can see and respond to the question.</p>
       <div class="button">
@@ -89,18 +109,18 @@
         <a class="button__link button__link--ghost" href="https://github.com/aparkinbotswana/Fraga" target="_blank" alt="fraga github link">Code</a>
       </div>
       <figure class="photo-container">
-        <img id="picture" class="photo__img" src="build/images/Fraga.png" alt="Fraga project image">
+        <img class="photo__img" src="build/images/Fraga.png" alt="Fraga project image">
       </figure>
     </div>
   </section>
 
   <footer class="content" id="contact">
-    <svg class="angled-svg angled-svg--charcoal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <!-- <svg class="angled-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
       <polygon points="0,0 100,0 0,100" />
     </svg>
-
+ -->
     <div class="content__contact">
-      <h2>CONTACT</h2>
+      <h1>CONTACT</h1>
       <div class="container">
         <figure class="container__flex1 container--align-right">
           <a href="https://github.com/aparkinbotswana" target="_blank"><img class="contact-image" src="build/images/002-github.svg" alt="github link"></a>
