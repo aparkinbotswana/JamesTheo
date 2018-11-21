@@ -1,13 +1,10 @@
 $offwhite: #f9f9f9;
 $gray: #DCDCDC;
 $charcoal: #404040;
-
-
-
 $black: #000000;
 $yellow: #fedc3d;
-$blue: #01abaa;
-$peach: #fea680;
+$fuschia: #D00251;
+
 
 $main-font: 'Raleway', serif;
 
@@ -20,6 +17,10 @@ $main-font: 'Raleway', serif;
 }
 html, body, figure {
   margin: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 p {
@@ -36,8 +37,10 @@ p {
 }
 
 .navbar-container__button {
-  text-decoration: none;
   color: $charcoal;
+  &:hover {
+    color: $fuschia;
+  }
 }
 
 .navbar-container--transition {
@@ -51,8 +54,6 @@ p {
 //
 /////
 
-$navbar-icon-color: #363636;
-$navbar-icon-color--active: #D00251;
 
 .navbar-icon-container {
   position: fixed;
@@ -62,6 +63,7 @@ $navbar-icon-color--active: #D00251;
   justify-content: center;
   z-index: 4;
   width: 50px;
+  background-color: #ffffff
 }
 
 .navbar-icon {
@@ -72,7 +74,7 @@ $navbar-icon-color--active: #D00251;
 }
 
 .navbar-icon path {
-  stroke: $navbar-icon-color;
+  stroke: $charcoal;
   stroke-width: 5;
   stroke-linecap: round;
   transition: all 250ms ease-in-out;
@@ -81,7 +83,7 @@ $navbar-icon-color--active: #D00251;
 }
 
 .navbar-icon__button:hover path{
-  stroke: $navbar-icon-color--active;
+  stroke: $fuschia;
 }
 
 .navbar-icon.is-active path:nth-child(1) {
@@ -105,23 +107,17 @@ $navbar-icon-color--active: #D00251;
 // Menu Icon End
 //
 /////
-
-.angled-svg {
-  width: 100%;
-  height: 5vw;
-  fill: $offwhite;
-}
-
 #canvas-container {
   margin: auto auto;
 }
 
 .name-container {
-  z-index: 1;
   position: absolute;
+  z-index: 1;
   background-color: rgba(255, 255, 255, 0.7);
   padding: 20px 60px;
 }
+
 
 .name-container__text {
   color: $charcoal;
@@ -133,14 +129,19 @@ $navbar-icon-color--active: #D00251;
   font-size: 32px;
 }
 
+
 .content {
-  // background-color: $offwhite;
   height: 100vh;
+  width: 80vw;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content--position {
   width: 100vw;
 }
 
 .content__p5 {
-  text-align: center;
   display: flex;
 }
 
@@ -148,10 +149,12 @@ $navbar-icon-color--active: #D00251;
 }
 
 .content__contact{
-padding-bottom: 40px;
-text-align: center
+  padding-bottom: 40px;
 }
 
+.content__contact--viewport {
+  height: 50vh;
+}
 
 .container {
   display: flex;
@@ -176,7 +179,7 @@ text-align: center
 .button__link {
   text-decoration: none;
   font-size: 18px;
-  // background-color: $blue;
+  background-color: $fuschia;
   width: 200px;
   color: $offwhite;
   padding: 1em;
@@ -186,17 +189,15 @@ text-align: center
   margin: 8px;
 
   &:hover {
-    background-color: #28b5a8;
+    background-color: #e00573;
   }
 }
 
 .button__link--ghost {
-  box-shadow: inset 0 0 0 2px #2ec4b6;
-  background-color: $offwhite;
-  // color: $blue;
+  box-shadow: inset 0 0 0 2px #e00573;
+  background-color: $fuschia;
 
   &:hover {
-    // background-color: $blue-ghost;
     color: $offwhite;
   }
 }
@@ -211,7 +212,7 @@ text-align: center
 }
 
 .photo__img {
-    width: 80vw;
+  width: 80vw;
 }
 
 .contact-image {

@@ -7,6 +7,9 @@
 html, body, figure {
   margin: 0; }
 
+a {
+  text-decoration: none; }
+
 p {
   font-family: sans-serif; }
 
@@ -19,8 +22,9 @@ p {
   z-index: 3; }
 
 .navbar-container__button {
-  text-decoration: none;
   color: #404040; }
+  .navbar-container__button:hover {
+    color: #D00251; }
 
 .navbar-container--transition {
   top: -10vh; }
@@ -32,7 +36,8 @@ p {
   align-items: center;
   justify-content: center;
   z-index: 4;
-  width: 50px; }
+  width: 50px;
+  background-color: #ffffff; }
 
 .navbar-icon {
   position: relative;
@@ -41,7 +46,7 @@ p {
   display: inline-block; }
 
 .navbar-icon path {
-  stroke: #363636;
+  stroke: #404040;
   stroke-width: 5;
   stroke-linecap: round;
   transition: all 250ms ease-in-out;
@@ -63,17 +68,12 @@ p {
 .navbar-icon.is-active path:nth-child(3) {
   transform: rotate(-45deg); }
 
-.angled-svg {
-  width: 100%;
-  height: 5vw;
-  fill: #f9f9f9; }
-
 #canvas-container {
   margin: auto auto; }
 
 .name-container {
-  z-index: 1;
   position: absolute;
+  z-index: 1;
   background-color: rgba(255, 255, 255, 0.7);
   padding: 20px 60px; }
 
@@ -87,15 +87,21 @@ p {
 
 .content {
   height: 100vh;
+  width: 80vw;
+  margin: 0 auto;
+  text-align: center; }
+
+.content--position {
   width: 100vw; }
 
 .content__p5 {
-  text-align: center;
   display: flex; }
 
 .content__contact {
-  padding-bottom: 40px;
-  text-align: center; }
+  padding-bottom: 40px; }
+
+.content__contact--viewport {
+  height: 50vh; }
 
 .container {
   display: flex;
@@ -117,6 +123,7 @@ p {
 .button__link {
   text-decoration: none;
   font-size: 18px;
+  background-color: #D00251;
   width: 200px;
   color: #f9f9f9;
   padding: 1em;
@@ -125,11 +132,11 @@ p {
   letter-spacing: 1px;
   margin: 8px; }
   .button__link:hover {
-    background-color: #28b5a8; }
+    background-color: #e00573; }
 
 .button__link--ghost {
-  box-shadow: inset 0 0 0 2px #2ec4b6;
-  background-color: #f9f9f9; }
+  box-shadow: inset 0 0 0 2px #e00573;
+  background-color: #D00251; }
   .button__link--ghost:hover {
     color: #f9f9f9; }
 

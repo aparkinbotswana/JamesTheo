@@ -161,28 +161,26 @@ new p5(function(p5) {
 
 document.addEventListener('DOMContentLoaded', function(){
   console.log("%c The biggest reason you should hire me is because my mum thinks I'm cool.", "background: #000080; color: #bada55");
-  console.log("%c Like the p5 animation? Want to change the colour (cause you are boring and don't like the rainbow)? Call changeColour() and pass it string for a colour you like! Eg changeColour('red') .", "background: #000080; color: #bada55");
-
-  const name = document.getElementById('name');
-  const p5 = document.getElementById('p5');
-  const navbarButton = document.getElementsByClassName("js-navbar-button")[0];
-  const navbarIcon = document.getElementsByClassName("navbar-icon")[0];
-  const navbar = document.getElementById('navbar');
+  console.log("%c Like the p5 animation? Want to change the colour (cause you are boring and don't like the rainbow)? Call changeColour() and pass it string for a colour you like! Eg changeColour('red').", "background: #000080; color: #bada55");
 
   const positionName = () => {
-    name.style.top = (p5.getBoundingClientRect().height - name.getBoundingClientRect().height) / 2 + "px";
-    name.style.left = (p5.getBoundingClientRect().width - name.getBoundingClientRect().width) / 2 + "px";
-  } // css keeps offsetting the position for some reason when I try to center vertically and horizontally. This remedies.
+    const p5Canvas = document.getElementById('p5');
+    const name = document.getElementById('name');
+    name.style.top = (p5Canvas.getBoundingClientRect().height - name.getBoundingClientRect().height) / 2 + "px";
+    name.style.left = (p5Canvas.getBoundingClientRect().width - name.getBoundingClientRect().width) / 2 + "px";
+  } // position element smack in the middle while still having the padding a particular size.
 
   positionName();
 
-  new Siema({
+  const mySiema = new Siema({
     duration: 600,
     loop: true
-  });
-  // Code for carousel
+  }); // Code for carousel
 
+  const navbarButton = document.getElementsByClassName("js-navbar-button")[0];
   navbarButton.addEventListener("click", function (e) {
+    const navbarIcon = document.getElementsByClassName("navbar-icon")[0];
+    const navbar = document.getElementById('navbar');
     e.preventDefault();
     navbarIcon.classList.toggle('is-active');
     navbar.classList.toggle('navbar-container--transition');
@@ -191,4 +189,7 @@ document.addEventListener('DOMContentLoaded', function(){
   window.addEventListener('resize', function() {
     positionName();
   }) 
+
+  document.getElementById('prev').addEventListener('click', () => mySiema.prev());
+  document.getElementById('next').addEventListener('click', () => mySiema.next());
 }, false);
