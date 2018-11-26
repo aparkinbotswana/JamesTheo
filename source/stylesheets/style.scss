@@ -223,13 +223,13 @@ p {
   width: 80vw;
 }
 
-.iframe-container {
+.figure-container {
   position: relative;
   overflow: hidden;
   padding-top: 56.25%; // make sure default ratio for youtube vids is kept for container
-}
+} // adding same class to images to ensure sizing remains the same.
 
-.iframe-container__responsive {
+.figure-container__responsive {
   position: absolute;
   top: 0;
   left: 0;

@@ -155,12 +155,12 @@ p {
 .photo-container__img {
   width: 80vw; }
 
-.iframe-container {
+.figure-container {
   position: relative;
   overflow: hidden;
   padding-top: 56.25%; }
 
-.iframe-container__responsive {
+.figure-container__responsive {
   position: absolute;
   top: 0;
   left: 0;
