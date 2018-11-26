@@ -50,7 +50,7 @@ p {
 
 /////
 //
-// Menu Icon
+// Navbar and Navbar Icon
 //
 /////
 
@@ -104,7 +104,7 @@ p {
 
 /////
 //
-// Menu Icon End
+// Navbar and Navbar Icon End
 //
 /////
 #canvas-container {
@@ -117,7 +117,6 @@ p {
   background-color: rgba(255, 255, 255, 0.7);
   padding: 20px 60px;
 }
-
 
 .name-container__text {
   color: $charcoal;
@@ -145,7 +144,10 @@ p {
   display: flex;
 }
 
-.content__projects{
+// .content__projects{
+// }
+.siema-arrow {
+  height: 40px;
 }
 
 .content__contact{
@@ -156,13 +158,19 @@ p {
   height: 50vh;
 }
 
+.contact-link {
+  font-size: 20px;
+}
+
 .container {
   display: flex;
   text-align: center;
 }
+
 .container--align-left {
   text-align: left;
 }
+
 .container--align-right {
   text-align: right;
 }
@@ -211,10 +219,31 @@ p {
   text-align: center;
 }
 
-.photo__img {
+.photo-container__img {
   width: 80vw;
+}
+
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; // make sure default ratio for youtube vids is kept for container
+}
+
+.iframe-container__responsive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .contact-image {
   width: 10vw;
+}
+
+@media (min-width: 769px) {
+  .siema-arrow {
+    height: 50px;
+  }
 }

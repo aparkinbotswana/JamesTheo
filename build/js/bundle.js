@@ -81776,7 +81776,8 @@ document.addEventListener('DOMContentLoaded', function () {
   positionName();
   var mySiema = new _siema.default({
     duration: 600,
-    loop: true
+    loop: true,
+    easing: 'ease-out'
   }); // Code for carousel
 
   var navbarButton = document.getElementsByClassName("js-navbar-button")[0];

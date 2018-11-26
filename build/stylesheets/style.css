@@ -97,11 +97,17 @@ p {
 .content__p5 {
   display: flex; }
 
+.siema-arrow {
+  height: 40px; }
+
 .content__contact {
   padding-bottom: 40px; }
 
 .content__contact--viewport {
   height: 50vh; }
+
+.contact-link {
+  font-size: 20px; }
 
 .container {
   display: flex;
@@ -146,10 +152,27 @@ p {
 .photo-container {
   text-align: center; }
 
-.photo__img {
+.photo-container__img {
   width: 80vw; }
+
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; }
+
+.iframe-container__responsive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0; }
 
 .contact-image {
   width: 10vw; }
+
+@media (min-width: 769px) {
+  .siema-arrow {
+    height: 50px; } }
 
 /*# sourceMappingURL=style.css.map */
