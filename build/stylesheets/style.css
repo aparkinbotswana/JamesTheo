@@ -1,9 +1,3 @@
-.one {
-  font-family: 'Nanum Gothic', sans-serif; }
-
-.five {
-  font-family: 'Raleway', sans-serif; }
-
 html, body, figure {
   margin: 0; }
 
@@ -12,6 +6,9 @@ a {
 
 p {
   font-family: sans-serif; }
+
+h1, h2 {
+  font-family: "Raleway", sans-serif; }
 
 .navbar-container {
   transition: 0.4s;
@@ -73,7 +70,8 @@ p {
   position: absolute;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.7);
-  padding: 20px 60px; }
+  padding: 20px 60px;
+  font-family: "Raleway", sans-serif; }
 
 .name-container__text {
   color: #404040;
@@ -96,34 +94,11 @@ p {
   display: flex; }
 
 .content__about {
-  height: 100vh; }
+  height: 100vh;
+  max-width: 600px; }
 
-.siema-arrow {
-  height: 30px; }
-
-.content__contact {
-  padding-bottom: 40px;
-  height: 50vh;
-  display: flex; }
-
-.contact-container {
-  margin: auto auto; }
-
-.contact-link {
-  font-size: 20px; }
-
-.container {
-  display: flex;
-  text-align: center; }
-
-.container--align-left {
-  text-align: left; }
-
-.container--align-right {
-  text-align: right; }
-
-.container__flex1 {
-  flex: 1; }
+.content__projects {
+  max-width: 600px; }
 
 .button-container {
   padding: 35px 0;
@@ -131,6 +106,7 @@ p {
   margin: 20px 0; }
 
 .button-container__link {
+  font-family: "Raleway", sans-serif;
   text-decoration: none;
   font-size: 18px;
   background-color: #D00251;
@@ -142,16 +118,14 @@ p {
   letter-spacing: 1px;
   margin: 8px; }
   .button-container__link:hover {
-    background-color: #e00573; }
+    background-color: #c20940; }
 
 .button-container__link--ghost {
-  box-shadow: inset 0 0 0 2px #e00573;
-  background-color: #D00251; }
+  box-shadow: inset 0 0 0 2px #c20940;
+  background-color: #ffffff;
+  color: #D00251; }
   .button-container__link--ghost:hover {
     color: #f9f9f9; }
-
-.projects {
-  margin: 0 auto; }
 
 .figure-container {
   margin-bottom: 20px;
@@ -166,6 +140,30 @@ p {
   width: 100%;
   height: 100%;
   border: 0; }
+
+.siema-arrow {
+  height: 30px;
+  cursor: pointer; }
+
+.content__contact {
+  max-width: 600px;
+  margin: 50vh auto; }
+
+.contact-link {
+  font-size: 16px; }
+
+.container {
+  display: flex;
+  text-align: center; }
+
+.container--align-left {
+  text-align: left; }
+
+.container--align-right {
+  text-align: right; }
+
+.container__flex1 {
+  flex: 1; }
 
 @media (min-width: 769px) {
   .siema-arrow {
@@ -186,6 +184,9 @@ p {
     text-align: left; }
 
   .navbar-container__width {
-    width: 100vw; } }
+    width: 100vw; }
+
+  .contact-link {
+    font-size: 20px; } }
 
 /*# sourceMappingURL=style.css.map */
