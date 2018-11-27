@@ -2,7 +2,6 @@ $offwhite: #f9f9f9;
 $gray: #DCDCDC;
 $charcoal: #404040;
 $black: #000000;
-$yellow: #fedc3d;
 $fuschia: #D00251;
 
 
@@ -58,7 +57,7 @@ p {
 .navbar-icon-container {
   position: fixed;
   top: 0vh;
-  left: 95vw;
+  left: 85vw;
   align-items: center;
   justify-content: center;
   z-index: 4;
@@ -66,12 +65,12 @@ p {
   background-color: #ffffff
 }
 
-.navbar-icon {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-}
+// .navbar-icon {
+  // position: relative;
+  // width: 100%;
+  // height: 100%;
+  // display: inline-block;
+// }
 
 .navbar-icon path {
   stroke: $charcoal;
@@ -128,9 +127,7 @@ p {
   font-size: 32px;
 }
 
-
 .content {
-  height: 100vh;
   width: 80vw;
   margin: 0 auto;
   text-align: center;
@@ -141,21 +138,26 @@ p {
 }
 
 .content__p5 {
+  height: 100vh;
   display: flex;
 }
 
-// .content__projects{
-// }
+.content__about {
+  height: 100vh;
+}
+
 .siema-arrow {
   height: 40px;
 }
 
 .content__contact{
   padding-bottom: 40px;
+  height: 50vh;
+  display: flex;
 }
 
-.content__contact--viewport {
-  height: 50vh;
+.contact-container {
+  margin: auto auto;
 }
 
 .contact-link {
@@ -179,12 +181,13 @@ p {
   flex: 1;
 }
 
-.button {
+.button-container {
   padding: 35px 0;
   text-align: center;
+  margin: 20px 0;
 }
 
-.button__link {
+.button-container__link {
   text-decoration: none;
   font-size: 18px;
   background-color: $fuschia;
@@ -201,7 +204,7 @@ p {
   }
 }
 
-.button__link--ghost {
+.button-container__link--ghost {
   box-shadow: inset 0 0 0 2px #e00573;
   background-color: $fuschia;
 
@@ -210,20 +213,12 @@ p {
   }
 }
 
-
 .projects {
   margin: 0 auto;
 }
 
-.photo-container {
-  text-align: center;
-}
-
-.photo-container__img {
-  width: 80vw;
-}
-
 .figure-container {
+  // margin-top: 40px;
   position: relative;
   overflow: hidden;
   padding-top: 56.25%; // make sure default ratio for youtube vids is kept for container
@@ -238,12 +233,11 @@ p {
   border: 0;
 }
 
-.contact-image {
-  width: 10vw;
-}
-
 @media (min-width: 769px) {
   .siema-arrow {
     height: 50px;
+  }
+  .navbar-icon-container {
+    left: 94vw;
   }
 }

@@ -32,18 +32,12 @@ p {
 .navbar-icon-container {
   position: fixed;
   top: 0vh;
-  left: 95vw;
+  left: 85vw;
   align-items: center;
   justify-content: center;
   z-index: 4;
   width: 50px;
   background-color: #ffffff; }
-
-.navbar-icon {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: inline-block; }
 
 .navbar-icon path {
   stroke: #404040;
@@ -86,7 +80,6 @@ p {
   font-size: 32px; }
 
 .content {
-  height: 100vh;
   width: 80vw;
   margin: 0 auto;
   text-align: center; }
@@ -95,16 +88,22 @@ p {
   width: 100vw; }
 
 .content__p5 {
+  height: 100vh;
   display: flex; }
+
+.content__about {
+  height: 100vh; }
 
 .siema-arrow {
   height: 40px; }
 
 .content__contact {
-  padding-bottom: 40px; }
+  padding-bottom: 40px;
+  height: 50vh;
+  display: flex; }
 
-.content__contact--viewport {
-  height: 50vh; }
+.contact-container {
+  margin: auto auto; }
 
 .contact-link {
   font-size: 20px; }
@@ -122,11 +121,12 @@ p {
 .container__flex1 {
   flex: 1; }
 
-.button {
+.button-container {
   padding: 35px 0;
-  text-align: center; }
+  text-align: center;
+  margin: 20px 0; }
 
-.button__link {
+.button-container__link {
   text-decoration: none;
   font-size: 18px;
   background-color: #D00251;
@@ -137,23 +137,17 @@ p {
   font-weight: 300;
   letter-spacing: 1px;
   margin: 8px; }
-  .button__link:hover {
+  .button-container__link:hover {
     background-color: #e00573; }
 
-.button__link--ghost {
+.button-container__link--ghost {
   box-shadow: inset 0 0 0 2px #e00573;
   background-color: #D00251; }
-  .button__link--ghost:hover {
+  .button-container__link--ghost:hover {
     color: #f9f9f9; }
 
 .projects {
   margin: 0 auto; }
-
-.photo-container {
-  text-align: center; }
-
-.photo-container__img {
-  width: 80vw; }
 
 .figure-container {
   position: relative;
@@ -168,11 +162,11 @@ p {
   height: 100%;
   border: 0; }
 
-.contact-image {
-  width: 10vw; }
-
 @media (min-width: 769px) {
   .siema-arrow {
-    height: 50px; } }
+    height: 50px; }
+
+  .navbar-icon-container {
+    left: 94vw; } }
 
 /*# sourceMappingURL=style.css.map */
