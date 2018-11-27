@@ -21,6 +21,9 @@ p {
   background-color: white;
   z-index: 3; }
 
+.navbar-container__width {
+  width: 85vw; }
+
 .navbar-container__button {
   color: #404040; }
   .navbar-container__button:hover {
@@ -32,12 +35,13 @@ p {
 .navbar-icon-container {
   position: fixed;
   top: 0vh;
-  left: 85vw;
+  left: 89vw;
   align-items: center;
   justify-content: center;
   z-index: 4;
-  width: 50px;
-  background-color: #ffffff; }
+  width: 35px;
+  background-color: #ffffff;
+  margin-top: 5px; }
 
 .navbar-icon path {
   stroke: #404040;
@@ -95,7 +99,7 @@ p {
   height: 100vh; }
 
 .siema-arrow {
-  height: 40px; }
+  height: 30px; }
 
 .content__contact {
   padding-bottom: 40px;
@@ -150,6 +154,7 @@ p {
   margin: 0 auto; }
 
 .figure-container {
+  margin-bottom: 20px;
   position: relative;
   overflow: hidden;
   padding-top: 56.25%; }
@@ -167,6 +172,20 @@ p {
     height: 50px; }
 
   .navbar-icon-container {
-    left: 94vw; } }
+    left: 94vw;
+    margin-top: 0px;
+    width: 50px; }
+
+  .navbar-container {
+    width: 100vw; }
+
+  .navbar__about {
+    text-align: right; }
+
+  .navbar__contact {
+    text-align: left; }
+
+  .navbar-container__width {
+    width: 100vw; } }
 
 /*# sourceMappingURL=style.css.map */
