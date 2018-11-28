@@ -1,26 +1,52 @@
 $offwhite: #f9f9f9;
-$gray: #DCDCDC;
 $charcoal: #404040;
-$black: #000000;
 $fuschia: #D00251;
 $fuschia-ghost: #c20940;
-$heading-font: 'Raleway', sans-serif;
+$heading-font: 'Fira Sans', sans-serif;
+$body-font: 'Crimson Text', serif;
 
 html, body, figure {
   margin: 0;
+}
+
+html {
+  font-size: 1.2em;
 }
 
 a {
   text-decoration: none;
 }
 
+p, a {
+  font-family: $body-font;
+}
+
 p {
-  font-family: sans-serif;
+  margin-bottom: 1.6em;
+  letter-spacing: 0.4px;
+  color: $charcoal;
 }
 
 h1, h2 {
   font-family: $heading-font;
+  font-weight: 300;
+  line-height: 1.2;
+  color: $charcoal;
 }
+
+h1 {
+  margin-top: 0;
+  font-size: 2.827em;
+}
+
+h2 {
+  font-size: 1.999em;
+}
+
+h3 {
+  font-size: 1.414em;
+}
+
 
 .navbar-container {
   transition: 0.4s;
@@ -36,6 +62,7 @@ h1, h2 {
 }
 
 .navbar-container__button {
+  font-family: $heading-font;
   color: $charcoal;
   &:hover {
     color: $fuschia;
@@ -46,6 +73,23 @@ h1, h2 {
   top: -10vh
 }
 
+@media (min-width: 769px) {
+  .navbar-container {
+    width: 100vw;
+  }
+
+  .navbar__about {
+    text-align: right;
+  }
+
+  .navbar__contact {
+    text-align: left;
+  }
+
+  .navbar-container__width {
+    width: 100vw;
+  }
+}
 
 /////
 //
@@ -64,6 +108,14 @@ h1, h2 {
   width: 35px;
   background-color: #ffffff;
   margin-top: 5px;
+}
+
+@media (min-width: 769px) {
+  .navbar-icon-container {
+    left: 94vw;
+    margin-top: 0px;
+    width: 50px;
+  }
 }
 
 // .navbar-icon {
@@ -122,12 +174,18 @@ h1, h2 {
 
 .name-container__text {
   color: $charcoal;
+  font-size: 3.063em;
   text-align: center;
-  font-size: 48px;
+  letter-spacing: 2px;
+
+  @media (min-width: 769px) {
+    font-size: 4.063em;
+  }
 }
 
 .name-container__text--sml {
-  font-size: 32px;
+  font-size: 1.6em;
+  letter-spacing: 1px;
 }
 
 .content {
@@ -147,11 +205,11 @@ h1, h2 {
 
 .content__about {
   height: 100vh;
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .content__projects{
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .button-container {
@@ -163,11 +221,10 @@ h1, h2 {
 .button-container__link {
   font-family: $heading-font;
   text-decoration: none;
-  font-size: 18px;
   background-color: $fuschia;
   width: 200px;
   color: $offwhite;
-  padding: 1em;
+  padding: 16px;
   border-radius: 2px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -179,12 +236,13 @@ h1, h2 {
 }
 
 .button-container__link--ghost {
-  box-shadow: inset 0 0 0 2px $fuschia-ghost;
-  background-color: #ffffff;
+  box-shadow: inset 0 0 0 2px $fuschia;
+  background-color: $offwhite;
   color: $fuschia;
 
   &:hover {
     color: $offwhite;
+    background-color: $fuschia;
   }
 }
 
@@ -207,19 +265,40 @@ h1, h2 {
 }
 
 .siema-arrow {
-  height: 30px;
+  height: 28px;
   cursor: pointer;
 }
 
+@media (min-width: 769px) {
+  .siema-arrow {
+    height: 32px;
+  }
+}
+
 .content__contact{
-  max-width: 600px;
+  max-width: 800px;
   margin: 50vh auto;
   // height: 100vh;
 }
 
-.contact-link {
-  font-size: 16px;
+// todo: fix naming
+.contact-container {
+    margin-bottom: 20px;
+
+
 }
+  .contact-link {
+    color: $charcoal;
+    font-family: $heading-font;
+
+    &:focus {
+      color: $charcoal;
+    }
+
+    &:hover {
+      color: $fuschia;
+    }
+  }
 
 .container {
   display: flex;
@@ -238,28 +317,242 @@ h1, h2 {
   flex: 1;
 }
 
-@media (min-width: 769px) {
-  .siema-arrow {
-    height: 50px;
-  }
-  .navbar-icon-container {
-    left: 94vw;
-    margin-top: 0px;
-    width: 50px;
-  }
-  .navbar-container{
-    width: 100vw;
-  }
-  .navbar__about{
-    text-align: right;
-  }
-  .navbar__contact {
-    text-align: left;
-  }
-  .navbar-container__width {
-    width: 100vw;
-  }
-  .contact-link {
-    font-size: 20px;
+//////
+//
+// animated arrows
+//
+//////
+
+$text-arrow-space: 16px;
+$shaft-width: 64px;
+$shaft-weight: 1px;
+$arrow-head-width: 8px;
+$arrow-head-weight: $shaft-weight;
+
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// .container {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   height: 100%;
+// }
+
+ul {
+  li {
+    margin: 0 0 24px;
+    list-style-type: none;
   }
 }
+
+.arrow {
+  width: $shaft-width;
+  transition: all 0.2s;
+
+  &.-left {
+    position: absolute;
+    top: 60%;
+    left: 0;
+
+    >.shaft {
+      width: 0;
+      background-color: $charcoal;
+
+      &:before,
+      &:after {
+        width: 0;
+        background-color: $charcoal;
+      }
+
+      &:before {
+        transform: rotate(0);
+      }
+
+      &:after {
+        transform: rotate(0);
+      }
+    }
+  }
+
+  &.-right {
+    top: 3px;
+
+    >.shaft {
+      width: $shaft-width;
+      transition-delay: 0.2s;
+
+      &:before,
+      &:after {
+        width: $arrow-head-width;
+        transition-delay: 0.3s;
+        transition: all 0.5s;
+      }
+
+      &:before {
+        transform: rotate(40deg);
+      }
+
+      &:after {
+        transform: rotate(-40deg);
+      }
+    }
+  }
+
+  &.-reverse {
+    &:before {
+      transform: rotate(120deg);
+    }
+
+    &:after {
+      transform: rotate(-120deg);
+    }
+  }
+
+  >.shaft {
+    background-color: $charcoal;
+    display: block;
+    height: $shaft-weight;
+    position: relative;
+    transition: all 0.2s;
+    transition-delay: 0;
+    will-change: transform;
+
+    &:before,
+    &:after {
+      background-color: $charcoal;
+      content: '';
+      display: block;
+      height: $arrow-head-weight;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: all 0.2s;
+      transition-delay: 0;
+    }
+
+    &:before {
+      transform-origin: top right;
+    }
+
+    &:after {
+      transform-origin: bottom right;
+    }
+  }
+}
+
+
+// Animated Arrow Button
+
+.animated-arrow {
+  display: inline-block;
+  color: $charcoal;
+  font-family: $body-font;
+  font-size: 1.25em;
+  font-style: italic;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.2s;
+
+  &:hover {
+    color: $fuschia;
+
+    >.arrow.-left {
+      >.shaft {
+        width: $shaft-width;
+        transition-delay: 0.1s;
+        background-color: $fuschia;
+
+        &:before,
+        &:after {
+          width: $arrow-head-width;
+          transition-delay: 0.1s;
+          background-color: $fuschia;
+        }
+
+        &:before {
+          transform: rotate(40deg);
+        }
+
+        &:after {
+          transform: rotate(-40deg);
+        }
+      }
+    }
+
+    >.main {
+      transform: translateX($shaft-width + $text-arrow-space);
+
+      >.arrow.-right {
+        >.shaft {
+          width: 0;
+          transform: translateX(200%);
+          transition-delay: 0;
+
+          &:before,
+          &:after {
+            width: 0;
+            transition-delay: 0;
+            transition: all 0.1s;
+          }
+
+          &:before {
+            transform: rotate(0);
+          }
+
+          &:after {
+            transform: rotate(0);
+          }
+        }
+      }
+    }
+  }
+
+
+  >.main {
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+
+    >.text {
+      margin: 0 $text-arrow-space 0 0;
+      line-height: 1;
+    }
+
+    >.arrow {
+      position: relative;
+    }
+  }
+}
+
+.animated-arrow__left {
+  >.shaft {
+    width: $shaft-width;
+    transition-delay: 0.1s;
+    background-color: $fuschia;
+
+    &:before,
+    &:after {
+      width: $arrow-head-width;
+      transition-delay: 0.1s;
+      background-color: $fuschia;
+    }
+
+    &:before {
+      transform: rotate(40deg);
+    }
+
+    &:after {
+      transform: rotate(-40deg);
+    }
+  }
+}
+
+//////
+//
+// animated arrows end
+//
+//////
