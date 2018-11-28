@@ -353,67 +353,18 @@ ul {
   width: $shaft-width;
   transition: all 0.2s;
 
-  &.-left {
-    position: absolute;
-    top: 60%;
-    left: 0;
+  // &.-reverse {
+  //   &:before {
+  //     transform: rotate(120deg);
+  //   }
 
-    >.shaft {
-      width: 0;
-      background-color: $charcoal;
-
-      &:before,
-      &:after {
-        width: 0;
-        background-color: $charcoal;
-      }
-
-      &:before {
-        transform: rotate(0);
-      }
-
-      &:after {
-        transform: rotate(0);
-      }
-    }
-  }
-
-  &.-right {
-    top: 3px;
-
-    >.shaft {
-      width: $shaft-width;
-      transition-delay: 0.2s;
-
-      &:before,
-      &:after {
-        width: $arrow-head-width;
-        transition-delay: 0.3s;
-        transition: all 0.5s;
-      }
-
-      &:before {
-        transform: rotate(40deg);
-      }
-
-      &:after {
-        transform: rotate(-40deg);
-      }
-    }
-  }
-
-  &.-reverse {
-    &:before {
-      transform: rotate(120deg);
-    }
-
-    &:after {
-      transform: rotate(-120deg);
-    }
-  }
+  //   &:after {
+  //     transform: rotate(-120deg);
+  //   }
+  // }
 
   >.shaft {
-    background-color: $charcoal;
+    background-color: black;
     display: block;
     height: $shaft-weight;
     position: relative;
@@ -423,7 +374,7 @@ ul {
 
     &:before,
     &:after {
-      background-color: $charcoal;
+      background-color: black;
       content: '';
       display: block;
       height: $arrow-head-weight;
@@ -444,12 +395,78 @@ ul {
   }
 }
 
+.arrow__right {
+  top: 3px;
+
+  >.shaft {
+    width: $shaft-width;
+    transition-delay: 0.2s;
+
+    &:before,
+    &:after {
+      width: $arrow-head-width;
+      transition-delay: 0.3s;
+      transition: all 0.5s;
+    }
+
+    &:before {
+      transform: rotate(40deg);
+    }
+
+    &:after {
+      transform: rotate(-40deg);
+    }
+  }
+}
+
+.arrow__left {
+  position: absolute;
+  top: 60%;
+  left: 0;
+
+  >.shaft {
+    width: 0;
+    background-color: black;
+
+    &:before,
+    &:after {
+      width: 0;
+      background-color: black;
+    }
+
+    &:before {
+      transform: rotate(0);
+    }
+
+    &:after {
+      transform: rotate(0);
+    }
+  }
+}
+
+.arrow__right--previous {
+  >.shaft {
+
+    &:before,
+    &:after {
+      left: -7px;
+    }
+
+    &:before {
+      transform: rotate(140deg);
+    }
+
+    &:after {
+      transform: rotate(-140deg);
+    }
+  }
+}
 
 // Animated Arrow Button
 
 .animated-arrow {
   display: inline-block;
-  color: $charcoal;
+  color: black;
   font-family: $body-font;
   font-size: 1.25em;
   font-style: italic;
@@ -460,7 +477,7 @@ ul {
   &:hover {
     color: $fuschia;
 
-    >.arrow.-left {
+    >.arrow.arrow__left {
       >.shaft {
         width: $shaft-width;
         transition-delay: 0.1s;
@@ -486,7 +503,7 @@ ul {
     >.main {
       transform: translateX($shaft-width + $text-arrow-space);
 
-      >.arrow.-right {
+      >.arrow.arrow__right {
         >.shaft {
           width: 0;
           transform: translateX(200%);
@@ -528,25 +545,39 @@ ul {
   }
 }
 
-.animated-arrow__left {
-  >.shaft {
-    width: $shaft-width;
-    transition-delay: 0.1s;
-    background-color: $fuschia;
+.animated-arrow--previous {
+  &:hover {
 
-    &:before,
-    &:after {
-      width: $arrow-head-width;
-      transition-delay: 0.1s;
-      background-color: $fuschia;
+    >.arrow.arrow__left {
+      >.shaft {
+
+        &:before,
+        &:after {
+          left: -7px;
+        }
+
+        &:before {
+          transform: rotate(140deg);
+        }
+
+        &:after {
+          transform: rotate(-140deg);
+        }
+      }
     }
+  }
+}
 
-    &:before {
-      transform: rotate(40deg);
-    }
+.animated-arrow__left--previous {
+  >.arrow.arrow__left {
+    >.shaft {
+      &:before {
+        transform: rotate(140deg);
+      }
 
-    &:after {
-      transform: rotate(-40deg);
+      &:after {
+        transform: rotate(-140deg);
+      }
     }
   }
 }
