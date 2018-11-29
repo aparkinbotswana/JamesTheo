@@ -42,8 +42,8 @@
     <p class="name-container__text name-container__text--sml">Front-end Developer</p>
   </div>
 
-  <section id="p5" class="content content__p5 content--position">
-    <div id="canvas-container">
+  <section id="p5" class="container content content__p5 content--vw-100">
+    <div id="canvas-container" class="container__center">
       <!-- canvas element created and appended here through p5.js library -->
     </div>
   </section>
@@ -101,16 +101,15 @@
       <img class="container__flex1 container--align-right siema-arrow" id="prev" src="build/images/back.svg" alt="back">
       <img class="container__flex1 container--align-left siema-arrow" id="next" src="build/images/next.svg" alt="next">
     </div> -->
-<div class='container'>
-  <ul>
-    <li id="prev">
+  <ul class='container'>
+    <li class="container__flex1 container--align-right" id="back">
       <a class='animated-arrow animated-arrow--previous'>
         <span class='arrow arrow__left arrow__left--previous'>
           <span class='shaft'></span>
         </span>
         <span class='main'>
           <span class='text'>
-            Previous
+            Back
           </span>
           <span class='arrow arrow__right arrow__right--previous'>
             <span class='shaft'></span>
@@ -118,7 +117,7 @@
         </span>
       </a>
     </li>
-    <li id="next">
+    <li class="container__flex1 container--align-left" id="next">
       <a class='animated-arrow'>
         <span class='arrow arrow__left'>
           <span class='shaft'></span>
@@ -134,20 +133,19 @@
       </a>
     </li>
   </ul>
-</div>
   </section>
 
-  <footer class="content" id="contact">
-    <section class="content__contact">
+  <footer class="content content__contact container" id="contact">
+    <section class="container__center">
       <h1>Contact</h1>
       <p>Feel free to reach out and get in touch!</p>
-      <div class="contact-container">
-<a class="contact-link" href="https://github.com/aparkinbotswana" target="_blank">github.com/aparkinbotswana</a>
+      <div class="link-container">
+        <a class="contact-link" href="https://github.com/aparkinbotswana" target="_blank">github.com/aparkinbotswana</a>
       </div>
-<div class="contact-container">
-<a class="contact-link" href="https://www.linkedin.com/in/james-theo/" target="_blank">linkedin.com/in/james-theo</a>
+      <div class="link-container">
+        <a class="contact-link" href="https://www.linkedin.com/in/james-theo/" target="_blank">linkedin.com/in/james-theo</a>
       </div>     
-<div class="contact-container">
+      <div class="link-container">
         <a class="contact-link" href="mailto:theojames1989@gmail.com">theojames1989@gmail.com</a>
       </div>
     </section>

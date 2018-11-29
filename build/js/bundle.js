@@ -81791,7 +81791,7 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', function () {
     positionName();
   });
-  document.getElementById('prev').addEventListener('click', function () {
+  document.getElementById('back').addEventListener('click', function () {
     return mySiema.prev();
   });
   document.getElementById('next').addEventListener('click', function () {

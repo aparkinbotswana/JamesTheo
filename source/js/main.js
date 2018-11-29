@@ -191,6 +191,6 @@ document.addEventListener('DOMContentLoaded', function(){
     positionName();
   }) 
 
-  document.getElementById('prev').addEventListener('click', () => mySiema.prev());
+  document.getElementById('back').addEventListener('click', () => mySiema.prev());
   document.getElementById('next').addEventListener('click', () => mySiema.next());
 }, false);
