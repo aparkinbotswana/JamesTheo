@@ -353,18 +353,8 @@ ul {
   width: $shaft-width;
   transition: all 0.2s;
 
-  // &.-reverse {
-  //   &:before {
-  //     transform: rotate(120deg);
-  //   }
-
-  //   &:after {
-  //     transform: rotate(-120deg);
-  //   }
-  // }
-
   >.shaft {
-    background-color: black;
+    background-color: $charcoal;
     display: block;
     height: $shaft-weight;
     position: relative;
@@ -374,7 +364,7 @@ ul {
 
     &:before,
     &:after {
-      background-color: black;
+      background-color: $charcoal;
       content: '';
       display: block;
       height: $arrow-head-weight;
@@ -386,11 +376,13 @@ ul {
     }
 
     &:before {
-      transform-origin: top right;
+            // transform-origin: top right;
+
     }
 
     &:after {
-      transform-origin: bottom right;
+            // transform-origin: bottom right;
+
     }
   }
 }
@@ -411,10 +403,14 @@ ul {
 
     &:before {
       transform: rotate(40deg);
+      transform-origin: top right;
+      
     }
 
     &:after {
       transform: rotate(-40deg);
+      transform-origin: bottom right;
+      
     }
   }
 }
@@ -426,20 +422,48 @@ ul {
 
   >.shaft {
     width: 0;
-    background-color: black;
+    background-color: $charcoal;
 
     &:before,
     &:after {
       width: 0;
-      background-color: black;
+      background-color: $charcoal;
     }
 
     &:before {
-      transform: rotate(0);
+      transform: rotate(40deg);
+      transform-origin: bottom left;
     }
 
     &:after {
-      transform: rotate(0);
+      transform: rotate(-40deg);
+      transform-origin: bottom left;
+    }
+  }
+}
+
+.arrow__left--previous {
+  >.shaft {
+    width: $shaft-width;
+    transition-delay: 0.2s;
+
+
+    &:before,
+    &:after {
+      width: $arrow-head-width;
+      transition-delay: 0.3s;
+      transition: all 0.5s;
+      left: 0px;
+    }
+
+    &:before {
+      transform: rotate(40deg);
+      transform-origin: top left;
+    }
+
+    &:after {
+      transform: rotate(-40deg);
+      transform-origin: bottom left;
     }
   }
 }
@@ -449,15 +473,17 @@ ul {
 
     &:before,
     &:after {
-      left: -7px;
+      left: 0;
     }
 
     &:before {
-      transform: rotate(140deg);
+      transform: rotate(40deg);
+      transform-origin: top left;
     }
 
     &:after {
-      transform: rotate(-140deg);
+      transform: rotate(-40deg);
+      transform-origin: bottom left;
     }
   }
 }
@@ -466,7 +492,7 @@ ul {
 
 .animated-arrow {
   display: inline-block;
-  color: black;
+  color: $charcoal;
   font-family: $body-font;
   font-size: 1.25em;
   font-style: italic;
@@ -492,10 +518,12 @@ ul {
 
         &:before {
           transform: rotate(40deg);
+          transform-origin: top right;
         }
 
         &:after {
           transform: rotate(-40deg);
+          transform-origin: bottom right
         }
       }
     }
@@ -546,6 +574,19 @@ ul {
 }
 
 .animated-arrow--previous {
+      // >.arrow.arrow__left {
+      //   >.shaft {
+                  //   &:before {
+                  //     transform: rotate(0deg);
+                  //     // transform-origin: top left;
+                  //   }
+
+                  //   &:after {
+                  //     transform: rotate(0deg);
+                  //     // transform-origin: bottom left;
+                  //   }
+                  // }}
+
   &:hover {
 
     >.arrow.arrow__left {
@@ -553,30 +594,60 @@ ul {
 
         &:before,
         &:after {
-          left: -7px;
+          left: 0px;
         }
+                  &:before {
+                    transform: rotate(40deg);
+                    transform-origin: top left;
+                  }
 
-        &:before {
-          transform: rotate(140deg);
-        }
+                  &:after {
+                    transform: rotate(-40deg);
+                    transform-origin: bottom left;
+                  }
 
-        &:after {
-          transform: rotate(-140deg);
+      }
+    }
+    >.main {
+      transform: translateX($shaft-width + $text-arrow-space);
+
+      >.arrow.arrow__left {
+        >.shaft {
+          width: 0;
+          transform: translateX(200%);
+          transition-delay: 0;
+
+          &:before,
+          &:after {
+            width: 0;
+            transition-delay: 0;
+            transition: all 0.1s;
+          }
+
+          // &:before {
+          //   transform: rotate(40deg);
+          //   transform-origin: top left;
+          // }
+
+          // &:after {
+          //   transform: rotate(-40deg);
+          //   transform-origin: bottom left;
+          // }
         }
       }
     }
   }
 }
 
-.animated-arrow__left--previous {
+.animated-arrow--previous {
   >.arrow.arrow__left {
     >.shaft {
       &:before {
-        transform: rotate(140deg);
+        transform: rotate(40deg);
       }
 
       &:after {
-        transform: rotate(-140deg);
+        transform: rotate(-40deg);
       }
     }
   }
