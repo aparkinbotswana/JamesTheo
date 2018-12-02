@@ -300,15 +300,11 @@ ul {
     transform: rotate(-40deg);
     transform-origin: bottom left; }
 
-.arrow__right--previous {
-  position: absolute;
-  top: 60%;
-  left: 0; }
-  .arrow__right--previous > .shaft {
+.arrow__right--previous > .shaft {
+  width: 0; }
+  .arrow__right--previous > .shaft:before, .arrow__right--previous > .shaft:after {
+    left: 0;
     width: 0; }
-    .arrow__right--previous > .shaft:before, .arrow__right--previous > .shaft:after {
-      left: 0;
-      width: 0; }
 
 .animated-arrow {
   display: inline-block;
