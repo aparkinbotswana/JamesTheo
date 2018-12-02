@@ -216,7 +216,8 @@ ul {
 
 .arrow__left--previous > .shaft {
   width: 64px;
-  transition-delay: 0.2s; }
+  transition-delay: 0.2s;
+  top: -2px; }
   .arrow__left--previous > .shaft:before, .arrow__left--previous > .shaft:after {
     width: 8px;
     transition-delay: 0.3s;
@@ -254,7 +255,8 @@ ul {
   font-style: italic;
   text-decoration: none;
   position: relative;
-  transition: all 0.2s; }
+  transition: all 0.2s ease-out;
+  margin: 0 0 0 15px; }
   .animated-arrow:hover {
     color: #D00251; }
     .animated-arrow:hover > .arrow.arrow__left > .shaft {
@@ -293,45 +295,48 @@ ul {
       margin: 0 16px 0 0;
       line-height: 1; }
 
-.animated-arrow--previous > .main {
-  transform: translateX(80px);
-  width: 125px;
-  position: relative;
-  left: -80px; }
-  .animated-arrow--previous > .main > .text {
+.animated-arrow--previous {
+  margin: 0 15px 0 0; }
+  .animated-arrow--previous > .main {
+    transform: translateX(80px);
+    width: 125px;
     position: relative;
-    margin: 0 0 0 16px;
-    left: 64px; }
-.animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft {
-  width: 64px;
-  transition-delay: 0.1s;
-  background-color: #D00251; }
-  .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft:before, .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft:after {
-    width: 8px;
+    left: -80px; }
+    .animated-arrow--previous > .main > .text {
+      position: relative;
+      margin: 0 0 0 16px;
+      left: 64px; }
+  .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft {
+    width: 64px;
     transition-delay: 0.1s;
     background-color: #D00251; }
-  .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft:before {
-    transform: rotate(40deg);
-    transform-origin: top right; }
-  .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft:after {
-    transform: rotate(-40deg);
-    transform-origin: bottom right; }
-.animated-arrow--previous:hover > .main {
-  transform: translateX(0); }
-  .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft {
-    width: 0;
-    transform: translateX(100%);
-    transition-delay: 0; }
-    .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft:before, .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft:after {
-      width: 0;
-      transition-delay: 0;
-      transition: all 0.1s; }
-    .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft:before {
+    .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft:before, .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft:after {
+      left: 0;
+      width: 8px;
+      transition-delay: 0.1s;
+      background-color: #D00251; }
+    .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft:before {
       transform: rotate(40deg);
       transform-origin: top left; }
-    .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft:after {
+    .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft:after {
       transform: rotate(-40deg);
       transform-origin: bottom left; }
+  .animated-arrow--previous:hover > .main {
+    transform: translateX(0); }
+    .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft {
+      width: 0;
+      transform: translateX(100%);
+      transition-delay: 0; }
+      .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft:before, .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft:after {
+        width: 0;
+        transition-delay: 0;
+        transition: all 0.1s; }
+      .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft:before {
+        transform: rotate(40deg);
+        transform-origin: top left; }
+      .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft:after {
+        transform: rotate(-40deg);
+        transform-origin: bottom left; }
 
 .navbar-container {
   transition: 0.4s;

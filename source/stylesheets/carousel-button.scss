@@ -10,10 +10,6 @@ $shaft-weight: 1px;
 $arrow-head-width: 8px;
 $arrow-head-weight: $shaft-weight;
 
-@media (min-width: 769px) {
-  $shaft-width: 64px;
-}
-
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -71,13 +67,11 @@ ul {
     &:before {
       transform: rotate(40deg);
       transform-origin: top right;
-
     }
 
     &:after {
       transform: rotate(-40deg);
       transform-origin: bottom right;
-
     }
   }
 }
@@ -114,6 +108,7 @@ ul {
   >.shaft {
     width: $shaft-width;
     transition-delay: 0.2s;
+    top: -2px;
 
     &:before,
     &:after {
@@ -172,7 +167,8 @@ ul {
   font-style: italic;
   text-decoration: none;
   position: relative;
-  transition: all 0.2s;
+  transition: all 0.2s ease-out;
+  margin: 0 0 0 15px;
 
   &:hover {
     color: $fuschia;
@@ -243,6 +239,7 @@ ul {
 }
 
 .animated-arrow--previous {
+  margin: 0 15px 0 0;
 
   >.main {
     transform: translateX($shaft-width + $text-arrow-space);
@@ -267,6 +264,7 @@ ul {
 
         &:before,
         &:after {
+          left: 0;
           width: $arrow-head-width;
           transition-delay: 0.1s;
           background-color: $fuschia;
@@ -274,12 +272,12 @@ ul {
 
         &:before {
           transform: rotate(40deg);
-          transform-origin: top right;
+          transform-origin: top left;
         }
 
         &:after {
           transform: rotate(-40deg);
-          transform-origin: bottom right
+          transform-origin: bottom left
         }
       }
     }

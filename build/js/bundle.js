@@ -81695,13 +81695,13 @@ new _p.default(function (p5) {
 
     this.lifespan = 40; // How long a line "lives" before it is taken out of the array of Particles. Taken out when it gets to 0.
 
-    this.baseIncrementX = this.x / this.lifespan; // make sure every line has its own increment counter. Division by the lifespan enables use to get different angled lines that are incremented at a steady rate.
+    this.baseIncrementX = this.x / this.lifespan; // make sure every line has its own increment counter. Division by the lifespan enables us to get different angled lines that are incremented at a steady rate.
 
-    this.baseIncrementY = this.y / this.lifespan; // make sure every line has its own increment counter. Division by the lifespan enables use to get different angled lines that are incremented at a steady rate.
+    this.baseIncrementY = this.y / this.lifespan; // make sure every line has its own increment counter. Division by the lifespan enables us to get different angled lines that are incremented at a steady rate.
 
-    this.incrementLineX = 0; // need to keep a seperate counter between how much the line increments and how much it is incremented by so that the rate it increments remains constant. 
+    this.currentVectorX = 0; // need to keep a seperate counter between the total line length and how much it is incremented by, so that the rate it increments remains constant. 
 
-    this.incrementLineY = 0; // need to keep a seperate counter between how much the line increments and how much it is incremented by so that the rate it increments remains constant.     
+    this.currentVectorY = 0; // need to keep a seperate counter between the total line length and how much it is incremented by, so that the rate it increments remains constant.     
 
     this.vectorHistory = [p5.createVector(this.x, this.y)]; // initialise an array with the first coordinate ready to access for the draw function.
   }; // Method to display the line.
@@ -81710,7 +81710,7 @@ new _p.default(function (p5) {
   Line.prototype.display = function () {
     if (!this.isDead()) {
       this.lifespan -= 1;
-      var v = p5.createVector(this.x + this.incrementLineX, this.y + this.incrementLineY); // at every iteration, we save the current coordinate into an array so we have access to all the coordinates later on for use.
+      var v = p5.createVector(this.x + this.currentVectorX, this.y + this.currentVectorY); // at every iteration, we save the current coordinate into an array so we have access to all the coordinates later on for use.
 
       this.vectorHistory.push(v);
     } // we only want to use createVector function if the line is still "alive"
@@ -81752,9 +81752,9 @@ new _p.default(function (p5) {
           line.disappear();
         }
       } else {
-        line.incrementLineX += line.baseIncrementX; // adding the base increment so that the line is increased at a smooth rate.
+        line.currentVectorX += line.baseIncrementX; // adding the base increment so that the line is increased at a smooth rate.
 
-        line.incrementLineY += line.baseIncrementY; // adding the base increment so that the line is increased at a smooth rate.
+        line.currentVectorY += line.baseIncrementY; // adding the base increment so that the line is increased at a smooth rate.
 
         line.display();
       }
