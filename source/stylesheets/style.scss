@@ -461,22 +461,46 @@ ul {
 
 
 .arrow__right--previous {
+    position: absolute;
+    top: 60%;
+    left: $shaft-width;
+
+    >.shaft {
+      width: 0;
+      background-color: $charcoal;
+
+      &:before,
+      &:after {
+        width: 0;
+        background-color: $charcoal;
+      }
+
+      &:before {
+        transform: rotate(40deg);
+        transform-origin: bottom left;
+      }
+
+      &:after {
+        transform: rotate(-40deg);
+        transform-origin: bottom left;
+      }
+    }
+
   // display: inline-block;
   // position: absolute;
     // top: 60%;
     // left: 0;
 
-
-  >.shaft {
+//>.shaft {
       // width: $shaft-width;
-      width: 0;
+//width: 0;
 
-    &:before,
-    &:after {
-      left: 0;
-      // width: $arrow-head-width;
-      width: 0;
-    }
+//&:before,
+//&:after {
+//left: 0;
+// width: $arrow-head-width;
+//width: 0;
+//}
 
     // &:before {
     //   transform: rotate(40deg);
@@ -488,7 +512,7 @@ ul {
     //   transform-origin: bottom left;
     // } 
     // might be duplicated css. Dont delete until end.
-  }
+//}
 }
 
 // Animated Arrow Button
@@ -588,47 +612,78 @@ ul {
                   // }}
     >.main {
       transform: translateX($shaft-width + $text-arrow-space);
+      width: 125px;
+      >.text {
+              position: relative;
+
+        margin: 0 0 0 $text-arrow-space;
+        left: $shaft-width;
+      }
     }
   &:hover {
 
-    >.arrow.arrow__left {
+    // >.arrow.arrow__left {
+    //   >.shaft {
+    //     width: 0px;
+    //     transform: translateX(200%);
+    //     transition-delay: 0;
+
+    //     &:before,
+    //     &:after {
+    //       width: 0px;
+    //       transition-delay: 0;
+    //       transition: all 0.1s;
+    //     }
+        
+    //     &:before {
+    //       transform: rotate(0deg);
+    //       transform-origin: top left;
+    //     }
+
+    //     &:after {
+    //       transform: rotate(0deg);
+    //       transform-origin: bottom left;
+    //     }
+    //   }
+    // }
+          >.arrow.arrow__right--previous {
       >.shaft {
-        width: 0px;
-        transform: translateX(200%);
-        transition-delay: 0;
+        width: $shaft-width;
+        transition-delay: 0.1s;
+        background-color: $fuschia;
 
         &:before,
         &:after {
-          width: 0px;
-          transition-delay: 0;
-          transition: all 0.1s;
+          width: $arrow-head-width;
+          transition-delay: 0.1s;
+          background-color: $fuschia;
         }
-        
+
         &:before {
-          transform: rotate(0deg);
-          transform-origin: top left;
+          transform: rotate(40deg);
+          transform-origin: top right;
         }
 
         &:after {
-          transform: rotate(0deg);
-          transform-origin: bottom left;
+          transform: rotate(-40deg);
+          transform-origin: bottom right
         }
       }
-    }
+          }
+
 
     >.main {
       transform: translateX(0);
       // transform: translateX($shaft-width + $text-arrow-space);
-
-      >.arrow.arrow__right {
+      >.arrow.arrow__left {
         >.shaft {
-          width: $shaft-width;
+          width: 0;
           transform: translateX(100%);
           transition-delay: 0;
 
           &:before,
           &:after {
-            width: $arrow-head-width;
+            width: 0;
             transition-delay: 0;
             transition: all 0.1s;
           }
@@ -654,7 +709,3 @@ ul {
 // animated arrows end
 //
 //////
-
-// ul, li, a, span {
-//   border: 1px solid red
-// }
