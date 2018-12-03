@@ -197,6 +197,24 @@ ul {
     transform: rotate(-40deg);
     transform-origin: bottom right; }
 
+.arrow__right--previous {
+  position: absolute;
+  top: 60%;
+  left: 64px; }
+  .arrow__right--previous > .shaft {
+    width: 0;
+    background-color: #404040; }
+    .arrow__right--previous > .shaft:before, .arrow__right--previous > .shaft:after {
+      width: 0;
+      background-color: #404040;
+      left: 0; }
+    .arrow__right--previous > .shaft:before {
+      transform: rotate(40deg);
+      transform-origin: bottom left; }
+    .arrow__right--previous > .shaft:after {
+      transform: rotate(-40deg);
+      transform-origin: bottom left; }
+
 .arrow__left {
   position: absolute;
   top: 60%;
@@ -230,23 +248,6 @@ ul {
     transform: rotate(-40deg);
     transform-origin: bottom left; }
 
-.arrow__right--previous {
-  position: absolute;
-  top: 60%;
-  left: 64px; }
-  .arrow__right--previous > .shaft {
-    width: 0;
-    background-color: #404040; }
-    .arrow__right--previous > .shaft:before, .arrow__right--previous > .shaft:after {
-      width: 0;
-      background-color: #404040; }
-    .arrow__right--previous > .shaft:before {
-      transform: rotate(40deg);
-      transform-origin: bottom left; }
-    .arrow__right--previous > .shaft:after {
-      transform: rotate(-40deg);
-      transform-origin: bottom left; }
-
 .animated-arrow {
   display: inline-block;
   color: #404040;
@@ -255,7 +256,7 @@ ul {
   font-style: italic;
   text-decoration: none;
   position: relative;
-  transition: all 0.2s ease-out;
+  transition: all 0.2s;
   margin: 0 0 0 15px; }
   .animated-arrow:hover {
     color: #D00251; }
@@ -309,7 +310,9 @@ ul {
   .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft {
     width: 64px;
     transition-delay: 0.1s;
-    background-color: #D00251; }
+    background-color: #D00251;
+    transform: translateX(-100%);
+    left: 64px; }
     .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft:before, .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft:after {
       left: 0;
       width: 8px;
@@ -325,7 +328,7 @@ ul {
     transform: translateX(0); }
     .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft {
       width: 0;
-      transform: translateX(100%);
+      transform: translateX(-100%);
       transition-delay: 0; }
       .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft:before, .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft:after {
         width: 0;
