@@ -47,7 +47,6 @@ ul {
       top: 0;
       right: 0;
       transition: all 0.2s;
-      transition-delay: 0;
     }
   }
 }
@@ -80,7 +79,7 @@ ul {
   position: absolute;
   top: 60%;
   left: $shaft-width;
-
+   
   >.shaft {
     width: 0;
     background-color: $charcoal;
@@ -90,6 +89,7 @@ ul {
       width: 0;
       background-color: $charcoal;
       left: 0;
+      
     }
 
     &:before {
@@ -132,10 +132,11 @@ ul {
 }
 
 .arrow__left--previous {
+    top: inherit;
+
   >.shaft {
     width: $shaft-width;
     transition-delay: 0.2s;
-    top: -2px;
 
     &:before,
     &:after {
@@ -203,13 +204,13 @@ ul {
 
       >.arrow.arrow__right {
         >.shaft {
-          width: 0px;
+          width: 0;
           transform: translateX(200%);
           transition-delay: 0;
 
           &:before,
           &:after {
-            width: 0px;
+            width: 0;
             transition-delay: 0;
             transition: all 0.1s;
           }
@@ -257,16 +258,14 @@ ul {
   &:hover {
 
     >.arrow.arrow__right--previous {
+      left: $shaft-width;
       >.shaft {
         width: $shaft-width;
         transition-delay: 0.1s;
         background-color: $fuschia;
-        transform: translateX(-100%);
-        left: $shaft-width;
 
         &:before,
         &:after {
-          left: 0;
           width: $arrow-head-width;
           transition-delay: 0.1s;
           background-color: $fuschia;
@@ -290,7 +289,7 @@ ul {
       >.arrow.arrow__left {
         >.shaft {
           width: 0;
-          transform: translateX(-100%);
+          transform: translateX(100%);
           transition-delay: 0;
 
           &:before,
