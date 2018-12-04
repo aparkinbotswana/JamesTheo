@@ -183,12 +183,9 @@ ul {
       transition: all 0.2s; }
 
 .arrow__right > .shaft {
-  width: 64px;
-  transition-delay: 0.2s; }
+  width: 64px; }
   .arrow__right > .shaft:before, .arrow__right > .shaft:after {
-    width: 8px;
-    transition-delay: 0.3s;
-    transition: all 0.5s; }
+    width: 8px; }
   .arrow__right > .shaft:before {
     transform: rotate(40deg);
     transform-origin: top right; }
@@ -199,7 +196,8 @@ ul {
 .arrow__right--previous {
   position: absolute;
   top: 60%;
-  left: 64px; }
+  left: 64px;
+  transform: rotateZ(180deg); }
   .arrow__right--previous > .shaft {
     width: 0;
     background-color: #404040; }
@@ -207,12 +205,6 @@ ul {
       width: 0;
       background-color: #404040;
       left: 0; }
-    .arrow__right--previous > .shaft:before {
-      transform: rotate(40deg);
-      transform-origin: bottom left; }
-    .arrow__right--previous > .shaft:after {
-      transform: rotate(-40deg);
-      transform-origin: bottom left; }
 
 .arrow__left {
   position: absolute;
@@ -232,21 +224,17 @@ ul {
       transform-origin: bottom left; }
 
 .arrow__left--previous {
-  top: inherit; }
+  top: inherit;
+  transform: rotateZ(180deg); }
   .arrow__left--previous > .shaft {
-    width: 64px;
-    transition-delay: 0.2s; }
+    width: 64px; }
     .arrow__left--previous > .shaft:before, .arrow__left--previous > .shaft:after {
       width: 8px;
-      transition-delay: 0.3s;
-      transition: all 0.5s;
-      left: 0; }
+      left: 56px; }
     .arrow__left--previous > .shaft:before {
-      transform: rotate(40deg);
-      transform-origin: top left; }
+      transform-origin: bottom right; }
     .arrow__left--previous > .shaft:after {
-      transform: rotate(-40deg);
-      transform-origin: bottom left; }
+      transform-origin: bottom right; }
 
 .animated-arrow {
   display: inline-block;
@@ -307,38 +295,26 @@ ul {
       position: relative;
       margin: 0 0 0 16px;
       left: 64px; }
-  .animated-arrow--previous:hover > .arrow.arrow__right--previous {
-    left: 64px; }
-    .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft {
-      width: 64px;
+  .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft {
+    width: 64px;
+    transition-delay: 0.1s;
+    background-color: #D00251; }
+    .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft:before, .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft:after {
+      width: 8px;
       transition-delay: 0.1s;
-      background-color: #D00251; }
-      .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft:before, .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft:after {
-        width: 8px;
-        transition-delay: 0.1s;
-        background-color: #D00251; }
-      .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft:before {
-        transform: rotate(40deg);
-        transform-origin: top left; }
-      .animated-arrow--previous:hover > .arrow.arrow__right--previous > .shaft:after {
-        transform: rotate(-40deg);
-        transform-origin: bottom left; }
+      background-color: #D00251;
+      left: 56px; }
   .animated-arrow--previous:hover > .main {
     transform: translateX(0); }
     .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft {
       width: 0;
-      transform: translateX(100%);
+      transform: translateX(200%);
       transition-delay: 0; }
       .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft:before, .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft:after {
+        left: 0;
         width: 0;
         transition-delay: 0;
         transition: all 0.1s; }
-      .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft:before {
-        transform: rotate(40deg);
-        transform-origin: top left; }
-      .animated-arrow--previous:hover > .main > .arrow.arrow__left > .shaft:after {
-        transform: rotate(-40deg);
-        transform-origin: bottom left; }
 
 .navbar-container {
   transition: 0.4s;
