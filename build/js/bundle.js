@@ -81787,7 +81787,40 @@ document.addEventListener('DOMContentLoaded', function () {
     e.preventDefault();
     navbarIcon.classList.toggle('is-active');
     navbar.classList.toggle('navbar-container--transition');
-  }, false);
+  }, false); // governs the header functionality.
+  // this chunk of code for anchor tag scroll
+
+  function anchorLinkHandler(e) {
+    var distanceToTop = function distanceToTop(el) {
+      return Math.floor(el.getBoundingClientRect().top);
+    };
+
+    e.preventDefault();
+    var targetID = this.getAttribute("href");
+    var targetAnchor = document.querySelector(targetID);
+    if (!targetAnchor) return;
+    var originalTop = distanceToTop(targetAnchor);
+    window.scrollBy({
+      top: originalTop,
+      left: 0,
+      behavior: "smooth"
+    });
+    var checkIfDone = setInterval(function () {
+      var atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
+
+      if (distanceToTop(targetAnchor) === 0 || atBottom) {
+        targetAnchor.tabIndex = "-1";
+        window.history.pushState("", "", targetID);
+        clearInterval(checkIfDone);
+      }
+    }, 100);
+  }
+
+  var linksToAnchors = document.querySelectorAll('a[href^="#"]');
+  linksToAnchors.forEach(function (each) {
+    return each.onclick = anchorLinkHandler;
+  }); // ^^^^ this chunk of code for anchor tag scroll ^^^^
+
   window.addEventListener('resize', function () {
     positionName();
   });

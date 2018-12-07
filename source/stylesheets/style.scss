@@ -5,6 +5,9 @@ $fuschia-ghost: #c20940;
 $heading-font: 'Fira Sans', sans-serif;
 $body-font: 'Crimson Text', serif;
 
+@import 'carousel-button';
+@import 'navbar';
+
 html, body, figure {
   margin: 0;
 }
@@ -15,16 +18,25 @@ html {
 
 a {
   text-decoration: none;
+  cursor: pointer;
+
+  &:focus {
+    color: $charcoal;
+  }
+
+  &:hover {
+    color: $fuschia;
+  }
 }
 
 p, a {
   font-family: $body-font;
+  color: $charcoal;
 }
 
 p {
   margin-bottom: 1.6em;
   letter-spacing: 0.4px;
-  color: $charcoal;
 }
 
 h1, h2 {
@@ -45,10 +57,6 @@ h2 {
 
 h3 {
   font-size: 1.414em;
-}
-
-#canvas-container {
-  margin: auto auto;
 }
 
 .name-container {
@@ -81,17 +89,18 @@ h3 {
   text-align: center;
 }
 
-.content--vw-100 {
-  width: 100vw;
-}
-
 .content__p5 {
   height: 100vh;
+  width: 100vw;
 }
 
 .content__about {
   height: 100vh;
   max-width: 800px;
+}
+
+.about-link {
+
 }
 
 .content__projects{
@@ -150,17 +159,6 @@ h3 {
   border: 0;
 }
 
-.siema-arrow {
-  height: 28px;
-  cursor: pointer;
-}
-
-@media (min-width: 769px) {
-  .siema-arrow {
-    height: 32px;
-  }
-}
-
 .content__contact{
   max-width: 800px;
   height: 100vh;
@@ -171,16 +169,7 @@ h3 {
 }
 
 .contact-link {
-  color: $charcoal;
   font-family: $heading-font;
-
-  &:focus {
-    color: $charcoal;
-  }
-
-  &:hover {
-    color: $fuschia;
-  }
 }
 
 .container {
@@ -203,6 +192,3 @@ h3 {
 .container__flex1 {
   flex: 1;
 }
-
-@import 'carousel-button';
-@import 'navbar';
