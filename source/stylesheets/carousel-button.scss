@@ -5,10 +5,10 @@
 //////
 
 $text-arrow-space: 16px;
-$shaft-width: 64px;
 $shaft-weight: 1px;
 $arrow-head-width: 8px;
 $arrow-head-weight: $shaft-weight;
+
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -25,8 +25,11 @@ ul {
 }
 
 .arrow {
-  width: $shaft-width;
   transition: all 0.2s;
+  width: 50px;
+  @media (min-width: 769px) {
+    width: 64px;
+  }
 
   >.shaft {
     background-color: $charcoal;
@@ -53,7 +56,10 @@ ul {
 
 .arrow__right {
   >.shaft {
-    width: $shaft-width;
+    width: 50px;
+    @media (min-width: 769px) {
+      width: 64px;
+    }
 
     &:before,
     &:after {
@@ -75,10 +81,12 @@ ul {
 .arrow__right--previous {
   position: absolute;
   top: 60%;
-  left: $shaft-width;
   transform: rotateZ(180deg);
+  left: 50px;
+  @media (min-width: 769px) {
+    left: 64px;
+  }
 
-   
   >.shaft {
     width: 0;
     background-color: $charcoal;
@@ -124,12 +132,18 @@ ul {
     transform: rotateZ(180deg);
 
   >.shaft {
-    width: $shaft-width;
+    width: 50px;
+    @media (min-width: 769px) {
+      width: 64px;
+    }
 
     &:before,
     &:after {
       width: $arrow-head-width;
-      left: $shaft-width - $arrow-head-width;
+      left: 50px - $arrow-head-width;
+      @media (min-width: 769px) {
+        left: 64px - $arrow-head-width;
+      }
     }
 
     &:before {
@@ -160,9 +174,12 @@ ul {
 
     >.arrow.arrow__left {
       >.shaft {
-        width: $shaft-width;
         transition-delay: 0.1s;
         background-color: $fuschia;
+        width: 50px;
+        @media (min-width: 769px) {
+          width: 64px;
+        }
 
         &:before,
         &:after {
@@ -184,7 +201,10 @@ ul {
     }
 
     >.main {
-      transform: translateX($shaft-width + $text-arrow-space);
+      transform: translateX(50px + $text-arrow-space);
+      @media (min-width: 769px) {
+        transform: translateX(64px + $text-arrow-space);
+      }
 
       >.arrow.arrow__right {
         >.shaft {
@@ -227,33 +247,45 @@ ul {
   margin: 0 15px 0 0;
 
   >.main {
-    transform: translateX($shaft-width + $text-arrow-space);
     width: 125px;
     position: relative;
-    left: -$shaft-width -$text-arrow-space;
+    left: -50px -$text-arrow-space;
+    transform: translateX(50px + $text-arrow-space);
+    @media (min-width: 769px) {
+      left: -64px -$text-arrow-space;
+      transform: translateX(64px + $text-arrow-space);
+    }
 
     >.text {
       position: relative;
       margin: 0 0 0 $text-arrow-space;
-      left: $shaft-width;
+      left: 50px;
+      @media (min-width: 769px) {
+        left: 64px;
+      }
     }
   }
 
   &:hover {
-
     >.arrow.arrow__right--previous {
 
       >.shaft {
-        width: $shaft-width;
         transition-delay: 0.1s;
         background-color: $fuschia;
+        width: 50px;
+        @media (min-width: 769px) {
+          width: 64px;
+        }
 
         &:before,
         &:after {
           width: $arrow-head-width;
           transition-delay: 0.1s;
           background-color: $fuschia;
-          left: $shaft-width - $arrow-head-width;
+          left: 50px - $arrow-head-width;
+          @media (min-width: 769px) {
+            left: 64px - $arrow-head-width;
+          }
         }
       }
     }

@@ -95,12 +95,15 @@ h3 {
 }
 
 .content__about {
-  height: 100vh;
   max-width: 800px;
+  
+  @media (min-width: 769px) {
+    height: 100vh;
+  }
 }
 
 .about-link {
-
+  font-weight: 600
 }
 
 .content__projects{
