@@ -1,0 +1,197 @@
+$offwhite: #f9f9f9;
+$charcoal: #404040;
+$fuschia: #D00251;
+$fuschia-ghost: #c20940;
+$heading-font: 'Fira Sans', sans-serif;
+$body-font: 'Crimson Text', serif;
+
+@import 'carousel-button';
+@import 'navbar';
+
+html, body, figure {
+  margin: 0;
+}
+
+html {
+  font-size: 1.2em;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+
+  &:focus {
+    color: $charcoal;
+  }
+
+  &:hover {
+    color: $fuschia;
+  }
+}
+
+p, a {
+  font-family: $body-font;
+  color: $charcoal;
+}
+
+p {
+  margin-bottom: 1.6em;
+  letter-spacing: 0.4px;
+}
+
+h1, h2 {
+  font-family: $heading-font;
+  font-weight: 300;
+  line-height: 1.2;
+  color: $charcoal;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2.827em;
+}
+
+h2 {
+  font-size: 1.999em;
+}
+
+h3 {
+  font-size: 1.414em;
+}
+
+.name-container {
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px 60px;
+  font-family: $heading-font;
+}
+
+.name-container__text {
+  color: $charcoal;
+  font-size: 3.063em;
+  text-align: center;
+  letter-spacing: 2px;
+
+  @media (min-width: 769px) {
+    font-size: 4.063em;
+  }
+}
+
+.name-container__text--sml {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+.content {
+  width: 80vw;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content__p5 {
+  height: 100vh;
+  width: 100vw;
+}
+
+.content__about {
+  max-width: 800px;
+  
+  @media (min-width: 769px) {
+    height: 100vh;
+  }
+}
+
+.about-link {
+  font-weight: 600
+}
+
+.content__projects{
+  max-width: 800px;
+}
+
+.button-container {
+  padding: 35px 0;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.button-container__link {
+  font-family: $heading-font;
+  text-decoration: none;
+  background-color: $fuschia;
+  width: 200px;
+  color: $offwhite;
+  padding: 16px;
+  border-radius: 2px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin: 8px;
+
+  &:hover {
+    background-color: $fuschia-ghost;
+  }
+}
+
+.button-container__link--ghost {
+  box-shadow: inset 0 0 0 2px $fuschia;
+  background-color: $offwhite;
+  color: $fuschia;
+
+  &:hover {
+    color: $offwhite;
+    background-color: $fuschia;
+  }
+}
+
+.figure-container {
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; // make sure default ratio for youtube vids is kept for container
+}
+
+// adding same class to images to ensure sizing remains the same.
+
+.figure-container__responsive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.content__contact{
+  max-width: 800px;
+  height: 100vh;
+}
+
+.link-container {
+    margin-bottom: 20px;
+}
+
+.contact-link {
+  font-family: $heading-font;
+}
+
+.container {
+  display: flex;
+  text-align: center;
+}
+
+.container__center {
+  margin: auto auto;
+}
+
+.container--align-left {
+  text-align: left;
+}
+
+.container--align-right {
+  text-align: right;
+}
+
+.container__flex1 {
+  flex: 1;
+}
