@@ -215,7 +215,8 @@ ul {
     color: #D00251; }
 
 .navbar-container--transition {
-  top: -10vh; }
+  top: -10vh;
+  visibility: hidden; }
 
 @media (min-width: 769px) {
   .navbar-container {
