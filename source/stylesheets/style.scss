@@ -53,6 +53,7 @@ h1 {
 
 h2 {
   font-size: 1.999em;
+  margin: 0 0;
 }
 
 h3 {
@@ -113,7 +114,6 @@ h3 {
 .button-container {
   padding: 35px 0;
   text-align: center;
-  margin: 20px 0;
 }
 
 .button-container__link {
@@ -147,7 +147,6 @@ h3 {
 }
 
 .figure-container {
-  margin-bottom: 20px;
   position: relative;
   overflow: hidden;
   padding-top: 56.25%; // make sure default ratio for youtube vids is kept for container
@@ -180,6 +179,7 @@ h3 {
 .container {
   display: flex;
   text-align: center;
+  margin: 0 auto;
 }
 
 .container__center {
