@@ -364,7 +364,9 @@ h3 {
   letter-spacing: 1px;
   margin: 8px; }
   .button-container__link:hover {
-    background-color: #c20940; }
+    background-color: #f9f9f9;
+    color: #c20940;
+    box-shadow: inset 0 0 0 2px #c20940; }
 
 .button-container__link--ghost {
   box-shadow: inset 0 0 0 2px #D00251;

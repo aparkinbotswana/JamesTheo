@@ -129,7 +129,9 @@ h3 {
   margin: 8px;
 
   &:hover {
-    background-color: $fuschia-ghost;
+    background-color: $offwhite;
+    color: $fuschia-ghost;
+    box-shadow: inset 0 0 0 2px $fuschia-ghost;
   }
 }
 
